@@ -1,0 +1,168 @@
+$mau-do: #BE2031;
+i{
+	font-size: 0.8rem;
+	color: $mau-do;
+}
+#position-fix{
+	position: fixed;
+	z-index: 1;
+}
+header.row{
+    height: 50px;
+	background-color: white;
+    .logo{
+        height: 100%;
+		display: flex;
+		align-items: center;
+		img{
+			width: 60%;
+			height: auto;
+		}
+    }
+    .hambuger-menu{
+        display: flex;
+        justify-content: flex-end;
+		.show-search-bar{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 1%;
+			.search-bar-input>.input-group{
+				margin: auto;
+				input{
+					background-color: transparent;
+					padding-left: 10px;
+					width: 85%;
+					border: none;
+					border-bottom: 1px solid $mau-do;
+					outline: none;
+			}}
+			.category{
+				width: 200%;
+			.text{
+				margin-top: 10px;
+				text-align: center;
+				
+				a{
+					color: $mau-do;
+					margin-right: 8%;
+					button{
+						outline: none;
+						
+					}
+				}
+			}
+		}
+	}
+        .menu{
+            background-color: slateblue;
+            height: 100%;
+            width: 30px;
+        }
+	}
+	.flex-container {
+		display: flex; justify-content: center;
+		flex-wrap: wrap;
+		background-color: DodgerBlue;
+	  }
+	  
+	  .flex-container > div {
+		background-color: #f1f1f1;
+		width: 22%;
+		height: 500px;
+		border-radius: 18px;
+		margin: 10px;
+		text-align: center;
+		line-height: 75px;
+		font-size: 30px;
+	  }
+}
+
+#flex-container{
+	padding-top: 150px;
+	padding-bottom: 80px;
+}
+/* ======================================================================================footer */
+footer.row{
+	background-color: $mau-do;
+	height: 300px;
+}
+@media only screen and (min-width:768px){
+	header.row{
+		.logo{
+			padding: 0;
+		img{
+		width: 30%;
+		}
+	}
+		.hambuger-menu{
+			padding: 0;
+			padding-right: 64px;
+		}
+	}
+	.flex-container {
+		display: flex;
+		flex-wrap: wrap; justify-content: center;
+		background-color: DodgerBlue;
+	  }
+	  
+	  .flex-container > div {
+		background-color: #f1f1f1;
+		width: 25%;
+		height: 500px;
+		margin: 10px;
+		text-align: center;
+		line-height: 75px;
+		font-size: 30px;
+	  }
+}
+@media (min-width: 576px) { 
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: DodgerBlue;
+      }
+      .flex-container > div {
+        background-color: #f1f1f1;
+        width: 80%;    height: 500px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
+}
+@media only screen and (min-width:992px){
+ 	header.row .hambuger-menu{
+		padding-right: 20%;
+        display: block;
+        .search-bar{
+            width: 100%;
+			margin-right: 10%;
+        }
+    }
+	header.row{
+		padding-left: 10%;
+		height: 85px;
+		.logo{
+			img{
+				width: 35%;}
+	}
+
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; justify-content: center;
+    background-color: DodgerBlue;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    width: 25%;
+    height: 500px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+}

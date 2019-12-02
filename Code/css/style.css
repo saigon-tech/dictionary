@@ -1,0 +1,217 @@
+i {
+  font-size: 0.8rem;
+  color: #BE2031;
+}
+
+#position-fix {
+  position: fixed;
+  z-index: 1;
+}
+
+header.row {
+  height: 50px;
+  background-color: white;
+}
+
+header.row .logo {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.row .logo img {
+  width: 60%;
+  height: auto;
+}
+
+header.row .hambuger-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header.row .hambuger-menu .show-search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1%;
+}
+
+header.row .hambuger-menu .show-search-bar .search-bar-input > .input-group {
+  margin: auto;
+}
+
+header.row .hambuger-menu .show-search-bar .search-bar-input > .input-group input {
+  background-color: transparent;
+  padding-left: 10px;
+  width: 85%;
+  border: none;
+  border-bottom: 1px solid #BE2031;
+  outline: none;
+}
+
+header.row .hambuger-menu .show-search-bar .category {
+  width: 200%;
+}
+
+header.row .hambuger-menu .show-search-bar .category .text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+header.row .hambuger-menu .show-search-bar .category .text a {
+  color: #BE2031;
+  margin-right: 8%;
+}
+
+header.row .hambuger-menu .show-search-bar .category .text a button {
+  outline: none;
+}
+
+header.row .hambuger-menu .menu {
+  background-color: slateblue;
+  height: 100%;
+  width: 30px;
+}
+
+header.row .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: DodgerBlue;
+}
+
+header.row .flex-container > div {
+  background-color: #f1f1f1;
+  width: 22%;
+  height: 500px;
+  border-radius: 18px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+#flex-container {
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+
+/* ======================================================================================footer */
+footer.row {
+  background-color: #BE2031;
+  height: 300px;
+}
+
+@media only screen and (min-width: 768px) {
+  header.row .logo {
+    padding: 0;
+  }
+  header.row .logo img {
+    width: 30%;
+  }
+  header.row .hambuger-menu {
+    padding: 0;
+    padding-right: 64px;
+  }
+  .flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: DodgerBlue;
+  }
+  .flex-container > div {
+    background-color: #f1f1f1;
+    width: 25%;
+    height: 500px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 576px) {
+  .flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: DodgerBlue;
+  }
+  .flex-container > div {
+    background-color: #f1f1f1;
+    width: 80%;
+    height: 500px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  header.row .hambuger-menu {
+    padding-right: 20%;
+    display: block;
+  }
+  header.row .hambuger-menu .search-bar {
+    width: 100%;
+    margin-right: 10%;
+  }
+  header.row {
+    padding-left: 10%;
+    height: 85px;
+  }
+  header.row .logo img {
+    width: 35%;
+  }
+  .flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: DodgerBlue;
+  }
+  .flex-container > div {
+    background-color: #f1f1f1;
+    width: 25%;
+    height: 500px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
