@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  # Apache, PHP
+  server:
+    container_name: training-dictionary
+    build: ./docker/server
+    volumes:
+      - ./server:/srv:rw
+    ports:
+      - 80:80
+      - 443:443
+    working_dir: /srv
+    command: >
+      bash -c "composer install --prefer-dist
+      && /usr/sbin/httpd -D FOREGROUND"
+
+
+  # Database MySQL
+  db:
+    image: mysql:5.7
+    container_name: training-dictionary-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: docker
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      TZ: 'Asia/Ho_Chi_Minh'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/sql:/docker-entrypoint-initdb.d
+
+  # phpMyAdmin
+  phpmyadmin:
+    container_name: training-dictionary-myadmin
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=training-dictionary-db
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+      - 8080:80
