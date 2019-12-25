@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3308
--- Thời gian đã tạo: Th12 18, 2019 lúc 03:06 AM
+-- Thời gian đã tạo: Th12 25, 2019 lúc 02:15 AM
 -- Phiên bản máy phục vụ: 5.7.26
 -- Phiên bản PHP: 7.2.18
 
@@ -123,14 +123,13 @@ CREATE TABLE IF NOT EXISTS `tbl_alphabet` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`alphabet_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_alphabet`
 --
 
 INSERT INTO `tbl_alphabet` (`alphabet_id`, `alphabet_name`, `alphabet_desc`, `alphabet_status`, `created_at`, `updated_at`) VALUES
-(10, 'D', '<p>3</p>', 0, NULL, NULL),
 (4, 'F', '<p>Food</p>', 0, NULL, NULL),
 (5, 'G', '<p>Game</p>', 0, NULL, NULL),
 (6, 'M', '<p>Music</p>', 0, NULL, NULL),
@@ -157,29 +156,28 @@ CREATE TABLE IF NOT EXISTS `tbl_dictionary` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`dictionary_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_dictionary`
 --
 
 INSERT INTO `tbl_dictionary` (`dictionary_id`, `dictionary_name_eng`, `dictionary_name_vn`, `dictionary_desc`, `dictionary_image`, `dictionary_status`, `alphabet_id`, `wordtype_id`, `created_at`, `updated_at`) VALUES
-(57, 'minh', 'minh', '<p>sdfasdf</p>', '51968924_401852130380659_1129324606390272000_n0.jpg', 1, 10, 7, NULL, NULL),
-(1, 'Cake /keɪk/', 'Bánh ngọt', '<p>This cake is so sweet.</p>\r\n\r\n<p>C&aacute;i b&aacute;nh n&agrave;y ngọt qu&aacute;.</p>', 'Cake77.jpg', 0, 4, 5, NULL, NULL),
-(2, 'Biscuit /ˈbɪskɪt/', 'Bánh quy', '<p>My sister is making biscuits.<br />\r\nChị t&ocirc;i đang l&agrave;m b&aacute;nh quy.</p>', 'Biscuit81.jpg', 0, 4, 5, NULL, NULL),
-(3, 'Bread /bred/', 'Bánh mì', '<p>I eat bread for breakfast.<br />\r\nT&ocirc;i ăn b&aacute;nh m&igrave; cho bữa s&aacute;ng.</p>', 'Bread31.jpg', 0, 4, 5, NULL, NULL),
-(4, 'Butterr /ˈbʌtə(r)/', 'Bơ', '<p>I love butter.<br />\r\nT&ocirc;i th&iacute;ch bơ.</p>', 'Butter80.jpg', 0, 4, 5, NULL, NULL),
-(5, 'Cheese /tʃiːz/', 'Pho mát', '<p>My son hates cheese.<br />\r\nCon trai của t&ocirc;i gh&eacute;t pho m&aacute;t.</p>', 'Cheese23.jpg', 0, 4, 5, NULL, NULL),
-(6, 'catch /kætʃ/', 'ném và bắt bóng', '<p>I like catch</p>', 'catch29.jpg', 0, 5, 6, NULL, NULL),
-(7, 'hide-and-seek /ˌhaɪd ən ˈsiːk/', 'trốn tìm', '<p>I like&nbsp;hide-and-seek</p>', 'hide-and-seek75.jpg', 0, 5, 6, NULL, NULL),
-(8, 'hopscotch /ˈhɑːpskɑːtʃ/', 'nhảy lò cò', '<p>I like&nbsp;hopscotch</p>', 'hopscotch47.jpg', 0, 5, 6, NULL, NULL),
-(9, 'marbles /ˈmɑːbl/', 'bắn bi', '<p>I Like&nbsp;marbles</p>', 'marbles81.jpg', 0, 5, 6, NULL, NULL),
-(10, 'tug-of-war', 'kéo co', '<p>I like&nbsp;tug-of-war</p>', 'tug-of-war20.jpg', 0, 5, 6, NULL, NULL),
-(11, 'audience /ˈɔːdiəns/', 'khán giả', '<p>audience Vote</p>', 'audience21.jpg', 0, 6, 7, NULL, NULL),
-(12, 'bassist /ˈbeɪsɪst/', 'nhạc công guitar bass', '<p>bassist&nbsp;&nbsp;nhạc c&ocirc;ng guitar bass</p>', 'bassist99.jpg', 0, 6, 7, NULL, NULL),
-(13, 'beat /biːt/', 'nhịp, phách', '<p>beat /biːt/nhịp, ph&aacute;ch</p>', 'beat39.jpg', 0, 6, 7, NULL, NULL),
-(14, 'cassette player /kəˈset ˈpleɪər/', 'máy nghe băng', '<p>cassette player /kəˈset ˈpleɪər/m&aacute;y nghe băng</p>', 'cassette player30.jpg', 0, 6, 7, NULL, NULL),
-(15, 'cassette /kəˈset/', 'băng cát-xéc', '<p>cassette /kəˈset/băng c&aacute;t-x&eacute;c</p>', 'cassette8.jpg', 0, 6, 7, NULL, NULL);
+(1, 'Cake', 'Bánh ngọt', '<p>/keɪk/</p>', 'Cake77.jpg', 0, 4, 5, NULL, '2019-12-24 04:20:23'),
+(2, 'Biscuit', 'Bánh quy', '<p>/ˈbɪskɪt/</p>', 'Biscuit81.jpg', 0, 4, 5, NULL, '2019-12-24 04:20:11'),
+(3, 'Bread', 'Bánh mì', '<p>/bred/</p>', 'Bread31.jpg', 0, 4, 5, NULL, '2019-12-24 04:20:01'),
+(4, 'Butterr', 'Bơ', '<p>/ˈbʌtə(r)/</p>', 'Butter80.jpg', 0, 4, 5, NULL, '2019-12-24 04:19:46'),
+(5, 'Cheese', 'Pho mát', '<p>/tʃiːz/</p>', 'Cheese23.jpg', 0, 4, 5, NULL, '2019-12-24 04:19:35'),
+(6, 'catch', 'ném và bắt bóng', '<p>/k&aelig;tʃ/</p>', 'catch29.jpg', 0, 5, 6, NULL, '2019-12-24 04:19:25'),
+(7, 'hide-and-seek', 'trốn tìm', '<p>/ˌhaɪd ən ˈsiːk/</p>', 'hide-and-seek75.jpg', 0, 5, 6, NULL, '2019-12-24 04:19:13'),
+(8, 'hopscotch', 'nhảy lò cò', '<p>/ˈhɑːpskɑːtʃ/</p>', 'hopscotch47.jpg', 0, 5, 6, NULL, '2019-12-24 04:19:02'),
+(9, 'marbles', 'bắn bi', '<p>/ˈmɑːbl/</p>', 'marbles81.jpg', 0, 5, 6, NULL, '2019-12-24 04:18:52'),
+(10, 'tug-of-war', 'kéo co', '<p>I like&nbsp;tug-of-war</p>', 'tug-of-war20.jpg', 0, 5, 6, NULL, '2019-12-24 04:18:43'),
+(11, 'audience', 'khán giả', '<p>/ˈɔːdiəns/</p>', 'audience21.jpg', 0, 6, 7, NULL, '2019-12-24 04:18:36'),
+(12, 'bassist', 'nhạc công guitar bass', '<p>&nbsp;/ˈbeɪsɪst/</p>', 'bassist99.jpg', 0, 6, 7, NULL, '2019-12-24 04:18:26'),
+(13, 'beat', 'nhịp, phách', '<p>/biːt/</p>', 'beat39.jpg', 0, 6, 7, NULL, '2019-12-24 04:18:14'),
+(14, 'cassette player', 'máy nghe băng', '<p>/kəˈset ˈpleɪər/</p>', 'cassette player30.jpg', 0, 6, 7, NULL, '2019-12-24 04:18:03'),
+(15, 'cassette', 'băng cát-xéc', '<p>cassette /kəˈset/băng c&aacute;t-x&eacute;c</p>', 'cassette8.jpg', 0, 9, 7, NULL, '2019-12-21 23:46:55');
 
 -- --------------------------------------------------------
 

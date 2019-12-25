@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <head>
 <title>Trang Quản lý Admin Web</title>
@@ -26,24 +25,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="w3layouts-main">
     <h2>Đăng Nhập</h2>
             <?php
-            $message = Session::get('message');
-            if($message)
-            {
-                    echo '<span. class="text-alert" style="color:white">'. $message.'</span>';
-                    // $message = Session::get('message');
-                    Session::put('message',null);
-            }
-            ?>
-        <form action="{{ URL::to('/admin-dashboard') }}" method="post" >
+$message = Session::get('message');
+if ($message) {
+    echo '<span. class="text-alert" style="color:white">' . $message . '</span>';
+    // $message = Session::get('message');
+    Session::put('message', null);
+}
+?>
+       <form action="{{ URL::to('/admin-dashboard') }}" method="post" >
             {{ csrf_field() }}
-			<input type="text" class="ggg" name="admin_email"  placeholder="Điền email" required="">
-			<input type="password" class="ggg" name="admin_password" placeholder="Điền PASSWORD" required="">
-			<span><input type="checkbox" />Nhớ Đăng Nhập</span>
-			<h6><a href="#">Quên mật Khẩu</a></h6>
-				<div class="clearfix"></div>
-				<input type="submit" value="Sign In" name="login">
-		</form>
-		{{-- <a>Don't Have an Account ?<a href="registration.html">Create an account</a></a> --}}
+            <input type="text" class="ggg" name="admin_email"  placeholder="Điền email" required="">
+            <input type="password" class="ggg" name="admin_password" placeholder="Điền PASSWORD" required="">
+            <span><input type="checkbox" />Nhớ Đăng Nhập</span>
+            <h6><a href="#">Quên mật Khẩu</a></h6>
+                <div class="clearfix"></div>
+                <input type="submit" value="Sign In" name="login">
+        </form>
+        {{-- <a>Don't Have an Account ?<a href="registration.html">Create an account</a></a> --}}
 </div>
 </div>
 <script src="{{ asset('public/backend/js/bootstrap.js') }}"></script>

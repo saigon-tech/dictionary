@@ -16,15 +16,19 @@
 Route::get('/', 'HomeController@index' );
 
 Route::get('/chi-tiet-tu-dien/{dictionary_id}','DictionaryController@details_dictionary');
+Route::get('/wordtype-food','HomeController@wordtype_food');
+Route::get('/wordtype-game','HomeController@wordtype_game');
+Route::get('/wordtype-music','HomeController@wordtype_music');
+
 Route::post('/tim-kiem', 'HomeController@search' );
 Route::get('/add-all-dictionary', 'HomeController@add_all_dictionary' );
 Route::post('/save-add-dictionary', 'HomeController@save_add_dictionary' );
  
 
 // Route::get('/trang-chu', 'HomeController@index' );
-Route::get('/tim-kiem-alphabet', 'AlphabetDictionary@search' );
-Route::get('/tim-kiem-wordtype', 'WordtypeDictionary@search' );
-Route::get('/tim-kiem-dictionary', 'DictionaryController@search' );
+Route::post('/tim-kiem-alphabet', 'AlphabetDictionary@search' );
+Route::post('/tim-kiem-wordtype', 'WordtypeDictionary@search' );
+Route::post('/tim-kiem-dictionary', 'DictionaryController@search' );
 
 
 //Back-end
