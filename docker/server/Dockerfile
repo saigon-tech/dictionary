@@ -13,7 +13,7 @@ RUN ln -s /usr/bin/php73 /usr/bin/php
 RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs install httpd && \
     yum clean all
-RUN sed -i -e "s/var\/www\/html/srv\/public/g" /etc/httpd/conf/httpd.conf
+RUN sed -i -e "s/var\/www\/html/srv/g" /etc/httpd/conf/httpd.conf
 RUN sed -i -e "s/    AllowOverride None/    AllowOverride All/g" /etc/httpd/conf/httpd.conf
 RUN echo 'Timeout 600' >> /etc/httpd/conf/httpd.conf
 
