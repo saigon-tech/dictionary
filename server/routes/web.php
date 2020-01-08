@@ -15,7 +15,7 @@
 
 Route::get('/', 'HomeController@index' );
 
-Route::get('/chi-tiet-tu-dien/{dictionary_id}','DictionaryController@details_dictionary');
+Route::get('/chi-tiet-tu-dien/{dictionary_id}','DictionaryController@details_dictionary')->name('detail.dictionary');
 Route::get('/wordtype-food','HomeController@wordtype_food');
 Route::get('/wordtype-game','HomeController@wordtype_game');
 Route::get('/wordtype-music','HomeController@wordtype_music');

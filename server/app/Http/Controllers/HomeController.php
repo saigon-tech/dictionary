@@ -53,7 +53,7 @@ class HomeController extends Controller
     }
     public function save_add_dictionary(Request $request)
     {
-        
+
         $data = array();
         $data['dictionary_name_eng'] = $request->dictionary_name_eng;
         $data['dictionary_name_vn'] = $request->dictionary_name_vn;
