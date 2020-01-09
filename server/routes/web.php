@@ -25,20 +25,17 @@ Route::get('/add-all-dictionary', 'HomeController@add_all_dictionary');
 Route::post('/save-add-dictionary', 'HomeController@save_add_dictionary');
 
 Route::post('/tim-kiem-alphabet', 'AlphabetDictionary@search');
+
+Route::post('/tim-kiem-alphabet', 'AlphabetDictionary@search');
 Route::post('/tim-kiem-wordtype', 'WordtypeDictionary@search');
+Route::post('/tim-kiem-dictionary', 'DictionaryController@search');
+
 
 //Back-end
-
-Route::get('/login', 'AdminController@index')->name('login');
-Route::get('/logout', 'AdminController@log_out')->name('logout');
-
-// Admin page
-Route::group(['middleware' => ['adminLogin']], function () {
-    Route::prefix('admin')->group(function (){
-        Route::get('/dashboard', 'AdminController@show_dashboard')->name('get.admin_dashboard');
-        Route::post('/dashboard', 'AdminController@postDashboard')->name('post.admin_dashboard');
-    });
-});
+Route::get('/admin', 'AdminController@index');
+Route::get('/dashboard', 'AdminController@show_dashboard');
+Route::get('/logout', 'AdminController@log_out');
+Route::post('/admin-dashboard', 'AdminController@admin_dashboard');
 
 // AlphabetDictionary dictionary
 Route::get('/add-alphabet-dictionary', 'AlphabetDictionary@add_alphabet_dictionary');

@@ -87,7 +87,7 @@ class HomeController extends Controller
         join('tbl_wordtype','tbl_wordtype.wordtype_id','=','tbl_dictionary.wordtype_id')
         ->join('tbl_alphabet','tbl_alphabet.alphabet_id','=','tbl_dictionary.alphabet_id')
         ->where('wordtype_name', 'Food')
-        ->orderby('tbl_dictionary.dictionary_id','desc')->get();
+        ->orderby('tbl_dictionary.dictionary_id','desc')->paginate(21);
         return view('pages.food')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)
         ->with('all_dictionary',$all_dictionary);
     }

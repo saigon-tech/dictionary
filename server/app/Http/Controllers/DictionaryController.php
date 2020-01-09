@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Logics\DictionaryLogic;
 use Illuminate\Http\Request;
-use App\Models\Wordtype;
-use App\Models\Alphabet;
-use App\Models\Dictionary;
+use DB;
+use App\Wordtype;
+use App\Alphabet;
+use App\Dictionary;
+use App\Http\Requests;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 
 class DictionaryController extends Controller
 {
-    private  $DictionaryLogic = null;
-    public function __construct(DictionaryLogic $dictionary_logic)
-    {
-        $this->DictionaryLogic = $dictionary_logic;
-    }
-
     public function AuthLogin()
     {
         $admin_id = Session::get('admin_id');
@@ -144,6 +139,18 @@ class DictionaryController extends Controller
         Dictionary::where('dictionary_id', $dictionary_id)->delete();
         Session::put('message', 'Xoa danh mục sản phầm thành công');
         return Redirect::to("all-dictionary");
+    }
+
+    public function search(Request $request)
+    {
+        $keywords = $request->keywords_submit;
+        $search_dictionary_all = Dictionary::
+        join('tbl_wordtype', 'tbl_wordtype.wordtype_id', '=', 'tbl_dictionary.wordtype_id')
+            ->join('tbl_alphabet', 'tbl_alphabet.alphabet_id', '=', 'tbl_dictionary.alphabet_id')
+            ->where('dictionary_name_eng', 'like', '%' . $keywords . '%')
+            ->orderby('tbl_dictionary.dictionary_id', 'desc')->get();
+        return view('admin.search_dictionary', compact('search_dictionary_all'));
+
     }
 
     public function details_dictionary($dictionary_id)
