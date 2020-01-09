@@ -32,8 +32,8 @@ if ($message) {
     Session::put('message', null);
 }
 ?>
-       <form action="{{ URL::to('/admin-dashboard') }}" method="post" >
-            {{ csrf_field() }}
+       <form action="{{ route('post.admin_dashboard') }}" method="post" >
+            @csrf
             <input type="text" class="ggg" name="admin_email"  placeholder="Điền email" required="">
             <input type="password" class="ggg" name="admin_password" placeholder="Điền PASSWORD" required="">
             <span><input type="checkbox" />Nhớ Đăng Nhập</span>
