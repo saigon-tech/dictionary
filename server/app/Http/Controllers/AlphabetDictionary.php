@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use App\Alphabet;
-use App\Http\Requests;
+use App\Models\Alphabet;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 

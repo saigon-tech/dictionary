@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Logics\DictionaryLogic;
 use Illuminate\Http\Request;
-use DB;
-use App\Wordtype;
-use App\Alphabet;
-use App\Dictionary;
-use App\Http\Requests;
+use App\Models\Wordtype;
+use App\Models\Alphabet;
+use App\Models\Dictionary;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 
 class DictionaryController extends Controller
 {
+    private  $DictionaryLogic = null;
+    public function __construct(DictionaryLogic $dictionary_logic)
+    {
+        $this->DictionaryLogic = $dictionary_logic;
+    }
+
     public function AuthLogin()
     {
         $admin_id = Session::get('admin_id');
@@ -35,13 +40,13 @@ class DictionaryController extends Controller
     public function all_dictionary()
     {
         $this->AuthLogin();
-        $all_dictionary     = Dictionary::
-        join('tbl_wordtype', 'tbl_wordtype.wordtype_id', '=', 'tbl_dictionary.wordtype_id')
+        $all_dictionary     = Dictionary::join('tbl_wordtype', 'tbl_wordtype.wordtype_id', '=',
+            'tbl_dictionary.wordtype_id')
             ->join('tbl_alphabet', 'tbl_alphabet.alphabet_id', '=', 'tbl_dictionary.alphabet_id')
             ->orderby('tbl_dictionary.dictionary_id', 'desc')->get();
+
         $manager_dictionary = view('admin.all_dictionary')->with('all_dictionary', $all_dictionary);
         return view('admin_layout')->with('admin.all_dictionary', $manager_dictionary);
-
     }
 
     public function save_dictionary(Request $request)
@@ -141,31 +146,18 @@ class DictionaryController extends Controller
         return Redirect::to("all-dictionary");
     }
 
-    public function search(Request $request)
-    {
-        $keywords = $request->keywords_submit;
-        // dd($keywords);
-        $search_dictionary_all = Dictionary::
-        join('tbl_wordtype', 'tbl_wordtype.wordtype_id', '=', 'tbl_dictionary.wordtype_id')
-            ->join('tbl_alphabet', 'tbl_alphabet.alphabet_id', '=', 'tbl_dictionary.alphabet_id')
-            ->where('dictionary_name_eng', 'like', '%' . $keywords . '%')
-            ->orderby('tbl_dictionary.dictionary_id', 'desc')->get();
-        return view('admin.search_dictionary', compact('search_dictionary_all'));
-
-    }
-
     public function details_dictionary($dictionary_id)
     {
         $wordtype_dictionary = Wordtype::where('wordtype_status', '0')->orderby('wordtype_id', 'desc')->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', '0')->orderby('alphabet_id', 'desc')->get();
 
         $details_dictionary = Dictionary::where('tbl_dictionary.dictionary_id', $dictionary_id)->get();
-        $wordtype_id = null;
+        $wordtype_id        = null;
         foreach ($details_dictionary as $key => $value) {
             $wordtype_id = $value->wordtype_id;
         }
 
-        if (! empty($wordtype_id)) {
+        if ( ! empty($wordtype_id)) {
             $related_dictionary = Dictionary::
             join('tbl_wordtype', 'tbl_wordtype.wordtype_id', '=', 'tbl_dictionary.wordtype_id')
                 ->join('tbl_alphabet', 'tbl_alphabet.alphabet_id', '=', 'tbl_dictionary.alphabet_id')
@@ -178,6 +170,5 @@ class DictionaryController extends Controller
             ->with('alphabet', $alphabet_dictionary)
             ->with('details_dictionary', $details_dictionary)
             ->with('relate', $related_dictionary ?? []);
-
     }
 }

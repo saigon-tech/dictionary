@@ -23,20 +23,17 @@ Route::get('/wordtype-music','HomeController@wordtype_music');
 Route::post('/tim-kiem', 'HomeController@search' );
 Route::get('/add-all-dictionary', 'HomeController@add_all_dictionary' );
 Route::post('/save-add-dictionary', 'HomeController@save_add_dictionary' );
- 
 
-// Route::get('/trang-chu', 'HomeController@index' );
 Route::post('/tim-kiem-alphabet', 'AlphabetDictionary@search' );
 Route::post('/tim-kiem-wordtype', 'WordtypeDictionary@search' );
-Route::post('/tim-kiem-dictionary', 'DictionaryController@search' );
-
 
 //Back-end
-Route::get('/admin', 'AdminController@index' );
-Route::get('/dashboard', 'AdminController@show_dashboard' );
+Route::group(['middleware'=>['adminLogin']],function (){
+    Route::get('/admin', 'AdminController@index' )->name('login');
+    Route::get('/dashboard', 'AdminController@show_dashboard' );
+    Route::post('/admin-dashboard', 'AdminController@admin_dashboard' );
+});
 Route::get('/logout', 'AdminController@log_out' );
-Route::post('/admin-dashboard', 'AdminController@admin_dashboard' );
-
 // AlphabetDictionary dictionary
 Route::get('/add-alphabet-dictionary', 'AlphabetDictionary@add_alphabet_dictionary' );
 Route::get('/all-alphabet-dictionary', 'AlphabetDictionary@all_alphabet_dictionary' );
