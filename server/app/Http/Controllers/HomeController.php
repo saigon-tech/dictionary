@@ -16,7 +16,7 @@ class HomeController extends Controller
             ->orderBy('wordtype_id', 'ASC')
             ->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
-            ->orderBy('alphabet_id', 'ASC')
+            ->orderBy('alphabet_name', 'ASC')
             ->get();
         $all_dictionary = Dictionary::where('dictionary_status', 0)
             ->orderBy('dictionary_status', 'ASC')

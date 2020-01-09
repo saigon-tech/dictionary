@@ -102,5 +102,4 @@ class AlphabetDictionary extends Controller
         return view('admin.search_alphabet')->with('search_alphabet', $search_alphabet);
     }
 
-
 }
