@@ -19,7 +19,7 @@ Route::get('/chi-tiet-tu-dien/{dictionary_id}', 'DictionaryController@details_di
 Route::get('/wordtype-food', 'HomeController@wordtype_food');
 Route::get('/wordtype-game', 'HomeController@wordtype_game');
 Route::get('/wordtype-music', 'HomeController@wordtype_music');
-
+Route::get('/alphabet-detail/{word}','HomeController@getDetailAlphabet')->name('detail.alphabet');
 Route::post('/tim-kiem', 'HomeController@search');
 Route::get('/add-all-dictionary', 'HomeController@add_all_dictionary');
 Route::post('/save-add-dictionary', 'HomeController@save_add_dictionary');
