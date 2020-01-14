@@ -19,6 +19,6 @@ class LoginAdmin
         if (Auth::check()) {
             return $next($request);
         }
-        return route('login');
+        return redirect('login');
     }
 }

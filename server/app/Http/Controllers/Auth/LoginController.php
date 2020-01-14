@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -34,6 +36,33 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        // $this->middleware('guest')->except('logout');
+    }
+
+    public function getLogin()
+    {
+        if (Auth::check()) {
+            return redirect(route('get.admin_dashboard'));
+        }
+        return view('Auth.login');
+    }
+
+    public function postLogin(Request $request)
+    {
+        if (Auth::attempt([
+            'admin_email' => $request->admin_email,
+            'password'    => $request->admin_password,
+        ])) {
+            return redirect(route('get.admin_dashboard'));
+        }
+        return redirect(route('get_login'))->with('login_fail', trans('auth.failed'));
+    }
+
+    public function getLogout()
+    {
+        if (Auth::check()) {
+            Auth::logout();
+            return redirect('get_login');
+        }
     }
 }

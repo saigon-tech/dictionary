@@ -28,13 +28,13 @@ Route::post('/tim-kiem-alphabet', 'AlphabetDictionary@search');
 Route::post('/tim-kiem-wordtype', 'WordtypeDictionary@search');
 
 //Back-end
-
-Route::get('/login', 'AdminController@index')->name('login');
-Route::get('/logout', 'AdminController@log_out')->name('logout');
+Route::get('login', 'Auth\LoginController@getLogin')->name('get_login');
+Route::post('login', 'Auth\LoginController@postLogin')->name('post_login');
+Route::get('logout', 'Auth\LoginController@getLogout')->name('logout');
 
 // Admin page
 Route::group(['middleware' => ['adminLogin']], function () {
-    Route::prefix('admin')->group(function (){
+    Route::prefix('admin')->group(function () {
         Route::get('/dashboard', 'AdminController@show_dashboard')->name('get.admin_dashboard');
         Route::post('/dashboard', 'AdminController@postDashboard')->name('post.admin_dashboard');
     });

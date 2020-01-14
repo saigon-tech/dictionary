@@ -20,7 +20,7 @@ class HomeController extends Controller
             ->orderBy('dictionary_status', 'ASC')
             ->get();
        
-        return view('pages.home')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('all_dictionary',$all_dictionary);
+        return view('Pages.home')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('all_dictionary',$all_dictionary);
     }
     public function search(Request $request)
     { 
@@ -35,7 +35,7 @@ class HomeController extends Controller
             ->orderBy('alphabet_id', 'ASC')
             ->get();
        
-        return view('pages.search')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('search_dictionary',$search_dictionary);
+        return view('Pages.search')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('search_dictionary',$search_dictionary);
     }
 
     public function add_all_dictionary(){
@@ -47,7 +47,7 @@ class HomeController extends Controller
             ->orderBy('alphabet_id', 'desc')
             ->get();
         
-        return view('pages.add')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary);
+        return view('Pages.add')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary);
     }
     public function save_add_dictionary(Request $request)
     {
@@ -88,7 +88,7 @@ class HomeController extends Controller
         ->join('tbl_alphabet','tbl_alphabet.alphabet_id','=','tbl_dictionary.alphabet_id')
         ->where('wordtype_name', 'Food')
         ->orderby('tbl_dictionary.dictionary_id','desc')->get();
-        return view('pages.food')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)
+        return view('Pages.food')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)
         ->with('all_dictionary',$all_dictionary);
     }
     public function wordtype_game(){
@@ -101,7 +101,7 @@ class HomeController extends Controller
         ->join('tbl_alphabet','tbl_alphabet.alphabet_id','=','tbl_dictionary.alphabet_id')
         ->where('wordtype_name', 'Game')
         ->orderby('tbl_dictionary.dictionary_id','desc')->get();
-        return view('pages.game')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)
+        return view('Pages.game')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)
         ->with('all_dictionary',$all_dictionary);
     }
     public function wordtype_music(){
@@ -114,7 +114,7 @@ class HomeController extends Controller
         ->join('tbl_alphabet','tbl_alphabet.alphabet_id','=','tbl_dictionary.alphabet_id')
         ->where('wordtype_name', 'Music')
         ->orderby('tbl_dictionary.dictionary_id','desc')->get();
-        return view('pages.music')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)
+        return view('Pages.music')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)
         ->with('all_dictionary',$all_dictionary);
     }
 }
