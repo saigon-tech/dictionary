@@ -1,24 +1,24 @@
 @extends('client')
-@section('contanier')
+@section('container')
 <!-- =====================================================================================================================main-page -->
 <div class="hidden"></div>
 <div class="flex-container" id="flex-container clearfix ">
 
     <div style="  background-image: url('resources/Image/One.jpg');
                 background-repeat: no-repeat;
-            
+
                 background-size: 100% 100%; "> <a href="{{URL::to('wordtype-food')}}">
             <p>FOOD</p>
         </a></div>
     <div style="  background-image: url('resources/Image/Two.jpg');
                 background-repeat: no-repeat;
-            
+
                 background-size: 100% 100%; "><a href="{{URL::to('wordtype-game')}}">
             <p>GAME</p>
         </a></div>
     <div style="  background-image: url('resources/Image/Three.jpg');
                 background-repeat: no-repeat;
-            
+
                 background-size: 100% 100%; "><a href="{{URL::to('wordtype-music')}}">
             <p>MUSIC</p>
         </a></div>

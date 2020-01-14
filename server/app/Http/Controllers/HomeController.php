@@ -21,11 +21,11 @@ class HomeController extends Controller
         $all_dictionary = Dictionary::where('dictionary_status', 0)
             ->orderBy('dictionary_status', 'ASC')
             ->get();
-       
+
         return view('pages.home')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('all_dictionary',$all_dictionary);
     }
     public function search(Request $request)
-    { 
+    {
         $keywords = $request->keywords_submit;
         $wordtype_dictionary = Wordtype::where('wordtype_status', 0)
             ->orderBy('wordtype_id', 'ASC')
@@ -36,24 +36,24 @@ class HomeController extends Controller
         $search_dictionary = Dictionary::where('dictionary_name_eng', 'like','%'.$keywords.'%')
             ->orderBy('alphabet_id', 'ASC')
             ->get();
-       
+
         return view('pages.search')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('search_dictionary',$search_dictionary);
     }
 
     public function add_all_dictionary(){
-    
+
         $wordtype_dictionary = Wordtype::where('wordtype_status', 0)
             ->orderBy('wordtype_id', 'desc')
             ->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
             ->orderBy('alphabet_id', 'desc')
             ->get();
-        
+
         return view('pages.add')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary);
     }
     public function save_add_dictionary(Request $request)
     {
-        
+
         $data = array();
         $data['dictionary_name_eng'] = $request->dictionary_name_eng;
         $data['dictionary_name_vn'] = $request->dictionary_name_vn;
@@ -65,7 +65,7 @@ class HomeController extends Controller
         $get_image = $request->file('dictionary_image');
 
         if($get_image){
-            $get_name_image = $get_image->getClientOriginalName(); 
+            $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
             $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
             $get_image->move('public/uploads/dictionary',$new_image);

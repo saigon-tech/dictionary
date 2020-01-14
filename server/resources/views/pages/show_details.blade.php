@@ -1,5 +1,5 @@
 @extends('client')
-@section('contanier')
+@section('container')
 <div class="container-fluid" style="height:auto;  background-color: #F2F2F2 !important">
     <div class="row" style="height:auto;">
         <div class="main-page col-12 col-md-12 col-lg-12" style="height:auto;background-color: #F2F2F2 !important">
@@ -26,9 +26,11 @@
 
                             <img src="{{ URL::to('/public/uploads/dictionary/'.$lienquan->dictionary_image) }}" alt=""
                                 style="width:80%" />
+                        </div>
                     </a>
+                    @endforeach
                 </div>
-                @endforeach
+
             </div>
 
         </div>
