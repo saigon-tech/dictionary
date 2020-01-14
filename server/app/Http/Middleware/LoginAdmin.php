@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class LoginAdmin
 {
@@ -15,10 +15,10 @@ class LoginAdmin
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
+    {dd(Auth::check());
         if (Auth::check()) {
             return $next($request);
         }
-        return redirect('login');
+        return redirect(route('get_login'));
     }
 }

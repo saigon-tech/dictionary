@@ -2,18 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticate;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Authenticate
+class Admin extends Authenticatable
 {
     use Notifiable;
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
-    protected $table      = 'tbl_admin';
-    protected $primaryKey = 'alphabet_id';
+    protected $table        = 'tbl_admin';
+    protected $primaryKey   = 'alphabet_id';
+    public    $incrementing = true;
 
     protected $fillable
         = [
@@ -28,6 +30,9 @@ class Admin extends Authenticate
 
     public function getAuthPassword()
     {
-        return $this->admin_password;
+        return $this->password;
     }
+
+    protected $hidden = ['password', 'remember_token'];
+
 }

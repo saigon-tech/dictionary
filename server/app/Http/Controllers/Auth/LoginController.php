@@ -53,16 +53,17 @@ class LoginController extends Controller
             'admin_email' => $request->admin_email,
             'password'    => $request->admin_password,
         ])) {
-            return redirect(route('get.admin_dashboard'));
+            return redirect(url('admin/dashboard'));
         }
-        return redirect(route('get_login'))->with('login_fail', trans('auth.failed'));
+
+        return redirect()->route('get_login')->with('login_fail', trans('auth.failed'));
     }
 
     public function getLogout()
     {
         if (Auth::check()) {
             Auth::logout();
-            return redirect('get_login');
+            return redirect()->route('get_login');
         }
     }
 }
