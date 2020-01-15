@@ -1,5 +1,5 @@
 @extends('client')
-@section('contanier')
+@section('container')
 
     <head>
         <link rel="stylesheet" href="{{asset ('public/frontend/detail/styledetail.css') }}">
