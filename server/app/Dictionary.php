@@ -17,12 +17,14 @@ class Dictionary extends Model
             'dictionary_image',
             'dictionary_status',
             'alphabet_id',
-            'wordtype_id'
+            'category_id',
+            'created_at',
+            'update_at'
         ];
 
     public function wordtype()
     {
-        return $this->belongsTo(Wordtype::class, 'wordtype_id', 'wordtype_id');
+        return $this->belongsTo(Category::class, 'wordtype_id', 'wordtype_id');
     }
 
     public function alphabet()

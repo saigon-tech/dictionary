@@ -72,7 +72,7 @@
                                 <a class="btn dropdown-toggle text-danger pr-0 pl-0" href="#" role="button"
                                     id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
-                                    Browers
+                                    Kana
                                 </a>
                                 <div class="dropdown-menu pl-4" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">
@@ -91,7 +91,7 @@
                                 <a class="btn dropdown-toggle text-danger pr-0 pl-0" href="#" role="button"
                                     id="dropdownMenuLink-1" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
-                                    Categories
+                                    Chủ Đề
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">
@@ -125,9 +125,6 @@
                                     </a>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item list-inline-item text-danger">
-                            <a class="nav-link text-danger" href="#">Vote</a>
                         </li>
                         <li class="nav-item-1 list-inline-item text-danger">
                             <a class="nav-link text-danger" href="#">About</a>

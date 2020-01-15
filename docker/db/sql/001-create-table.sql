@@ -113,7 +113,7 @@ CREATE TABLE `tbl_dictionary` (
   `dictionary_image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `dictionary_status` int(11) NOT NULL,
   `alphabet_id` int(11) NOT NULL,
-  `wordtype_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -121,15 +121,15 @@ CREATE TABLE `tbl_dictionary` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_wordtype`
+-- Table structure for table `tbl_category`
 --
-Drop table if exists tbl_wordtype cascade;
+Drop table if exists tbl_category cascade;
 
-CREATE TABLE `tbl_wordtype` (
-  `wordtype_id` int(11) UNSIGNED NOT NULL,
-  `wordtype_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `wordtype_desc` text COLLATE utf8_unicode_ci NOT NULL,
-  `wordtype_status` int(11) NOT NULL,
+CREATE TABLE `tbl_category` (
+  `category_id` int(11) UNSIGNED NOT NULL,
+  `category_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `category_desc` text COLLATE utf8_unicode_ci NOT NULL,
+  `category_status` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -193,10 +193,10 @@ ALTER TABLE `tbl_dictionary`
   ADD PRIMARY KEY (`dictionary_id`);
 
 --
--- Indexes for table `tbl_wordtype`
+-- Indexes for table `tbl_category`
 --
-ALTER TABLE `tbl_wordtype`
-  ADD PRIMARY KEY (`wordtype_id`);
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`category_id`);
 
 --
 -- Indexes for table `users`
@@ -240,10 +240,10 @@ ALTER TABLE `tbl_dictionary`
   MODIFY `dictionary_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
--- AUTO_INCREMENT for table `tbl_wordtype`
+-- AUTO_INCREMENT for table `tbl_category`
 --
-ALTER TABLE `tbl_wordtype`
-  MODIFY `wordtype_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+ALTER TABLE `tbl_category`
+  MODIFY `category_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `users`
