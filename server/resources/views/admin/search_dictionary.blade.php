@@ -12,7 +12,6 @@
       <div class="col-sm-4">
       </div>
       <div class="col-sm-3">
-
         <form action="{{ URL::to('/tim-kiem-dictionary') }}" method="POST">
           {{ csrf_field() }}
           <div class="input-group">
