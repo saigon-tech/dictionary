@@ -1,5 +1,5 @@
 @extends('client')
-@section('contanier')
+@section('container')
 <!-- =====================================================================================================================main-page -->
 <div class="hidden"></div>
 

@@ -16,13 +16,17 @@
                 <img src="{{URL::to ('resources/Image/One.jpg') }}" alt="" style="height:100%">
             </div>
             <div class="text col-9 col-md-9 col-lg-9 mx-auto d-flex flex-wrap justify-content-start " >
+
                 @foreach ($all_dictionary as $key => $food)
                 <div class="col-sm-4 mb-4   ">
+
                     <a  class="text-center" href="{{ URL::to('/chi-tiet-tu-dien/'.$food->dictionary_id)}}">
                         <p style="color:black;font-weight: 450;">{{ $food->dictionary_name_eng }}</p>
                     </a>
+
                 </div>
                 @endforeach
+
             </div>
             {{ $all_dictionary->links() }}
         </div>
