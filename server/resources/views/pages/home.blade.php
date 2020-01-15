@@ -1,12 +1,12 @@
 @extends('client')
-@section('contanier')
+@section('container')
 <!-- =====================================================================================================================main-page -->
 <div class="hidden"></div>
 <div class="flex-container" id="flex-container clearfix ">
 
     <div style="  background-image: url('resources/Image/One.jpg');
                 background-repeat: no-repeat;
-            
+
                 background-size: 100% 100%; "> <a href="{{URL::to('wordtype-food')}}">
             <p>FOOD</p>
         </a></div>
