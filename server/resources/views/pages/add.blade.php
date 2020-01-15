@@ -1,5 +1,5 @@
 @extends('client')
-@section('contanier')
+@section('container')
 <div class="hidden2"></div>
 <div class="col-12 col-xl-12 col-lg-12 " style="margin-top: 8rem!important;">
     <div class="bg-white col-9 my-5 mx-auto shadow rounded p-5" style="height:auto; Border-radius: 3% !important">
@@ -11,7 +11,7 @@
                             $message = Session::get('message');
                             if($message)
                             {
-                                    echo '<span. class="text-alert">'. $message.'</span>';                                
+                                    echo '<span. class="text-alert">'. $message.'</span>';
                                     Session::put('message',null);
                             }
                             ?>
