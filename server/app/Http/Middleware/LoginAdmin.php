@@ -15,7 +15,7 @@ class LoginAdmin
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {dd(Auth::check());
+    {
         if (Auth::check()) {
             return $next($request);
         }

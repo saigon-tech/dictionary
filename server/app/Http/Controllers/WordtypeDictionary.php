@@ -82,7 +82,7 @@ class WordtypeDictionary extends Controller
     { 
         $keywords = $request->keywords_submit;
         $search_wordtype = Wordtype::where('wordtype_name','like','%'.$keywords.'%')->get();
-        return view('admin.search_wordtype')->with('search_wordtype',$search_wordtype);
+        return view('Admin.search_wordtype')->with('search_wordtype',$search_wordtype);
     }
  
 

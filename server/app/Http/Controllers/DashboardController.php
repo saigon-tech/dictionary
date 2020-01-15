@@ -9,7 +9,6 @@ class DashboardController extends Controller
 {
     public function show_dashboard()
     {
-        dd('hello');
         return view('Admin.dashboard');
     }
 

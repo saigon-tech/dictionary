@@ -77,10 +77,6 @@ class DictionaryController extends Controller
         Dictionary::insert($data);
         Session::put('message', 'Thêm  sản phầm thành công');
         return Redirect::to('/all-dictionary');
-        // echo'<pre>';
-        // print_r($data);
-        // echo'</pre>';
-
     }
 
     public function unactive_dictionary($dictionary_id)
@@ -165,7 +161,7 @@ class DictionaryController extends Controller
                     [$dictionary_id])->get();
         }
 
-        return view('pages.show_details')
+        return view('Pages.show_details')
             ->with('wordtype_dictionary', $wordtype_dictionary)
             ->with('alphabet', $alphabet_dictionary)
             ->with('details_dictionary', $details_dictionary)
