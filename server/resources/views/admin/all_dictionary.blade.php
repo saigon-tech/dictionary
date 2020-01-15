@@ -13,7 +13,7 @@
       </div>
       <div class="col-sm-3">
 
-        <form action="{{ URL::to('/tim-kiem-dictionary') }}" method="GET">
+        <form action="{{ URL::to('/tim-kiem-dictionary') }}" method="Post">
           {{ csrf_field() }}
           <div class="input-group">
             <input type="text" class="input-sm form-control" name="keywords_submit" placeholder="Search">

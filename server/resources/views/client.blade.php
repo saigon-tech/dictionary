@@ -77,12 +77,11 @@
                                 <div class="dropdown-menu pl-4" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">
                                         @foreach ($alphabet as $key => $alphabet_nav)
-                                        <a href="{{URL::to('/chi-tiet-tu-dien/'.$alphabet_nav->alphabet_id)}}"
+                                        <a href="{{ route('detail.alphabet',$alphabet_nav->alphabet_id) }}"
                                             class="dropdown-item-1">
                                             {{ $alphabet_nav->alphabet_name }}</a>
                                         @endforeach
                                     </a>
-
                                 </div>
                             </div>
 

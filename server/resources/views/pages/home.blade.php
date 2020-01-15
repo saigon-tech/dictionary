@@ -12,13 +12,12 @@
         </a></div>
     <div style="  background-image: url('resources/Image/Two.jpg');
                 background-repeat: no-repeat;
-
                 background-size: 100% 100%; "><a href="{{URL::to('wordtype-game')}}">
             <p>GAME</p>
         </a></div>
     <div style="  background-image: url('resources/Image/Three.jpg');
                 background-repeat: no-repeat;
-
+            
                 background-size: 100% 100%; "><a href="{{URL::to('wordtype-music')}}">
             <p>MUSIC</p>
         </a></div>

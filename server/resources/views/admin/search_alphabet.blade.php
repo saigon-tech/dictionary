@@ -21,11 +21,6 @@
             </span>
           </div>
         </form>
-
-
-
-
-
       </div>
     </div>
     <div class="table-responsive">

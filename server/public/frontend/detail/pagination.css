@@ -1,0 +1,21 @@
+.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: .25rem;
+}
+
+.pagination li {
+    color: black;
+    float: left;
+    text-decoration: none;
+}
+
+.pagination li span {
+    font-size: 16px;
+}
+
+.pagination li a {
+    font-size: 16px;
+    margin: 0;
+}
