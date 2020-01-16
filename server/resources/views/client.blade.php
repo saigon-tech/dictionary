@@ -72,17 +72,16 @@
                                 <a class="btn dropdown-toggle text-danger pr-0 pl-0" href="#" role="button"
                                     id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
-                                    Browers
+                                    Kana
                                 </a>
                                 <div class="dropdown-menu pl-4" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">
                                         @foreach ($alphabet as $key => $alphabet_nav)
-                                        <a href="{{URL::to('/chi-tiet-tu-dien/'.$alphabet_nav->alphabet_id)}}"
+                                        <a href="{{ route('detail.alphabet',$alphabet_nav->alphabet_id) }}"
                                             class="dropdown-item-1">
                                             {{ $alphabet_nav->alphabet_name }}</a>
                                         @endforeach
                                     </a>
-
                                 </div>
                             </div>
 
@@ -92,7 +91,7 @@
                                 <a class="btn dropdown-toggle text-danger pr-0 pl-0" href="#" role="button"
                                     id="dropdownMenuLink-1" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
-                                    Categories
+                                    Chủ Đề
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">
@@ -127,9 +126,6 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item list-inline-item text-danger">
-                            <a class="nav-link text-danger" href="#">Vote</a>
-                        </li>
                         <li class="nav-item-1 list-inline-item text-danger">
                             <a class="nav-link text-danger" href="#">About</a>
                         </li>
@@ -146,7 +142,7 @@
     </header>
     <!-- =====================================================================================================================main-page -->
 
-    @yield('contanier')
+    @yield('container')
     <!-- ==========================================================================================================================================footer -->
     <footer class="col-xs-12 col-12 col-md-12 col-lg-12">
         <div class="logo col-10 col-md-10 col-lg-8 mx-auto pt-3 pl-0"><a href="index.html"><img

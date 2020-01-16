@@ -1,8 +1,9 @@
 @extends('client')
-@section('contanier')
+@section('container')
 
 <head>
     <link rel="stylesheet" href="{{asset ('public/frontend/detail/styledetail.css') }}">
+    <link rel="stylesheet" href="{{asset ('public/frontend/detail/pagination.css') }}">
 </head>
 <div class="container-fluid">
     <div class="row"></div>
@@ -20,7 +21,7 @@
                     <a href="{{URL::to('/chi-tiet-tu-dien/'.$music->dictionary_id)}}">
 
                         <p style="color:black;font-weight: 450;">{{ $music->dictionary_name_eng }}</p>
-                        
+
                     </a>
                 </div>
                 @endforeach

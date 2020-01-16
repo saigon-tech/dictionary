@@ -252,10 +252,10 @@ footer {
 }
 @media only screen and (min-width:992px){
 	 #navbar-search {
-    display: block !important; 
+    display: block !important;
 	}
 	.nav-item {
-    border: none; 
+    border: none;
 	}
 	.main-page{
 		height: 1350px;
@@ -321,3 +321,4 @@ footer {
     footer .info p {
       font-size: 1rem; }
 }
+
