@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginAdmin
 {
@@ -16,9 +16,7 @@ class LoginAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check()) {
+
             return $next($request);
-        }
-        return redirect(route('get_login'));
     }
 }

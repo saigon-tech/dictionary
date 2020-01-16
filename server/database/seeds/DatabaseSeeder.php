@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('tbl_admin')->insert([
             'admin_email'    => 'admin.sgt@gmail.com',
-            'admin_password' => md5('123456'),
+            'admin_password' => Hash::make('123456'),
             'admin_name'     => 'admin',
             'admin_phone'    => '099999999',
             'created_at'     => date('yy/m/d h:i:s'),

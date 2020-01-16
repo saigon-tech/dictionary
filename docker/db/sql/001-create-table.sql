@@ -75,7 +75,7 @@ Drop table if exists tbl_admin cascade;
 CREATE TABLE `tbl_admin` (
   `admin_id` int(11) UNSIGNED NOT NULL,
   `admin_email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `admin_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `admin_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `admin_phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
