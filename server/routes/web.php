@@ -35,7 +35,7 @@ Route::post('/tim-kiem-dictionary', 'DictionaryController@search');
 Route::get('/admin', 'AdminController@index');
 Route::get('/dashboard', 'AdminController@show_dashboard');
 Route::get('/logout', 'AdminController@log_out');
-Route::post('/admin-dashboard', 'AdminController@admin_dashboard');
+Route::post('/admin-dashboard', 'AdminController@admin_dashboard')->name('post.admin_dashboard');
 
 // AlphabetDictionary dictionary
 Route::get('/add-alphabet-dictionary', 'AlphabetDictionary@add_alphabet_dictionary');
