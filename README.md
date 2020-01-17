@@ -34,5 +34,5 @@ email: admin.sgt@gmail.com
 ```bash
 password: 123456
 ```
-Please run: php artisan db:seed before login admin
+Please run: 'php artisan db:seed' before login admin
 
