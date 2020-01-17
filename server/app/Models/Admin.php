@@ -14,14 +14,12 @@ class Admin extends Authenticatable
     const UPDATED_AT = 'updated_at';
 
     protected $table        = 'tbl_admin';
-    protected $primaryKey   = 'alphabet_id';
-    public    $incrementing = true;
+    protected $primaryKey   = 'admin_email';
 
     protected $fillable
         = [
-            'admin_id',
             'admin_email',
-            'admin_password',
+            'password',
             'admin_name',
             'admin_phone',
             'created_at',

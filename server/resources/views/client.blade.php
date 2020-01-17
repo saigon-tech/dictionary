@@ -5,8 +5,8 @@
     <title>Từ điển </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{asset ('public/frontend/word/style.css') }}">
-    <link rel="stylesheet" href="{{asset ('public/frontend/Home/css/Style.css') }}">
+    <link rel="stylesheet" href="{{asset ('frontend/word/style.css') }}">
+    <link rel="stylesheet" href="{{asset ('frontend/Home/css/Style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
@@ -48,7 +48,7 @@
                     <div class=" navbar-collapse d-flex">
                         <form action="{{ URL::to('/tim-kiem') }}" method="POST"
                             class="input-group col-8 col-sm-8 col-md-8 col-lg-10 mx-auto pr-0">
-                            {{ csrf_field() }}
+                            @csrf
                             <input type="text" class="form-control shadow-none" id="Borderblue_input"
                                 name="keywords_submit" placeholder="Search">
                             <div class="input-group-append">

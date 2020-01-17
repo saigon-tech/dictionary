@@ -19,7 +19,7 @@ Route::get('/chi-tiet-tu-dien/{dictionary_id}', 'DictionaryController@details_di
 Route::get('/wordtype-food', 'HomeController@wordtype_food');
 Route::get('/wordtype-game', 'HomeController@wordtype_game');
 Route::get('/wordtype-music', 'HomeController@wordtype_music');
-Route::get('/alphabet-detail/{word}','HomeController@getDetailAlphabet')->name('detail.alphabet');
+Route::get('/alphabet-detail/{word}', 'HomeController@getDetailAlphabet')->name('detail.alphabet');
 Route::post('/tim-kiem', 'HomeController@search');
 Route::get('/add-all-dictionary', 'HomeController@add_all_dictionary');
 Route::post('/save-add-dictionary', 'HomeController@save_add_dictionary');
@@ -39,11 +39,12 @@ Route::group(['middleware' => ['adminLogin']], function () {
         Route::get('/dashboard', 'DashboardController@show_dashboard')->name('get.admin_dashboard');
 
         // AlphabetDictionary dictionary
-        Route::get('/add-alphabet-dictionary', 'AlphabetDictionary@add_alphabet_dictionary');
-        Route::get('/all-alphabet-dictionary', 'AlphabetDictionary@all_alphabet_dictionary');
-        Route::get('/edit-alphabet-dictionary/{alphabet_dictionary_id}', 'AlphabetDictionary@edit_alphabet_dictionary');
+        Route::get('/add-alphabet-dictionary', 'AlphabetDictionary@add_alphabet_dictionary')->name('add.alphabet');
+        Route::get('/all-alphabet-dictionary', 'AlphabetDictionary@all_alphabet_dictionary')->name('list.alphabet');
+        Route::get('/edit-alphabet-dictionary/{alphabet_dictionary_id}',
+            'AlphabetDictionary@edit_alphabet_dictionary')->name('edit.alphabet');
         Route::get('/delete-alphabet-dictionary/{alphabet_dictionary_id}',
-            'AlphabetDictionary@delete_alphabet_dictionary');
+            'AlphabetDictionary@delete_alphabet_dictionary')->name('destroy.alphabet');
 
         Route::get('/unactive-alphabet-dictionary/{alphabet_dictionary_id}',
             'AlphabetDictionary@unactive_alphabet_dictionary');

@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+    
     protected $table      = 'tbl_category';
     protected $primaryKey = 'category_id';
+    public    $incrementing = true;
 
     protected $fillable
         = [

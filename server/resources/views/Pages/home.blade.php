@@ -28,7 +28,7 @@
 
                     <p>{{ $lienquan->dictionary_name_eng }}</p>
 
-                    <img src="{{ URL::to('/public/uploads/dictionary/'.$lienquan->dictionary_image) }}" alt=""
+                    <img src="{{ URL::to('/uploads/dictionary/'.$lienquan->dictionary_image) }}" alt=""
                         style="width:50%" />
                 </a>
             </div>

@@ -14,12 +14,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('tbl_admin')->insert([
-            'admin_email'    => 'admin.sgt@gmail.com',
-            'admin_password' => Hash::make('123456'),
-            'admin_name'     => 'admin',
-            'admin_phone'    => '099999999',
-            'created_at'     => date('yy/m/d h:i:s'),
-            'updated_at'     => null,
+            'admin_email'   => 'admin.sgt@gmail.com',
+            'password'      => Hash::make('123456'),
+            'admin_name'    => 'admin',
+            'admin_phone'   => '099999999',
+            'created_at'    => date('yy/m/d h:i:s'),
+            'updated_at'    => null,
         ]);
     }
 }
