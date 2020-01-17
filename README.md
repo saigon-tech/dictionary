@@ -26,3 +26,8 @@ cp /server/.env.example /server/.env
 ```bash
 ./down.sh
 ```
+
+## Account Admin
+email: admin.sgt@gmail.com
+password: 123456
+Please run: php artisan db:seed before login admin
