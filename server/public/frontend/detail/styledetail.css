@@ -149,6 +149,8 @@ ul li a {
     text-align: center;
 }
 footer {
+    width: 100%;
+    margin: 0;
   background-color: #BE2031; }
   footer .icon {
     padding: 0; }

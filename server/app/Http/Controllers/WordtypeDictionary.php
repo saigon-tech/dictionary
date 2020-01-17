@@ -1,15 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Wordtype;
-use App\Models\Alphabet;
-use App\Models\Dictionary;
-use App\Models\Admin;
+use App\Models\Category;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 
 
-class WordtypeDictionary extends Controller
+class CategoryDictionary extends Controller
 {
     public function AuthLogin(){
         $admin_id = Session::get('admin_id');
@@ -22,67 +19,67 @@ class WordtypeDictionary extends Controller
         }
     }
 
-    public function add_wordtype_dictionary(){
+    public function add_Category_dictionary(){
         $this->AuthLogin();
-        return view('admin.add_wordtype_dictionary');
+        return view('admin.add_Category_dictionary');
     }
-    public function all_wordtype_dictionary(){
+    public function all_Category_dictionary(){
         $this->AuthLogin();
-        $all_wordtype_dictionary = Wordtype::get();
-        $manager_wordtype_dictionary = view('admin.all_wordtype_dictionary')->with('all_wordtype_dictionary',$all_wordtype_dictionary);
-        return view('admin_layout')->with('admin.all_wordtype_dictionary',$manager_wordtype_dictionary);
+        $all_Category_dictionary = Category::get();
+        $manager_Category_dictionary = view('admin.all_Category_dictionary')->with('all_Category_dictionary',$all_Category_dictionary);
+        return view('admin_layout')->with('admin.all_Category_dictionary',$manager_Category_dictionary);
     }
-    public function save_wordtype_dictionary(Request $request){
+    public function save_Category_dictionary(Request $request){
         $this->AuthLogin();
-        $data = new Wordtype;
-        $data['wordtype_name'] = $request->wordtype_dictionary_name;
-        $data['wordtype_desc'] = $request->wordtype_dictionary_desc;
-        $data['wordtype_status'] = $request->wordtype_dictionary_status;
+        $data = new Category;
+        $data['Category_name'] = $request->Category_dictionary_name;
+        $data['Category_desc'] = $request->Category_dictionary_desc;
+        $data['Category_status'] = $request->Category_dictionary_status;
         $data->save();
         Session::put('message','Thêm danh mục dictionary thành công');
-        return Redirect::to('/add-wordtype-dictionary');
+        return Redirect::to('/add-Category-dictionary');
   
     }
-    public function unactive_wordtype_dictionary($wordtype_dictionary_id){
+    public function unactive_Category_dictionary($Category_dictionary_id){
         $this->AuthLogin();
-        Wordtype::where('wordtype_id',$wordtype_dictionary_id)->update(['wordtype_status'=>1]);
+        Category::where('Category_id',$Category_dictionary_id)->update(['Category_status'=>1]);
         Session::put("message","Không kích hoạt danh mục dictionary thành công");
-        return Redirect::to("all-wordtype-dictionary");
+        return Redirect::to("all-Category-dictionary");
     }
-    public function active_wordtype_dictionary($wordtype_dictionary_id){
+    public function active_Category_dictionary($Category_dictionary_id){
         $this->AuthLogin();
-        Wordtype::where('wordtype_id',$wordtype_dictionary_id)->update(['wordtype_status'=>0]);
+        Category::where('Category_id',$Category_dictionary_id)->update(['Category_status'=>0]);
         Session::put("message","Thành kích hoạt danh mục dictionary thành công");
-        return Redirect::to("all-wordtype-dictionary");
+        return Redirect::to("all-Category-dictionary");
     }
-    public function edit_wordtype_dictionary($wordtype_dictionary_id){
+    public function edit_Category_dictionary($Category_dictionary_id){
         $this->AuthLogin();
-        $edit_wordtype_dictionary =  Wordtype::where('wordtype_id',$wordtype_dictionary_id)->get();
+        $edit_Category_dictionary =  Category::where('Category_id',$Category_dictionary_id)->get();
 
-        $manager_wordtype_dictionary = view('admin.edit_wordtype_dictionary')->with('edit_wordtype_dictionary',$edit_wordtype_dictionary);
-        return view('admin_layout')->with('admin.edit_wordtype_dictionary',$manager_wordtype_dictionary);
+        $manager_Category_dictionary = view('admin.edit_Category_dictionary')->with('edit_Category_dictionary',$edit_Category_dictionary);
+        return view('admin_layout')->with('admin.edit_Category_dictionary',$manager_Category_dictionary);
     }
-    public function update_wordtype_dictionary(Request $request,$wordtype_dictionary_id){
+    public function update_Category_dictionary(Request $request,$Category_dictionary_id){
         $this->AuthLogin();
         $data = array();
-        $data['wordtype_name'] = $request->wordtype_dictionary_name;
-        $data['wordtype_desc'] = $request->wordtype_dictionary_desc;
-        Wordtype::where('wordtype_id',$wordtype_dictionary_id)->update($data);
+        $data['Category_name'] = $request->Category_dictionary_name;
+        $data['Category_desc'] = $request->Category_dictionary_desc;
+        Category::where('Category_id',$Category_dictionary_id)->update($data);
         Session::put('message','Cap nhap danh mục dictionary thành công');
-        return Redirect::to("all-wordtype-dictionary");
+        return Redirect::to("all-Category-dictionary");
         
     }
-    public function delete_wordtype_dictionary($wordtype_dictionary_id){
+    public function delete_Category_dictionary($Category_dictionary_id){
         $this->AuthLogin();
-        Wordtype::where('wordtype_id',$wordtype_dictionary_id)->delete();
+        Category::where('Category_id',$Category_dictionary_id)->delete();
         Session::put('message','Xoa danh mục dictionary thành công');
-        return Redirect::to("all-wordtype-dictionary");
+        return Redirect::to("all-Category-dictionary");
     }   
     public function search(Request $request)
     { 
         $keywords = $request->keywords_submit;
-        $search_wordtype = Wordtype::where('wordtype_name','like','%'.$keywords.'%')->get();
-        return view('Admin.search_wordtype')->with('search_wordtype',$search_wordtype);
+        $search_Category = Category::where('Category_name','like','%'.$keywords.'%')->get();
+        return view('Admin.search_Category')->with('search_Category',$search_Category);
     }
  
 

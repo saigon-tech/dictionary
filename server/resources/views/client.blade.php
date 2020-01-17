@@ -5,8 +5,8 @@
     <title>Từ điển </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{asset ('frontend/word/style.css') }}">
-    <link rel="stylesheet" href="{{asset ('frontend/Home/css/Style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/word/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/Home/css/Style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
@@ -144,9 +144,10 @@
 
     @yield('container')
     <!-- ==========================================================================================================================================footer -->
+
     <footer class="col-xs-12 col-12 col-md-12 col-lg-12">
         <div class="logo col-10 col-md-10 col-lg-8 mx-auto pt-3 pl-0"><a href="index.html"><img
-                    src="{{URL::to ('resources/Image/Asset4.png') }}" alt=""></a></div>
+                        src="{{URL::to ('resources/Image/Asset4.png') }}" alt=""></a></div>
         <div class="info col-10 col-md-10 col-lg-6 mx-auto d-lg-flex d-md-flex d-sm-flex justify-content-between pt-3">
             <p>Contact Us</p>
             <p>Help</p>
