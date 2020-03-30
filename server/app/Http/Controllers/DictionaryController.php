@@ -24,10 +24,10 @@ class DictionaryController extends Controller
     public function add_dictionary()
     {
 //        $this->AuthLogin();
-        $wordtype_dictionary = Category::orderby('category_id', 'desc')->get();
+        $category_dictionary = Category::orderby('category_id', 'desc')->get();
         $alphabet_dictionary = Alphabet::orderby('alphabet_id', 'desc')->get();
-        return view('Admin.Dictionary.add_dictionary')->with('wordtype_dictionary',
-            $wordtype_dictionary)->with('alphabet_dictionary', $alphabet_dictionary);
+        return view('Admin.Dictionary.add_dictionary')->with('category_dictionary',
+            $category_dictionary)->with('alphabet_dictionary', $alphabet_dictionary);
     }
 
     public function all_dictionary()
@@ -50,7 +50,7 @@ class DictionaryController extends Controller
         $data['dictionary_name_eng'] = $request->dictionary_name_eng;
         $data['dictionary_name_vn']  = $request->dictionary_name_vn;
         $data['dictionary_desc']     = $request->dictionary_desc;
-        $data['category_id']         = $request->dictionary_wordtype;
+        $data['category_id']         = $request->dictionary_category;
         $data['alphabet_id']         = $request->dictionary_alphabet;
         $data['dictionary_status']   = $request->dictionary_status;
         $data['dictionary_image']    = $request->dictionary_status;
@@ -92,11 +92,11 @@ class DictionaryController extends Controller
     {
 
         //$this->AuthLogin();
-        $wordtype_dictionary = DB::table('tbl_category')->orderby('category_id', 'desc')->get();
+        $category_dictionary = DB::table('tbl_category')->orderby('category_id', 'desc')->get();
         $alphabet_dictionary = DB::table('tbl_alphabet')->orderby('alphabet_id', 'desc')->get();
         $edit_dictionary     = DB::table('tbl_dictionary')->where('dictionary_id', $dictionary_id)->get();
         $manager_dictionary  = view('Admin.Dictionary.edit_dictionary')->with('edit_dictionary', $edit_dictionary)
-            ->with('wordtype_dictionary', $wordtype_dictionary)->with('alphabet_dictionary', $alphabet_dictionary);
+            ->with('category_dictionary', $category_dictionary)->with('alphabet_dictionary', $alphabet_dictionary);
 
         return view('admin_layout')->with('Admin.Dictionary.edit_dictionary', $manager_dictionary);
     }
@@ -108,7 +108,7 @@ class DictionaryController extends Controller
         $data['dictionary_name_eng'] = $request->dictionary_name_eng;
         $data['dictionary_name_vn']  = $request->dictionary_name_vn;
         $data['dictionary_desc']     = $request->dictionary_desc;
-        $data['category_id']         = $request->dictionary_wordtype;
+        $data['category_id']         = $request->dictionary_category;
         $data['alphabet_id']         = $request->dictionary_alphabet;
         $data['dictionary_status']   = $request->dictionary_status;
         $get_image                   = $request->file('dictionary_image');
@@ -149,25 +149,25 @@ class DictionaryController extends Controller
 
     public function details_dictionary($dictionary_id)
     {
-        $wordtype_dictionary = Category::where('category_status', '0')->orderby('category_id', 'desc')->get();
+        $category_dictionary = Category::where('category_status', '0')->orderby('category_id', 'desc')->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', '0')->orderby('alphabet_id', 'desc')->get();
 
         $details_dictionary = Dictionary::where('tbl_dictionary.dictionary_id', $dictionary_id)->get();
-        $wordtype_id        = null;
+        $category_id        = null;
         foreach ($details_dictionary as $key => $value) {
-            $wordtype_id = $value->category_id;
+            $category_id = $value->category_id;
         }
 
-        if ( ! empty($wordtype_id)) {
+        if ( ! empty($category_id)) {
             $related_dictionary = Dictionary::
             join('tbl_category', 'tbl_category.category_id', '=', 'tbl_dictionary.category_id')
                 ->join('tbl_alphabet', 'tbl_alphabet.alphabet_id', '=', 'tbl_dictionary.alphabet_id')
-                ->where('tbl_category.category_id', '=', $wordtype_id)->whereNotIn('tbl_dictionary.dictionary_id',
+                ->where('tbl_category.category_id', '=', $category_id)->whereNotIn('tbl_dictionary.dictionary_id',
                     [$dictionary_id])->get();
         }
 
         return view('Pages.show_details')
-            ->with('wordtype_dictionary', $wordtype_dictionary)
+            ->with('category_dictionary', $category_dictionary)
             ->with('alphabet', $alphabet_dictionary)
             ->with('details_dictionary', $details_dictionary)
             ->with('relate', $related_dictionary ?? []);

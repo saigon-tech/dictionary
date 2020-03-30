@@ -43,14 +43,8 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">Category</label>
                             <select name="dictionary_category" class="form-control input-sm m-bot15">
-                                @foreach($edit_dictionary as $key =>$category)
-                                    @if($category->category_id==$dicti->category_id)
-                                        <option selected value="{{ $category->category_id }}">{{ $category->category_name }}
-                                        </option>
-
-                                    @else
-                                        <option value="{{ $category->category_id }}">{{ $category->category_name }}</option>
-                                    @endif
+                                @foreach($category_dictionary as $key =>$category)
+                                    <option value="{{ $category->category_id }}">{{ $category->category_name }}</option>
                                 @endforeach
 
                             </select>
