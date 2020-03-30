@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <section class="panel">
             <header class="panel-heading">
-                Cập nhập danh mục sản phẩm
+                Cập nhập danh mục Alphabet
             </header>
             <?php
                     $message = Session::get('message');
@@ -34,7 +34,7 @@
 
 
 
-                        <button type="submit" name="update_category_product" class="btn btn-info">Thêm danh mục</button>
+                        <button type="submit" name="update_category_product" class="btn btn-info">Update Alphabet</button>
                     </form>
                 </div>
                 @endforeach

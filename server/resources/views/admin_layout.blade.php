@@ -105,11 +105,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Loại từ (Word Type)</span>
+                                <span>Thể loại (Category)</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{ route('add.wordtype') }}">Thêm danh mục Loại từ </a></li>
-                                <li><a href="{{ route('list.wordtype') }}">Liệt kê danh mục Loại từ </a>
+                                <li><a href="{{ route('add.category') }}">Thêm danh mục Thể loại </a></li>
+                                <li><a href="{{ route('list.category') }}">Liệt kê danh mục Thể loại </a>
                                 </li>
                             </ul>
                         </li>

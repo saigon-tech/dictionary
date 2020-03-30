@@ -24,13 +24,13 @@ class WordtypeDictionary extends Controller
 
     public function add_wordtype_dictionary(){
         //$this->AuthLogin();
-        return view('Admin.WordType.add_wordtype_dictionary');
+        return view('Admin.Category.add_wordtype_dictionary');
     }
     public function all_wordtype_dictionary(){
         //$this->AuthLogin();
         $all_wordtype_dictionary = Wordtype::get();
-        $manager_wordtype_dictionary = view('Admin.WordType.all_wordtype_dictionary')->with('all_wordtype_dictionary',$all_wordtype_dictionary);
-        return view('admin_layout')->with('Admin.WordType.all_wordtype_dictionary',$manager_wordtype_dictionary);
+        $manager_wordtype_dictionary = view('Admin.Category.all_wordtype_dictionary')->with('all_wordtype_dictionary',$all_wordtype_dictionary);
+        return view('admin_layout')->with('Admin.Category.all_wordtype_dictionary',$manager_wordtype_dictionary);
     }
     public function save_wordtype_dictionary(Request $request){
         //$this->AuthLogin();
@@ -59,8 +59,8 @@ class WordtypeDictionary extends Controller
         //$this->AuthLogin();
         $edit_wordtype_dictionary =  Wordtype::where('wordtype_id',$wordtype_dictionary_id)->get();
 
-        $manager_wordtype_dictionary = view('Admin.WordType.edit_wordtype_dictionary')->with('edit_wordtype_dictionary',$edit_wordtype_dictionary);
-        return view('admin_layout')->with('Admin.WordType.edit_wordtype_dictionary',$manager_wordtype_dictionary);
+        $manager_wordtype_dictionary = view('Admin.Category.edit_wordtype_dictionary')->with('edit_wordtype_dictionary',$edit_wordtype_dictionary);
+        return view('admin_layout')->with('Admin.Category.edit_wordtype_dictionary',$manager_wordtype_dictionary);
     }
     public function update_wordtype_dictionary(Request $request,$wordtype_dictionary_id){
         //$this->AuthLogin();
@@ -82,7 +82,7 @@ class WordtypeDictionary extends Controller
     {
         $keywords = $request->keywords_submit;
         $search_wordtype = Wordtype::where('wordtype_name','like','%'.$keywords.'%')->get();
-        return view('Admin.WordType.search_wordtype')->with('search_wordtype',$search_wordtype);
+        return view('Admin.Category.search_wordtype')->with('search_wordtype',$search_wordtype);
     }
 
 

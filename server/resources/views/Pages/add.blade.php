@@ -43,9 +43,9 @@
 
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Loại Từ </label>
-                                <select name="dictionary_wordtype" class="form-control input-sm m-bot15">
-                                    @foreach($wordtype_dictionary as $key =>$wordtype)
-                                    <option value="{{ $wordtype->wordtype_id }}">{{ $wordtype->wordtype_name }}
+                                <select name="dictionary_category" class="form-control input-sm m-bot15">
+                                    @foreach($category_dictionary as $key =>$category)
+                                    <option value="{{ $category->category_id }}">{{ $category->category_name }}
                                     </option>
                                     @endforeach
 

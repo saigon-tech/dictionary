@@ -12,7 +12,7 @@
       <div class="col-sm-4">
       </div>
       <div class="col-sm-3">
-        <form action="{{ URL::to('/tim-kiem-wordtype') }}" method="POST">
+        <form action="{{ URL::to('/tim-kiem-category') }}" method="POST">
           {{ csrf_field() }}
           <div class="input-group">
             <input type="text" class="input-sm form-control" name="keywords_submit" placeholder="Search">
@@ -41,28 +41,28 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th>WordType</th>
+            <th>category</th>
             <th>Description</th>
             <th style="width:30px;">Show</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($search_wordtype as $key =>$wordtype_dis_search)
+          @foreach ($search_category as $key =>$category_dis_search)
           <tr>
-            <td>{{$wordtype_dis_search->wordtype_name }}</td>
-            <td>{!! $wordtype_dis_search->wordtype_desc !!}</td>
+            <td>{{$category_dis_search->category_name }}</td>
+            <td>{!! $category_dis_search->category_desc !!}</td>
             <td><span class="text-ellipsis">
                 <?php
-                    if($wordtype_dis_search->wordtype_status==0){
+                    if($category_dis_search->category_status==0){
                         ?>
-                <a href="{{  route('unactive.alphabet', [$wordtype_dis_search->wordtype_id]) }}"><span
+                <a href="{{  route('unactive.alphabet', [$category_dis_search->category_id]) }}"><span
                     class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
                 <?php
                     }
                     else {
                         ?>
-                <a href="{{ route('active.alphabet', [$wordtype_dis_search->wordtype_id]) }}"><span class="
+                <a href="{{ route('active.alphabet', [$category_dis_search->category_id]) }}"><span class="
                   fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
               <?php
@@ -71,12 +71,12 @@
               </span></td>
 
             <td>
-              <a href="{{ route('edit.alphabet', [$wordtype_dis_search->wordtype_id]) }}"
+              <a href="{{ route('edit.alphabet', [$category_dis_search->category_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
               <a onclick="return confirm('Ban cố chắc xóa danh mục này không ')"
-                href="{{ route('destroy.alphabet', [$wordtype_dis_search->wordtype_id]) }}"
+                href="{{ route('destroy.alphabet', [$category_dis_search->category_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
