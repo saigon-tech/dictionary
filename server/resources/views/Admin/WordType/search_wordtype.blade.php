@@ -55,14 +55,14 @@
                 <?php
                     if($wordtype_dis_search->wordtype_status==0){
                         ?>
-                <a href="{{ URL::to("/unactive-alphabet-dictionary/".$wordtype_dis_search->wordtype_id )}}"><span
+                <a href="{{  route('unactive.alphabet', [$wordtype_dis_search->wordtype_id]) }}"><span
                     class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
                 <?php
                     }
                     else {
                         ?>
-                <a href="{{ URL::to("/active-alphabet-dictionary/".$wordtype_dis_search->wordtype_id )}}""><span class="
+                <a href="{{ route('active.alphabet', [$wordtype_dis_search->wordtype_id]) }}"><span class="
                   fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
               <?php
@@ -71,12 +71,12 @@
               </span></td>
 
             <td>
-              <a href="{{ URL::to('/edit-alphabet-dictionary/'.$wordtype_dis_search->wordtype_id) }}"
+              <a href="{{ route('edit.alphabet', [$wordtype_dis_search->wordtype_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
               <a onclick="return confirm('Ban cố chắc xóa danh mục này không ')"
-                href="{{ URL::to('/delete-alphabet-dictionary/'.$wordtype_dis_search->wordtype_id) }}"
+                href="{{ route('destroy.alphabet', [$wordtype_dis_search->wordtype_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>

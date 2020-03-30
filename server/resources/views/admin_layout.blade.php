@@ -4,7 +4,7 @@
     <title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
     <script type="application/x-javascript">
       addEventListener("load", function () {
@@ -108,8 +108,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Loại từ (Word Type)</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{ URL::to('/add-wordtype-dictionary') }}">Thêm danh mục Loại từ </a></li>
-                                <li><a href="{{ URL::to('/all-wordtype-dictionary') }}">Liệt kê danh mục Loại từ </a>
+                                <li><a href="{{ route('add.wordtype') }}">Thêm danh mục Loại từ </a></li>
+                                <li><a href="{{ route('list.wordtype') }}">Liệt kê danh mục Loại từ </a>
                                 </li>
                             </ul>
                         </li>
@@ -119,8 +119,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Từ Vựng (Dictionary)</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{ URL::to('/add-dictionary') }}">Thêm Từ Vựng</a></li>
-                                <li><a href="{{ URL::to('/all-dictionary') }}">Liệt kê Từ Vựng</a></li>
+                                <li><a href="{{ route('add.dictionary') }}">Thêm Từ Vựng</a></li>
+                                <li><a href="{{ route('list.dictionary') }}">Liệt kê Từ Vựng</a></li>
                             </ul>
                         </li>
                     </ul>

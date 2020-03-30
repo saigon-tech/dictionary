@@ -69,6 +69,7 @@ CREATE TABLE `tbl_dictionary` (
   `dictionary_image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `dictionary_status` int(11) NOT NULL,
   `alphabet_id` int(11) NOT NULL,
+  `wordtype_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL

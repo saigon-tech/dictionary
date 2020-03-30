@@ -17,7 +17,7 @@
                             }
                             ?>
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/save-wordtype-dictionary') }}" method="post">
+                    <form role="form" action="{{ route('save.wordtype') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name WordType</label>

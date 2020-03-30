@@ -62,14 +62,14 @@
                 <?php
                     if($dicti->dictionary_status==0){
                         ?>
-                <a href="{{ URL::to("/unactive-dictionary/".$dicti->dictionary_id )}}"><span
+                <a href="{{ route('unactive.dictionary', [$dicti->dictionary_id]) }}"><span
                     class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
                 <?php
                     }
                     else {
                         ?>
-                <a href="{{ URL::to("/active-dictionary/".$dicti->dictionary_id )}}""><span class=" fa-thumb-styling-two
+                <a href="{{ route('active.dictionary', [$dicti->dictionary_id])}}"><span class=" fa-thumb-styling-two
                   fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
               <?php
@@ -78,12 +78,12 @@
               </span></td>
 
             <td>
-              <a href="{{ URL::to('/edit-dictionary/'.$dicti->dictionary_id ) }}" class="active styling-edit"
+              <a href="{{ route('edit.dictionary', [$dicti->dictionary_id]) }}" class="active styling-edit"
                 ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
               <a onclick="return confirm('Ban cố chắc xóa sản phẩm  này không ')"
-                href="{{ URL::to('/delete-dictionary/'.$dicti->dictionary_id ) }}" class="active styling-edit"
+                href="{{ route('destroy.dictionary', [$dicti->dictionary_id]) }}" class="active styling-edit"
                 ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>

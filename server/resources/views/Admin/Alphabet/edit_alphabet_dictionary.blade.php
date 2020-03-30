@@ -17,7 +17,7 @@
             <div class="panel-body">
                 @foreach($edit_alphabet_dictionary as $key => $edit_value)
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/update-alphabet-dictionary/'.$edit_value->alphabet_id) }}"
+                    <form role="form" action="{{ route('update.alphabet', [$edit_value->alphabet_id])}}"
                         method="post">
                         {{ csrf_field() }}
                         <div class="form-group">

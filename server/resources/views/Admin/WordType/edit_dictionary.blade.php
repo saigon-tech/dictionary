@@ -18,7 +18,7 @@
                             ?>
                 <div class="position-center">
                     @foreach($edit_dictionary as $key=>$dicti)
-                    <form role="form" action="{{ URL::to('/update-dictionary/'.$dicti->dictionary_id) }}" method="post"
+                    <form role="form" action="{{  route('update.wordtype', [$dicti->dictionary_id]) }}" method="post"
                         enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">

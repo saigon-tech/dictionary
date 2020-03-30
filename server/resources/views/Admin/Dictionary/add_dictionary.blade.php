@@ -17,7 +17,7 @@
                             }
                             ?>
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/save-dictionary') }}" method="post"
+                    <form role="form" action="{{ route('save.dictionary') }}" method="post"
                         enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">

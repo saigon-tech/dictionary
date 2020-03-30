@@ -54,14 +54,14 @@
                 <?php
                     if($wordtype_dict->wordtype_status==0){
                         ?>
-                <a href="{{ URL::to("/unactive-wordtype-dictionary/".$wordtype_dict->wordtype_id )}}"><span
+                <a href="{{ route('unactive.wordtype', [$wordtype_dict->wordtype_id]) }}"><span
                     class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
                 <?php
                     }
                     else {
                         ?>
-                <a href="{{ URL::to("/active-wordtype-dictionary/".$wordtype_dict->wordtype_id )}}""><span class="
+                <a href="{{ route('active.wordtype', [$wordtype_dict->wordtype_id]) }}"><span class="
                   fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
               <?php
@@ -70,12 +70,12 @@
               </span></td>
 
             <td>
-              <a href="{{ URL::to('/edit-wordtype-dictionary/'.$wordtype_dict->wordtype_id) }}"
+              <a href="{{ route('edit.wordtype', [$wordtype_dict->wordtype_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
-              <a onclick="return confirm('Ban cố chắc xóa danh mục này không ')"
-                href="{{ URL::to('/delete-wordtype-dictionary/'.$wordtype_dict->wordtype_id) }}"
+              <a onclick="return confirm('Ban có chắc xóa danh mục này không ')"
+                href="{{ route('destroy.wordtype', [$wordtype_dict->wordtype_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
