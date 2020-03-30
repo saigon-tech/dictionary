@@ -15,6 +15,18 @@ button {
     outline: none !important;
 }
 
+#btn-padding {
+    padding: 0;
+}
+
+#layout-input {
+    justify-content: center;
+}
+
+#navbar-list-2 {
+    justify-content: center;
+}
+
 /* line 16, Style .scss */
 .add {
     padding: 0 !important;
@@ -132,8 +144,20 @@ ul li a {
     text-decoration: none;
 }
 
-/* ===============================================================================main-page */
+.line {
+    margin: 0 auto;
+}
 
+/* ===============================================================================main-page */
+.layout-main {
+    height: auto;
+    padding: 0 !important;
+    margin: 3rem 0;
+}
+.layout-content {
+    padding: 0;
+    margin: 0 auto;
+}
 .main-page {
     height: 1100px;
     background-color: #f2f2f2;

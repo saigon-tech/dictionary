@@ -5,8 +5,7 @@
     <title>Từ điển </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('public/frontend/word/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/frontend/Home/css/Style.css') }}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
@@ -15,13 +14,16 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('public/frontend/word/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/Home/css/Style.css') }}">
+
 </head>
 
 <body id="body">
     <header>
         <nav class="navbar navbar-dark bg-white navbar-expand-lg d-flex justify-content-around">
             <div class=" col-xs-2 col-lg-3 ">
-                <a class="navbar-brand d-none d-sm-none d-md-none d-lg-block float-right" href="{{URL::to('/')}}">
+                <a class="navbar-brand d-cnone d-sm-none d-md-none d-lg-block float-right" href="{{URL::to('/')}}">
                     <img src="{{URL::to ('resources/Image/Asset3.png') }}" id="LogoMENU" alt="logo" width="120vw"
                         height="auto">
                 </a>
@@ -45,14 +47,14 @@
 
             <div class="Menu-Onclick col-lg-6">
                 <div id="navbar-search" class="collapse">
-                    <div class=" navbar-collapse d-flex">
+                    <div class=" navbar-collapse d-flex" id="layout-input">
                         <form action="{{ URL::to('/tim-kiem') }}" method="POST"
                             class="input-group col-8 col-sm-8 col-md-8 col-lg-10 mx-auto pr-0">
                             @csrf
                             <input type="text" class="form-control shadow-none" id="Borderblue_input"
                                 name="keywords_submit" placeholder="Search">
                             <div class="input-group-append">
-                                <button class="btn text-danger" type="submit" style="font-size: 20px;" type="button">
+                                <button class="btn text-danger" type="submit" style="font-size: 20px;" type="button" id="btn-padding">
                                     <i class="fa fa-search" style="color: #BE2031"></i>
                                 </button>
                             </div>
@@ -72,7 +74,7 @@
                                 <a class="btn dropdown-toggle text-danger pr-0 pl-0" href="#" role="button"
                                     id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
-                                    Kana
+                                    Alphabet
                                 </a>
                                 <div class="dropdown-menu pl-4" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">
@@ -91,7 +93,7 @@
                                 <a class="btn dropdown-toggle text-danger pr-0 pl-0" href="#" role="button"
                                     id="dropdownMenuLink-1" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
-                                    Chủ Đề
+                                    Category
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">
@@ -127,7 +129,7 @@
                             </div>
                         </li>
                         <li class="nav-item-1 list-inline-item text-danger">
-                            <a class="nav-link text-danger" href="#">About</a>
+                            <a class="nav-link text-danger" href="#">About us</a>
                         </li>
                     </ul>
                 </div>
