@@ -7,7 +7,7 @@
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
-
+          <a href="{{ route('add.category') }}" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Category</a>
       </div>
       <div class="col-sm-4">
       </div>
