@@ -20,7 +20,7 @@ class HomeController extends Controller
             ->orderBy('alphabet_name', 'ASC')
             ->get();
         $all_dictionary      = Dictionary::where('dictionary_status', 0)
-            ->orderBy('created_at', 'DESC')
+            ->orderBy('created_at', 'ASC')
             ->get();
 
         return view('Pages.home')->with('category',$category_dictionary)->with('alphabet',$alphabet_dictionary)->with('all_dictionary',$all_dictionary);
@@ -44,7 +44,7 @@ class HomeController extends Controller
     public function add_all_dictionary(){
 
         $category_dictionary = category::where('category_status', 0)
-            ->orderBy('category_id', 'desc')
+            ->orderBy('category_id', 'ASC')
             ->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
             ->orderBy('alphabet_id', 'ASC')

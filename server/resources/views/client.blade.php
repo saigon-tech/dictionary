@@ -79,7 +79,8 @@
                                         @foreach ($alphabet as $key => $alphabet_nav)
                                         <a href="{{ route('detail.alphabet',$alphabet_nav->alphabet_id) }}"
                                             class="dropdown-item-1">
-                                            {{ $alphabet_nav->alphabet_name }}</a>
+                                            {{ $alphabet_nav->alphabet_name }}
+                                        </a>
                                         @endforeach
                                     </a>
                                 </div>
