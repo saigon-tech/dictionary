@@ -81,7 +81,7 @@ class categoryDictionary extends Controller
     {
         $keywords = $request->keywords_submit;
         $search_category = category::where('category_name','like','%'.$keywords.'%')->get();
-        return view('Admin.category.search_category')->with('search_category',$search_category);
+        return view('Admin.Category.search_category')->with('search_category',$search_category);
     }
 
 

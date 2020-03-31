@@ -47,7 +47,7 @@ class HomeController extends Controller
             ->orderBy('category_id', 'desc')
             ->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
-            ->orderBy('alphabet_id', 'desc')
+            ->orderBy('alphabet_id', 'ASC')
             ->get();
 
         return view('Pages.add')->with('category_dictionary',$category_dictionary)->with('alphabet',$alphabet_dictionary);
