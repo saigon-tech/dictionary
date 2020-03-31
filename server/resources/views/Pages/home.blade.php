@@ -24,7 +24,6 @@
     </div>
     <div class="line mx-auto"></div>
     <div class="col-xs-6 col-6 col-sm-10 col-10 col-md-10 col-lg-10 mx-auto mb-5 layout-content">
-
         <div
             class=" col-10 col-md-10 col-lg-10 mx-auto mb-5 d-flex flex-wrap align-content-center  justify-content-between layout-content">
             @foreach($all_dictionary as $key => $lienquan)
@@ -41,5 +40,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection

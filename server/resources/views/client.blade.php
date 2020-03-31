@@ -5,7 +5,6 @@
     <title>Từ điển </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
@@ -19,7 +18,7 @@
 
 </head>
 
-<body id="body">
+<body id="body top">
     <header>
         <nav class="navbar navbar-dark bg-white navbar-expand-lg d-flex justify-content-around">
             <div class=" col-xs-2 col-lg-3 ">
@@ -146,7 +145,8 @@
 
     @yield('container')
     <!-- ==========================================================================================================================================footer -->
-
+    <div class=" btn back-home" id="btn-back-to-top"><a><i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </a></div>
     <footer class="col-xs-12 col-12 col-md-12 col-lg-12">
         <div class="logo col-10 col-md-10 col-lg-8 mx-auto pt-3 pl-0"><a href="index.html"><img
                         src="{{URL::to ('resources/Image/Asset4.png') }}" alt=""></a></div>
@@ -154,9 +154,6 @@
             <p>Contact Us</p>
             <p>Help</p>
             <p>About</p>
-            <p>Contact Us</p>
-            <p>Contact Us</p>
-            <p>Contact Us</p>
         </div>
         <div class="icon col-lg-6 mx-auto d-lg-flex justify-content-end">
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -166,11 +163,30 @@
     </footer>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
 </script>
+<script type="text/javascript">
+    // btn back to top
+    $(function(){
+        var btn = $('#btn-back-to-top');
 
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 20) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+
+        btn.on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop:0}, '20');
+        });
+    });
+
+</script>
 </html>
