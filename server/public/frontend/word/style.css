@@ -148,6 +148,10 @@ ul li a {
     margin: 0 auto;
 }
 
+.hidden {
+    height: 92px !important;
+}
+
 /* ===============================================================================main-page */
 .layout-main {
     height: auto;
@@ -161,6 +165,7 @@ ul li a {
 .main-page {
     height: 1100px;
     background-color: #f2f2f2;
+    margin-top:0 !important;
 }
 
 .main-page .thong-tin {

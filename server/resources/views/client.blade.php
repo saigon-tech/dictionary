@@ -137,7 +137,7 @@
             <div class="add col-lg-3 col-xl-3">
                 <a href="{{URL::to('/add-all-dictionary')}}" data-toggle="tooltip" title="Please add your words!">
                     <button type="button"
-                        class="btn btn-outline-danger d-md-none d-lg-block d-sm-none d-none ">ADD</button>
+                        class="btn btn-outline-danger d-md-none d-lg-block d-sm-none d-none "><i class="fa fa-plus" aria-hidden="true"></i></button>
                 </a>
             </div>
         </nav>

@@ -225,6 +225,7 @@ ul li a {
 .main-page {
     width: 100%;
     background-color: white;
+    overflow: hidden;
 }
 
 
@@ -505,7 +506,7 @@ footer .info>p {
     }
     /* line 296, Style .scss */
     .section .line {
-        width: 75%;
+        width: 70%;
     }
     /* line 298, Style .scss */
     .section p {
@@ -547,7 +548,8 @@ footer .info>p {
     }
     /* line 327, Style .scss */
     .main-page .into-main-page {
-        height: 400px !important;
+        /*height: 400px !important;*/
+        max-width: 60.666667%;
     }
     /* line 330, Style .scss */
     .main-page img {
@@ -606,9 +608,16 @@ footer .info>p {
     .nav-item {
         border: none;
     }
+    .nav-link {
+        padding: .4rem 1rem;
+    }
 }
 
 @media only screen and (min-width: 1920px) {
+    .banner-layout-text {
+        position: absolute;
+        top: calc(50% - 56px);
+    }
     /* line 372, Style .scss */
     .flex-container>div {
         width: 15%;
@@ -622,9 +631,10 @@ footer .info>p {
     }
     /* line 380, Style .scss */
     .main-page .into-main-page {
-        height: 300px;
+        /*height: 300px;*/
         padding-top: 70px;
         padding: 0;
+        overflow: hidden;
     }
     /* line 383, Style .scss */
     .main-page .into-main-page img {
@@ -638,6 +648,10 @@ footer .info>p {
     /* line 389, Style .scss */
     .main-page .into-main-page p {
         font-size: 1.5rem;
+    }
+    .layout-main {
+        max-width: 60.666667%;
+        margin: 0 auto;
     }
     /* line 392, Style .scss */
     .section {
