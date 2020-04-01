@@ -162,6 +162,15 @@ ul li a {
     padding: 0;
     margin: 0 auto;
 }
+.style-card {
+    padding: 7.5px;
+}
+
+.card-img {
+    height: 150px;
+    overflow: hidden;
+}
+
 .main-page {
     height: 1100px;
     background-color: #f2f2f2;
@@ -252,6 +261,10 @@ footer .info > p {
         font-weight: 100;
         margin: 0;
     }
+    .style-card {
+        padding: 0;
+    }
+
 
     .main-page h1 {
         font-size: 1.5rem;

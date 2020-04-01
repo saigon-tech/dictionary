@@ -21,8 +21,8 @@ class HomeController extends Controller
             ->get();
         $all_dictionary      = Dictionary::where('dictionary_status', 0)
             ->orderBy('created_at', 'DESC')
-            ->get();
-       
+            ->paginate(12);
+
         return view('Pages.home')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('all_dictionary',$all_dictionary);
     }
     public function search(Request $request)
@@ -37,19 +37,19 @@ class HomeController extends Controller
         $search_dictionary   = Dictionary::where('dictionary_name_eng', 'like', '%' . $keywords . '%')
             ->orderBy('alphabet_id', 'ASC')
             ->get();
-       
+
         return view('Pages.search')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('search_dictionary',$search_dictionary);
     }
 
     public function add_all_dictionary(){
-    
+
         $wordtype_dictionary = Wordtype::where('wordtype_status', 0)
             ->orderBy('wordtype_id', 'desc')
             ->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
             ->orderBy('alphabet_id', 'desc')
             ->get();
-        
+
         return view('Pages.add')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary);
     }
 
