@@ -24,7 +24,7 @@
         </div>
         <div class="line mx-auto"></div>
         {{--    card group--}}
-        <div class="container" style="max-width: 70%" id="max-width-mobile">
+        <div class="container" style="max-width: 70%" id="max-width">
             <div class="row">
 
                 @foreach($all_dictionary as $key => $lienquan)

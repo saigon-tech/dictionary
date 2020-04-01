@@ -232,7 +232,7 @@ ul li a {
 /* line 122, Style .scss */
 
 .into-main-page {
-    height: 600px;
+
     background-color: white;
     padding: 0 !important;
 }
@@ -257,7 +257,7 @@ ul li a {
 /* line 135, Style .scss */
 
 .section {
-    background-color: #F2F2F2;
+    background-color: white;
     height: 600px;
 }
 
@@ -344,6 +344,10 @@ footer {
     visibility: visible;
 }
 
+#max-width-mobile {
+    margin-top:15px;
+}
+
 /* line 174, Style .scss */
 
 footer .icon {
@@ -383,15 +387,10 @@ footer .info>p {
     .main-page {
         height: 350px;
     }
-    #max-width-mobile {
-        max-width: 100% !important;
-    }
-    .shadow {
-        box-shadow: 0 .1rem 1rem rgba(0,0,0,.02)!important;
-    }
+
     /* line 198, Style .scss */
     .main-page .into-main-page {
-        margin-top: 50px;
+        /*margin-top: 50px;*/
         height: 300px;
     }
     /* line 201, Style .scss */
@@ -503,11 +502,11 @@ footer .info>p {
     .flex-container div p {
         font-size: 1.5rem;
     }
+    .main-page {
+         height: 650px;
+     }
     /* line 281, Style .scss */
-    .into-main-page {
-        margin-top: 100px;
-        height: 600px;
-    }
+
     /* line 284, Style .scss */
     .into-main-page span {
         font-size: 2.8rem;
@@ -564,12 +563,13 @@ footer .info>p {
     /* line 324, Style .scss */
     .main-page {
         margin-top: 100px;
-        height: 350px;
+        height: 450px;
     }
     /* line 327, Style .scss */
     .main-page .into-main-page {
         /*height: 400px !important;*/
         max-width: 60.666667%;
+        margin-top: 100px;
     }
     /* line 330, Style .scss */
     .main-page img {
@@ -649,6 +649,9 @@ footer .info>p {
         padding-top: 30px;
         height: 650px;
     }
+    #max-width {
+        max-width: 100% !important;
+    }
     /* line 380, Style .scss */
     .main-page .into-main-page {
         /*height: 300px;*/
@@ -725,11 +728,14 @@ footer .info>p {
     .main-page {
         padding-left: 100px;
         padding-right: 100px;
-        height: 750px;
+        height: 1050px;
     }
     /* line 429, Style .scss */
     .main-page span {
         font-size: 5rem;
+    }
+    #max-width {
+        max-width: 100% !important;
     }
     /* line 434, Style .scss */
     .section {
