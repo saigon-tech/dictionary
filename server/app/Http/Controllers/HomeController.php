@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Alphabet;
 use App\Models\Dictionary;
+use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 
@@ -21,9 +22,12 @@ class HomeController extends Controller
             ->get();
         $all_dictionary      = Dictionary::where('dictionary_status', 0)
             ->orderBy('created_at', 'ASC')
-            ->get();
+            ->paginate(12);
 
-        return view('Pages.home')->with('category',$category_dictionary)->with('alphabet',$alphabet_dictionary)->with('all_dictionary',$all_dictionary);
+        return view('Pages.home')
+            ->with('category',$category_dictionary)
+            ->with('alphabet',$alphabet_dictionary)
+            ->with('all_dictionary',$all_dictionary);
     }
     public function search(Request $request)
     {

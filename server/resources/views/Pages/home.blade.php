@@ -33,6 +33,11 @@
                 </a>
             </div>
             @endforeach
+            <div class="text-left">
+                <ul class="pagination">
+                    <li ><a>{{ $all_dictionary->links() }}</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
