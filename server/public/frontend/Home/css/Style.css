@@ -50,7 +50,7 @@ button {
 
 .nav-item {
   padding-left: 0 !important;
-  border-bottom: 0.1px solid #F2F2F2; }
+  border-bottom: 1px solid #F2F2F2; }
 
 #dropdownMenuLink-1 {
   outline: none;
