@@ -1,4 +1,4 @@
-@extends('client')
+@extends('Layouts.client')
 @section('container')
 <div class="hidden2"></div>
 <div class="col-12 col-xl-12 col-lg-12 " style="margin-top: 8rem!important;">
