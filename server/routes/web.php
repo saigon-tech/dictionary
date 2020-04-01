@@ -16,64 +16,74 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/chi-tiet-tu-dien/{dictionary_id}', 'DictionaryController@details_dictionary')->name('detail.dictionary');
-Route::get('/wordtype-food', 'HomeController@wordtype_food');
-Route::get('/wordtype-game', 'HomeController@wordtype_game');
-Route::get('/wordtype-music', 'HomeController@wordtype_music');
-Route::get('/alphabet-detail/{word}','HomeController@getDetailAlphabet')->name('detail.alphabet');
+Route::get('/category-food', 'HomeController@category_food');
+Route::get('/category-game', 'HomeController@category_game');
+Route::get('/category-music', 'HomeController@category_music');
+Route::get('/alphabet-detail/{word}', 'HomeController@getDetailAlphabet')->name('detail.alphabet');
 Route::post('/tim-kiem', 'HomeController@search');
 Route::get('/add-all-dictionary', 'HomeController@add_all_dictionary');
 Route::post('/save-add-dictionary', 'HomeController@save_add_dictionary');
 
 Route::post('/tim-kiem-alphabet', 'AlphabetDictionary@search');
 
-Route::post('/tim-kiem-alphabet', 'AlphabetDictionary@search');
-Route::post('/tim-kiem-wordtype', 'WordtypeDictionary@search');
-Route::post('/tim-kiem-dictionary', 'DictionaryController@search');
-
+Route::post('/tim-kiem-category', 'CategoryDictionary@search');
 
 //Back-end
-Route::get('/admin', 'AdminController@index');
-Route::get('/dashboard', 'AdminController@show_dashboard');
-Route::get('/logout', 'AdminController@log_out');
-Route::post('/admin-dashboard', 'AdminController@admin_dashboard')->name('post.admin_dashboard');
+Route::get('login', 'Auth\LoginController@getLogin')->name('get_login');
+Route::post('login', 'Auth\LoginController@postLogin')->name('post_login');
+Route::get('logout', 'Auth\LoginController@getLogout')->name('logout');
 
-// AlphabetDictionary dictionary
-Route::get('/add-alphabet-dictionary', 'AlphabetDictionary@add_alphabet_dictionary');
-Route::get('/all-alphabet-dictionary', 'AlphabetDictionary@all_alphabet_dictionary');
-Route::get('/edit-alphabet-dictionary/{alphabet_dictionary_id}', 'AlphabetDictionary@edit_alphabet_dictionary');
-Route::get('/delete-alphabet-dictionary/{alphabet_dictionary_id}', 'AlphabetDictionary@delete_alphabet_dictionary');
+// Admin page
+Route::group(['middleware' => ['adminLogin']], function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('/dashboard', 'DashboardController@show_dashboard')->name('get.admin_dashboard');
 
+        // AlphabetDictionary dictionary
+        Route::get('/add-alphabet-dictionary', 'AlphabetDictionary@add_alphabet_dictionary')->name('add.alphabet');
+        Route::get('/all-alphabet-dictionary', 'AlphabetDictionary@all_alphabet_dictionary')->name('list.alphabet');
+        Route::get('/edit-alphabet-dictionary/{alphabet_dictionary_id}',
+            'AlphabetDictionary@edit_alphabet_dictionary')->name('edit.alphabet');
+        Route::get('/delete-alphabet-dictionary/{alphabet_dictionary_id}',
+            'AlphabetDictionary@delete_alphabet_dictionary')->name('destroy.alphabet');
 
-Route::get('/unactive-alphabet-dictionary/{alphabet_dictionary_id}', 'AlphabetDictionary@unactive_alphabet_dictionary');
-Route::get('/active-alphabet-dictionary/{alphabet_dictionary_id}', 'AlphabetDictionary@active_alphabet_dictionary');
+        Route::get('/unactive-alphabet-dictionary/{alphabet_dictionary_id}',
+            'AlphabetDictionary@unactive_alphabet_dictionary')->name('unactive.alphabet');
+        Route::get('/active-alphabet-dictionary/{alphabet_dictionary_id}',
+            'AlphabetDictionary@active_alphabet_dictionary')->name('active.alphabet');
 
-Route::post('/save-alphabet-dictionary', 'AlphabetDictionary@save_alphabet_dictionary');
-Route::post('/update-alphabet-dictionary/{alphabet_dictionary_id}', 'AlphabetDictionary@update_alphabet_dictionary');
+        Route::post('/save-alphabet-dictionary', 'AlphabetDictionary@save_alphabet_dictionary')->name('save.alphabet');
+        Route::post('/update-alphabet-dictionary/{alphabet_dictionary_id}',
+            'AlphabetDictionary@update_alphabet_dictionary')->name('update.alphabet');
 
-// WordtypeDictionary
-Route::get('/add-wordtype-dictionary', 'WordtypeDictionary@add_wordtype_dictionary');
-Route::get('/all-wordtype-dictionary', 'WordtypeDictionary@all_wordtype_dictionary');
-Route::get('/edit-wordtype-dictionary/{wordtype_dictionary_id}', 'WordtypeDictionary@edit_wordtype_dictionary');
-Route::get('/delete-wordtype-dictionary/{wordtype_dictionary_id}', 'WordtypeDictionary@delete_wordtype_dictionary');
+        // CategoryDictionary
+        Route::get('/add-category-dictionary', 'CategoryDictionary@add_category_dictionary')->name('add.category');
+        Route::get('/all-category-dictionary', 'CategoryDictionary@all_category_dictionary')->name('list.category');
+        Route::get('/edit-category-dictionary/{category_dictionary_id}',
+            'CategoryDictionary@edit_category_dictionary')->name('edit.category');
+        Route::get('/delete-category-dictionary/{category_dictionary_id}',
+            'CategoryDictionary@delete_category_dictionary')->name('destroy.category');
 
+        Route::get('/unactive-category-dictionary/{category_dictionary_id}',
+            'CategoryDictionary@unactive_category_dictionary')->name('unactive.category');
+        Route::get('/active-category-dictionary/{category_dictionary_id}',
+            'CategoryDictionary@active_category_dictionary')->name('active.category');
 
-Route::get('/unactive-wordtype-dictionary/{wordtype_dictionary_id}', 'WordtypeDictionary@unactive_wordtype_dictionary');
-Route::get('/active-wordtype-dictionary/{wordtype_dictionary_id}', 'WordtypeDictionary@active_wordtype_dictionary');
+        Route::post('/save-category-dictionary', 'CategoryDictionary@save_category_dictionary')->name('save.category');
+        Route::post('/update-category-dictionary/{category_dictionary_id}',
+            'CategoryDictionary@update_category_dictionary')->name('update.category');
 
-Route::post('/save-wordtype-dictionary', 'WordtypeDictionary@save_wordtype_dictionary');
-Route::post('/update-wordtype-dictionary/{wordtype_dictionary_id}', 'WordtypeDictionary@update_wordtype_dictionary');
+        // Dictionary dictionary
+        Route::get('/add-dictionary', 'DictionaryController@add_dictionary')->name('add.dictionary');
+        Route::get('/all-dictionary', 'DictionaryController@all_dictionary')->name('list.dictionary');
+        Route::get('/edit-dictionary/{dictionary_id}', 'DictionaryController@edit_dictionary')->name('edit.dictionary');
+        Route::get('/delete-dictionary/{dictionary_id}', 'DictionaryController@delete_dictionary')->name('destroy.dictionary');
 
-// Dictionary dictionary
-Route::get('/add-dictionary', 'DictionaryController@add_dictionary');
-Route::get('/all-dictionary', 'DictionaryController@all_dictionary');
-Route::get('/edit-dictionary/{dictionary_id}', 'DictionaryController@edit_dictionary');
-Route::get('/delete-dictionary/{dictionary_id}', 'DictionaryController@delete_dictionary');
+        Route::get('/unactive-dictionary/{dictionary_id}', 'DictionaryController@unactive_dictionary')->name('unactive.dictionary');
+        Route::get('/active-dictionary/{dictionary_id}', 'DictionaryController@active_dictionary')->name('active.dictionary');
 
-
-Route::get('/unactive-dictionary/{dictionary_id}', 'DictionaryController@unactive_dictionary');
-Route::get('/active-dictionary/{dictionary_id}', 'DictionaryController@active_dictionary');
-
-Route::post('/save-dictionary', 'DictionaryController@save_dictionary');
-Route::post('/update-dictionary/{dictionary_id}', 'DictionaryController@update_dictionary');
+        Route::post('/save-dictionary', 'DictionaryController@save_dictionary')->name('save.dictionary');
+        Route::post('/update-dictionary/{dictionary_id}', 'DictionaryController@update_dictionary')->name('update.dictionary');
+    });
+});
 
 

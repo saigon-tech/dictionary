@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <section class="panel">
             <header class="panel-heading">
-                Add Word Type
+                Add Alphabet
             </header>
             <div class="panel-body">
                 <?php
@@ -17,30 +17,30 @@
                             }
                             ?>
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/save-wordtype-dictionary') }}" method="post">
+                    <form role="form" action="{{ route('save.alphabet') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Name WordType</label>
-                            <input type="text" name="wordtype_dictionary_name" class="form-control"
+                            <label for="exampleInputEmail1">Name Alphabet</label>
+                            <input type="text" name="alphabet_dictionary_name" class="form-control"
                                 id="exampleInputEmail1" placeholder="Tên danh mục">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Description</label>
+                            <label for="exampleInputPassword1">Description Alphabet</label>
                             <textarea style="resize: none" rows="8" class="form-control ckeditor"
-                                name="wordtype_dictionary_desc" id="exampleInputPassword1"
-                                placeholder="Mô tả danh mục"></textarea>
+                                name="alphabet_dictionary_desc" id="exampleInputPassword1"
+                                placeholder="Mô tả Bảng Chữ cái"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Show</label>
-                            <select name="wordtype_dictionary_status" class="form-control input-sm m-bot15">
+                            <select name="alphabet_dictionary_status" class="form-control input-sm m-bot15">
                                 <option value="0">Show</option>
                                 <option value="1">Hide</option>
 
                             </select>
                         </div>
 
-                        <button type="submit" name="add_wordtype_dictionary" class="btn btn-info">Add WordType</button>
+                        <button type="submit" name="add_category_product" class="btn btn-info">Add Alphabet</button>
                     </form>
                 </div>
 

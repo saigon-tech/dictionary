@@ -1,9 +1,9 @@
 @extends('Layouts.client')
-@section('contanier')
+@section('container')
 
 <head>
-    <link rel="stylesheet" href="{{asset ('public/frontend/detail/styledetail.css') }}">
-    <link rel="stylesheet" href="{{asset ('public/frontend/detail/pagination.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/detail/styledetail.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/detail/pagination.css') }}">
 </head>
 <div class="container-fluid">
     <div class="row"></div>

@@ -3,7 +3,7 @@
 <div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Cập nhập danh mục
+      Liệt kê danh mục
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
@@ -12,7 +12,7 @@
       <div class="col-sm-4">
       </div>
       <div class="col-sm-3">
-        <form action="{{ URL::to('/tim-kiem-dictionary') }}" method="POST">
+        <form action="{{ URL::to('/tim-kiem-category') }}" method="POST">
           {{ csrf_field() }}
           <div class="input-group">
             <input type="text" class="input-sm form-control" name="keywords_submit" placeholder="Search">
@@ -21,6 +21,11 @@
             </span>
           </div>
         </form>
+
+
+
+
+
       </div>
     </div>
     <div class="table-responsive">
@@ -36,42 +41,28 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-
-            <th>Name From English</th>
-            <th>Name From VietName</th>
-            <th>Picture</th>
-            <th>Wordtype</th>
-            <th>Alphabet</th>
-            <th>Show</th>
-            <th>Edit | Delete</th>
-
-
+            <th>category</th>
+            <th>Description</th>
+            <th style="width:30px;">Show</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($search_dictionary_all as $key =>$dictionary_search_key)
-
-
+          @foreach ($search_category as $key =>$category_dis_search)
           <tr>
-
-            <td>{{$dictionary_search_key->dictionary_name_eng }}</td>
-            <td>{{ $dictionary_search_key->dictionary_name_vn }}</td>
-            <td> <img src="public/uploads/dictionary/{{ $dictionary_search_key->dictionary_image}}"
-                style="height:80px;width:80px"> </td>
-            <td>{{$dictionary_search_key->wordtype_name }}</td>
-            <td>{{$dictionary_search_key->alphabet_name }}</td>
+            <td>{{$category_dis_search->category_name }}</td>
+            <td>{!! $category_dis_search->category_desc !!}</td>
             <td><span class="text-ellipsis">
                 <?php
-                    if($dictionary_search_key->dictionary_status==0){
+                    if($category_dis_search->category_status==0){
                         ?>
-                <a href="{{ URL::to("/unactive-dictionary/".$dictionary_search_key->dictionary_id )}}"><span
+                <a href="{{  route('unactive.alphabet', [$category_dis_search->category_id]) }}"><span
                     class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
                 <?php
                     }
                     else {
                         ?>
-                <a href="{{ URL::to("/active-dictionary/".$dictionary_search_key->dictionary_id )}}""><span class="
+                <a href="{{ route('active.alphabet', [$category_dis_search->category_id]) }}"><span class="
                   fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
               <?php
@@ -80,12 +71,12 @@
               </span></td>
 
             <td>
-              <a href="{{ URL::to('/edit-dictionary/'.$dictionary_search_key->dictionary_id ) }}"
+              <a href="{{ route('edit.alphabet', [$category_dis_search->category_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
-              <a onclick="return confirm('Ban cố chắc xóa sản phẩm  này không ')"
-                href="{{ URL::to('/delete-dictionary/'.$dictionary_search_key->dictionary_id ) }}"
+              <a onclick="return confirm('Ban cố chắc xóa danh mục này không ')"
+                href="{{ route('destroy.alphabet', [$category_dis_search->category_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>

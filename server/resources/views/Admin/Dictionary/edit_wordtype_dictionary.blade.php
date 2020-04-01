@@ -16,21 +16,21 @@
                     }
                     ?>
             <div class="panel-body">
-                @foreach($edit_wordtype_dictionary as $key => $edit_value)
+                @foreach($edit_category_dictionary as $key => $edit_value)
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/update-wordtype-dictionary/'.$edit_value->wordtype_id) }}"
+                    <form role="form" action="{{ route('update.dictionary', [$edit_value->category_id]) }}"
                         method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên danh mục</label>
-                            <input type="text" value="{{ $edit_value->wordtype_name }}" name="wordtype_dictionary_name"
+                            <input type="text" value="{{ $edit_value->category_name }}" name="wordtype_dictionary_name"
                                 class="form-control" id="exampleInputEmail1" placeholder="Tên danh mục">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mô tả danh mục</label>
                             <textarea style="resize: none" rows="8" class="form-control ckeditor"
                                 name="wordtype_dictionary_desc" id="exampleInputPassword1"
-                                placeholder="Mô tả danh mục">{{$edit_value->wordtype_desc}}</textarea>
+                                placeholder="Mô tả danh mục">{{$edit_value->category_desc}}</textarea>
                         </div>
 
 

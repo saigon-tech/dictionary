@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <section class="panel">
             <header class="panel-heading">
-                Cập nhập danh mục sản phẩm
+                Cập nhập danh mục Alphabet
             </header>
             <?php
                     $message = Session::get('message');
@@ -17,7 +17,7 @@
             <div class="panel-body">
                 @foreach($edit_alphabet_dictionary as $key => $edit_value)
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/update-alphabet-dictionary/'.$edit_value->alphabet_id) }}"
+                    <form role="form" action="{{ route('update.alphabet', [$edit_value->alphabet_id])}}"
                         method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
@@ -34,7 +34,7 @@
 
 
 
-                        <button type="submit" name="update_category_product" class="btn btn-info">Thêm danh mục</button>
+                        <button type="submit" name="update_category_product" class="btn btn-info">Update Alphabet</button>
                     </form>
                 </div>
                 @endforeach

@@ -1,13 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Alphabet extends Model
 {
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+    
     protected $table      = 'tbl_alphabet';
     protected $primaryKey = 'alphabet_id';
+    public    $incrementing = true;
 
     protected $fillable
         = [

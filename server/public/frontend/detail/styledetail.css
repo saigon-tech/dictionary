@@ -189,50 +189,39 @@ ul li a {
 }
 
 footer {
-    background-color: #BE2031;
+    width: 100%;
+    margin: 0;
+  background-color: #BE2031; }
+  footer .icon {
+    padding: 0; }
+    footer .icon a {
+      color: white;
+      margin-right: 10px; }
+  footer .info > p {
+    color: white; }
+@media only screen and (max-width:575px){
+	.main-page{
+		height: 1050px;
+	}
+	.main-page .info{
+		height: 850px;
+		margin: 0;
 }
-
-footer .icon {
-    padding: 0;
-}
-
-footer .icon a {
-    color: white;
-    margin-right: 10px;
-}
-
-footer .info > p {
-    color: white;
-}
-
-@media only screen and (max-width: 575px) {
-    .main-page {
-        height: 1050px;
+	.main-page .tag{
+		height: 40px;
+		margin-bottom: 30px;
+		background-color: #BF2735;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+	.main-page .tag span{
+		font-size: 1.5rem;
+	}
+    .main-page .info .img{
+		margin-top: 10px;
+		margin-bottom: 20px;
     }
-
-    .main-page .info {
-        height: 850px;
-        margin: 0;
-    }
-
-    .main-page .tag {
-        height: 40px;
-        margin-bottom: 30px;
-        background-color: #BF2735;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-
-    .main-page .tag span {
-        font-size: 1.5rem;
-    }
-
-    .main-page .info .img {
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-
-    .main-page .text p {
+    .main-page .text p{
         font-size: 1rem;
     }
 
