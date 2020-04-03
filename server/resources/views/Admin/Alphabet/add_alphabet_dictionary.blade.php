@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('Layouts.admin_layout')
 @section('admin_content')
 <div class="row">
     <div class="col-lg-12">
@@ -17,7 +17,7 @@
                             }
                             ?>
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/save-alphabet-dictionary') }}" method="post">
+                    <form role="form" action="{{ route('save.alphabet') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name Alphabet</label>

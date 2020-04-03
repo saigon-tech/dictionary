@@ -1,4 +1,4 @@
-@extends('client')
+@extends('Layouts.client')
 @section('container')
 <div class="container-fluid" style="height:auto;">
     <div class="row" style="height:auto;">

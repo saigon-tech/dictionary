@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('Layouts.admin_layout')
 @section('admin_content')
 <div class="table-agile-info">
   <div class="panel panel-default">
@@ -7,7 +7,7 @@
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
-
+          <a href="{{ route('add.alphabet') }}" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Alphabet</a>
       </div>
       <div class="col-sm-4">
       </div>
@@ -46,32 +46,25 @@
           <tr>
             <td>{{$alphabet_dis->alphabet_name }}</td>
             <td>{!! $alphabet_dis->alphabet_desc !!}</td>
-            <td><span class="text-ellipsis">
-                <?php
-                    if($alphabet_dis->alphabet_status==0){
-                        ?>
-                <a href="{{ URL::to("/unactive-alphabet-dictionary/".$alphabet_dis->alphabet_id )}}"><span
-                    class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
-    color: green;"></span></a>
-                <?php
-                    }
-                    else {
-                        ?>
-                <a href="{{ URL::to("/active-alphabet-dictionary/".$alphabet_dis->alphabet_id )}}""><span class="
-                  fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;
-    color: red;"></span></a>
-              <?php
-                    }
-                    ?>
-              </span></td>
-
             <td>
-              <a href="{{ URL::to('/edit-alphabet-dictionary/'.$alphabet_dis->alphabet_id) }}"
+                <span class="text-ellipsis">
+                    @if($alphabet_dis->alphabet_status==0)
+                    <a href="{{ route('unactive.alphabet', [$alphabet_dis->alphabet_id]) }}">
+                        <span class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;color: green;"></span>
+                    </a>
+                    @else
+                    <a href="{{ route('active.alphabet', [$alphabet_dis->alphabet_id]) }}">
+                        <span class="fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;color: red;"></span></a>
+                    @endif
+              </span>
+            </td>
+            <td>
+              <a href="{{ route('edit.alphabet', [$alphabet_dis->alphabet_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
               <a onclick="return confirm('Ban cố chắc xóa danh mục này không ')"
-                href="{{ URL::to('/delete-alphabet-dictionary/'.$alphabet_dis->alphabet_id) }}"
+                href="{{ route('destroy.alphabet', [$alphabet_dis->alphabet_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Alphabet;
 use App\Models\Dictionary;
+use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 
@@ -13,22 +14,25 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $wordtype_dictionary = Category::where('category_status', 0)
+        $category_dictionary = Category::where('category_status', 0)
             ->orderBy('category_id', 'ASC')
             ->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
             ->orderBy('alphabet_name', 'ASC')
             ->get();
         $all_dictionary      = Dictionary::where('dictionary_status', 0)
-            ->orderBy('created_at', 'DESC')
+            ->orderBy('created_at', 'ASC')
             ->paginate(12);
 
-        return view('Pages.home')->with('wordtype',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('all_dictionary',$all_dictionary);
+        return view('Pages.home')
+            ->with('category',$category_dictionary)
+            ->with('alphabet',$alphabet_dictionary)
+            ->with('all_dictionary',$all_dictionary);
     }
     public function search(Request $request)
     {
         $keywords            = $request->keywords_submit;
-        $wordtype_dictionary = Category::where('category_status', 0)
+        $category_dictionary = Category::where('category_status', 0)
             ->orderBy('category_id', 'ASC')
             ->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
@@ -38,19 +42,19 @@ class HomeController extends Controller
             ->orderBy('alphabet_id', 'ASC')
             ->get();
 
-        return view('Pages.search')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary)->with('search_dictionary',$search_dictionary);
+        return view('Pages.search')->with('category_dictionary',$category_dictionary)->with('alphabet',$alphabet_dictionary)->with('search_dictionary',$search_dictionary);
     }
 
     public function add_all_dictionary(){
 
-        $wordtype_dictionary = Wordtype::where('wordtype_status', 0)
-            ->orderBy('wordtype_id', 'desc')
+        $category_dictionary = category::where('category_status', 0)
+            ->orderBy('category_id', 'ASC')
             ->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
-            ->orderBy('alphabet_id', 'desc')
+            ->orderBy('alphabet_id', 'ASC')
             ->get();
 
-        return view('Pages.add')->with('wordtype_dictionary',$wordtype_dictionary)->with('alphabet',$alphabet_dictionary);
+        return view('Pages.add')->with('category_dictionary',$category_dictionary)->with('alphabet',$alphabet_dictionary);
     }
 
     public function save_add_dictionary(Request $request)
@@ -60,7 +64,7 @@ class HomeController extends Controller
         $data['dictionary_name_eng'] = $request->dictionary_name_eng;
         $data['dictionary_name_vn']  = $request->dictionary_name_vn;
         $data['dictionary_desc']     = $request->dictionary_desc;
-        $data['category_id']         = $request->dictionary_wordtype;
+        $data['category_id']         = $request->dictionary_category;
         $data['alphabet_id']         = $request->dictionary_alphabet;
         $data['dictionary_status']   = "1";
         $data['dictionary_image']    = $request->dictionary_status;
@@ -82,9 +86,9 @@ class HomeController extends Controller
         return Redirect::to('/add-all-dictionary');
     }
 
-    public function wordtype_food()
+    public function category_food()
     {
-        $wordtype_dictionary = Category::where('category_status', 0)
+        $category_dictionary = Category::where('category_status', 0)
             ->orderBy('category_id', 'ASC')->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
             ->orderBy('alphabet_id', 'ASC')->get();
@@ -93,13 +97,13 @@ class HomeController extends Controller
             ->join('tbl_alphabet', 'tbl_alphabet.alphabet_id', '=', 'tbl_dictionary.alphabet_id')
             ->where('category_name', 'Food')
             ->orderby('tbl_dictionary.dictionary_id', 'desc')->paginate(21);
-        return view('Pages.food')->with('wordtype', $wordtype_dictionary)->with('alphabet', $alphabet_dictionary)
+        return view('Pages.food')->with('category', $category_dictionary)->with('alphabet', $alphabet_dictionary)
             ->with('all_dictionary', $all_dictionary);
     }
 
-    public function wordtype_game()
+    public function category_game()
     {
-        $wordtype_dictionary = Category::where('category_status', 0)
+        $category_dictionary = Category::where('category_status', 0)
             ->orderBy('category_id', 'ASC')->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
             ->orderBy('alphabet_id', 'ASC')->get();
@@ -108,13 +112,13 @@ class HomeController extends Controller
             ->join('tbl_alphabet', 'tbl_alphabet.alphabet_id', '=', 'tbl_dictionary.alphabet_id')
             ->where('category_name', 'Game')
             ->orderby('tbl_dictionary.dictionary_id', 'desc')->get();
-        return view('Pages.game')->with('wordtype', $wordtype_dictionary)->with('alphabet', $alphabet_dictionary)
+        return view('Pages.game')->with('category', $category_dictionary)->with('alphabet', $alphabet_dictionary)
             ->with('all_dictionary', $all_dictionary);
     }
 
-    public function wordtype_music()
+    public function category_music()
     {
-        $wordtype_dictionary = Category::where('category_status', 0)
+        $category_dictionary = Category::where('category_status', 0)
             ->orderBy('category_id', 'ASC')->get();
         $alphabet_dictionary = Alphabet::where('alphabet_status', 0)
             ->orderBy('alphabet_id', 'ASC')->get();
@@ -123,7 +127,7 @@ class HomeController extends Controller
             ->join('tbl_alphabet', 'tbl_alphabet.alphabet_id', '=', 'tbl_dictionary.alphabet_id')
             ->where('category_name', 'Music')
             ->orderby('tbl_dictionary.dictionary_id', 'desc')->get();
-        return view('Pages.music')->with('wordtype', $wordtype_dictionary)->with('alphabet', $alphabet_dictionary)
+        return view('Pages.music')->with('category', $category_dictionary)->with('alphabet', $alphabet_dictionary)
             ->with('all_dictionary', $all_dictionary);
     }
 
