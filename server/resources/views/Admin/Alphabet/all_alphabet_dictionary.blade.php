@@ -7,7 +7,7 @@
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
-
+          <a href="{{ route('add.alphabet') }}" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Alphabet</a>
       </div>
       <div class="col-sm-4">
       </div>
@@ -46,25 +46,18 @@
           <tr>
             <td>{{$alphabet_dis->alphabet_name }}</td>
             <td>{!! $alphabet_dis->alphabet_desc !!}</td>
-            <td><span class="text-ellipsis">
-                <?php
-                    if($alphabet_dis->alphabet_status==0){
-                        ?>
-                <a href="{{ route('unactive.alphabet', [$alphabet_dis->alphabet_id]) }}"><span
-                    class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
-    color: green;"></span></a>
-                <?php
-                    }
-                    else {
-                        ?>
-                <a href="{{ route('active.alphabet', [$alphabet_dis->alphabet_id]) }}"><span class="
-                  fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;
-    color: red;"></span></a>
-              <?php
-                    }
-                    ?>
-              </span></td>
-
+            <td>
+                <span class="text-ellipsis">
+                    @if($alphabet_dis->alphabet_status==0)
+                    <a href="{{ route('unactive.alphabet', [$alphabet_dis->alphabet_id]) }}">
+                        <span class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;color: green;"></span>
+                    </a>
+                    @else
+                    <a href="{{ route('active.alphabet', [$alphabet_dis->alphabet_id]) }}">
+                        <span class="fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;color: red;"></span></a>
+                    @endif
+              </span>
+            </td>
             <td>
               <a href="{{ route('edit.alphabet', [$alphabet_dis->alphabet_id]) }}"
                 class="active styling-edit" ui-toggle-class="">

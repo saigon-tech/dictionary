@@ -7,7 +7,7 @@
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
-
+          <a href="{{ route('add.dictionary') }}" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Dictionary</a>
       </div>
       <div class="col-sm-4">
       </div>
@@ -41,7 +41,7 @@
             <th>Name From English</th>
             <th>Name From VietName</th>
             <th>Picture</th>
-            <th>Wordtype</th>
+            <th>Category</th>
             <th>Alphabet</th>
             <th>Show</th>
             <th>Edit | Delete</th>
@@ -54,27 +54,21 @@
           <tr>
             <td>{{$dicti->dictionary_name_eng }}</td>
             <td>{{ $dicti->dictionary_name_vn }}</td>
-            <td> <img src="public/uploads/dictionary/{{ $dicti->dictionary_image}}" style="height:80px;width:80px">
+            <td>
+                <img src="{{ url('/public/uploads/dictionary/'.$dicti->dictionary_image) }}" style="height:80px;width:80px">
             </td>
-            <td>{{$dicti->wordtype_name }}</td>
+            <td>{{$dicti->category_name }}</td>
             <td>{{$dicti->alphabet_name }}</td>
             <td><span class="text-ellipsis">
-                <?php
-                    if($dicti->dictionary_status==0){
-                        ?>
-                <a href="{{ route('unactive.dictionary', [$dicti->dictionary_id]) }}"><span
-                    class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
+                @if($dicti->dictionary_status==0)
+                    <a href="{{ route('unactive.dictionary', [$dicti->dictionary_id]) }}"><span
+                        class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
-                <?php
-                    }
-                    else {
-                        ?>
-                <a href="{{ route('active.dictionary', [$dicti->dictionary_id])}}"><span class=" fa-thumb-styling-two
-                  fa fa-thumbs-down" style="font-size: 28px;
+                @else
+                    <a href="{{ route('active.dictionary', [$dicti->dictionary_id])}}"><span class=" fa-thumb-styling-two
+                      fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
-              <?php
-                    }
-                    ?>
+                 @endif
               </span></td>
 
             <td>

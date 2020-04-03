@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
-                <a href="index.html" class="logo">
+                <a href="http://localhost/admin/dashboard" class="logo">
                     Dictionary
                 </a>
 
@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul class="dropdown-menu extended logout">
                             <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="{{ URL::to('logout') }}"><i class="fa fa-key"></i>Đăng Xuất</a></li>
+                            <li><a href="{{ URL::to('logout') }}"><i class="fa fa-key"></i>Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -87,17 +87,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Bảng Chữ cái (Alphabet)</span>
+                                <span>Alphabet</span>
                             </a>
                             <ul class="sub">
                                 <li>
                                     <a href="{{ route('add.alphabet') }}">
-                                        Thêm danh mục Bảng Chữ Cái
+                                        Add Alphabet
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{ route('list.alphabet') }}">
-                                        Liệt kê danh mục Bảng Chữ Cái
+                                        List Alphabet
                                     </a>
                                 </li>
                             </ul>
@@ -105,22 +105,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Thể loại (Category)</span>
+                                <span>Category</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{ route('add.category') }}">Thêm danh mục Thể loại </a></li>
-                                <li><a href="{{ route('list.category') }}">Liệt kê danh mục Thể loại </a>
+                                <li><a href="{{ route('add.category') }}">Add Category</a></li>
+                                <li><a href="{{ route('list.category') }}">List Category</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Từ Vựng (Dictionary)</span>
+                                <span>Dictionary</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{ route('add.dictionary') }}">Thêm Từ Vựng</a></li>
-                                <li><a href="{{ route('list.dictionary') }}">Liệt kê Từ Vựng</a></li>
+                                <li><a href="{{ route('add.dictionary') }}">Add Dictionary</a></li>
+                                <li><a href="{{ route('list.dictionary') }}">List Dictionary</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -134,7 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </section>
             <div class="footer">
                 <div class="wthree-copyright">
-                    <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+                    <p>© <?= date("Y"); ?> Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
                 </div>
             </div>
         </section>

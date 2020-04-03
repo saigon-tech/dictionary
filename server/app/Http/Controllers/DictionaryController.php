@@ -8,7 +8,7 @@ use App\Models\Alphabet;
 use App\Models\Dictionary;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
-
+use Illuminate\Support\Facades\DB;
 class DictionaryController extends Controller
 {
     public function AuthLogin()
@@ -24,8 +24,8 @@ class DictionaryController extends Controller
     public function add_dictionary()
     {
 //        $this->AuthLogin();
-        $category_dictionary = Category::orderby('category_id', 'desc')->get();
-        $alphabet_dictionary = Alphabet::orderby('alphabet_id', 'desc')->get();
+        $category_dictionary = Category::orderby('category_id', 'asc')->get();
+        $alphabet_dictionary = Alphabet::orderby('alphabet_id', 'asc')->get();
         return view('Admin.Dictionary.add_dictionary')->with('category_dictionary',
             $category_dictionary)->with('alphabet_dictionary', $alphabet_dictionary);
     }
@@ -39,7 +39,7 @@ class DictionaryController extends Controller
             ->orderby('tbl_dictionary.dictionary_id', 'desc')->get();
 
         $manager_dictionary = view('Admin.Dictionary.all_dictionary')->with('all_dictionary', $all_dictionary);
-        return view('admin_layout')->with('Admin.Dictionary.all_dictionary', $manager_dictionary);
+        return view('Layouts.admin_layout')->with('Admin.Dictionary.all_dictionary', $manager_dictionary);
     }
 
     public function save_dictionary(Request $request)
@@ -64,7 +64,7 @@ class DictionaryController extends Controller
             $data['dictionary_image'] = $new_image;
             Dictionary::insert($data);
             Session::flash('message', 'Thêm từ vựng thành công');
-            return redirect()->route('add.dictionary');
+            return redirect()->route('list.dictionary');
         }
         $data['dictionary_image'] = '';
         Dictionary::insert($data);
@@ -92,13 +92,13 @@ class DictionaryController extends Controller
     {
 
         //$this->AuthLogin();
-        $category_dictionary = DB::table('tbl_category')->orderby('category_id', 'desc')->get();
-        $alphabet_dictionary = DB::table('tbl_alphabet')->orderby('alphabet_id', 'desc')->get();
+        $category_dictionary = DB::table('tbl_category')->orderby('category_id', 'asc')->get();
+        $alphabet_dictionary = DB::table('tbl_alphabet')->orderby('alphabet_id', 'asc')->get();
         $edit_dictionary     = DB::table('tbl_dictionary')->where('dictionary_id', $dictionary_id)->get();
         $manager_dictionary  = view('Admin.Dictionary.edit_dictionary')->with('edit_dictionary', $edit_dictionary)
             ->with('category_dictionary', $category_dictionary)->with('alphabet_dictionary', $alphabet_dictionary);
 
-        return view('admin_layout')->with('Admin.Dictionary.edit_dictionary', $manager_dictionary);
+        return view('Layouts.admin_layout')->with('Admin.Dictionary.edit_dictionary', $manager_dictionary);
     }
 
     public function update_dictionary(Request $request, $dictionary_id)

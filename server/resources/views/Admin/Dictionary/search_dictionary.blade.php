@@ -40,7 +40,7 @@
             <th>Name From English</th>
             <th>Name From VietName</th>
             <th>Picture</th>
-            <th>Wordtype</th>
+            <th>Category</th>
             <th>Alphabet</th>
             <th>Show</th>
             <th>Edit | Delete</th>
@@ -58,7 +58,7 @@
             <td>{{ $dictionary_search_key->dictionary_name_vn }}</td>
             <td> <img src="public/uploads/dictionary/{{ $dictionary_search_key->dictionary_image}}"
                 style="height:80px;width:80px"> </td>
-            <td>{{$dictionary_search_key->wordtype_name }}</td>
+            <td>{{$dictionary_search_key->category_name }}</td>
             <td>{{$dictionary_search_key->alphabet_name }}</td>
             <td><span class="text-ellipsis">
                 <?php

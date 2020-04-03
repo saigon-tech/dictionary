@@ -30,7 +30,7 @@ class categoryDictionary extends Controller
         //$this->AuthLogin();
         $all_category_dictionary = category::get();
         $manager_category_dictionary = view('Admin.Category.all_category_dictionary')->with('all_category_dictionary',$all_category_dictionary);
-        return view('admin_layout')->with('Admin.Category.all_category_dictionary',$manager_category_dictionary);
+        return view('Layouts.admin_layout')->with('Admin.Category.all_category_dictionary',$manager_category_dictionary);
     }
     public function save_category_dictionary(Request $request){
         //$this->AuthLogin();
@@ -59,7 +59,7 @@ class categoryDictionary extends Controller
         //$this->AuthLogin();
         $edit_category_dictionary =  category::where('category_id',$category_dictionary_id)->get();
         $manager_category_dictionary = view('Admin.Category.edit_category_dictionary')->with('edit_category_dictionary',$edit_category_dictionary);
-        return view('admin_layout')->with('Admin.Category.edit_category_dictionary', $manager_category_dictionary);
+        return view('Layouts.admin_layout')->with('Admin.Category.edit_category_dictionary', $manager_category_dictionary);
     }
     public function update_category_dictionary(Request $request,$category_dictionary_id){
         //$this->AuthLogin();
@@ -81,7 +81,7 @@ class categoryDictionary extends Controller
     {
         $keywords = $request->keywords_submit;
         $search_category = category::where('category_name','like','%'.$keywords.'%')->get();
-        return view('Admin.category.search_category')->with('search_category',$search_category);
+        return view('Admin.Category.search_category')->with('search_category',$search_category);
     }
 
 

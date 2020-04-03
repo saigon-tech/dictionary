@@ -27,6 +27,7 @@ Route::post('/save-add-dictionary', 'HomeController@save_add_dictionary');
 Route::post('/tim-kiem-alphabet', 'AlphabetDictionary@search');
 
 Route::post('/tim-kiem-category', 'CategoryDictionary@search');
+Route::post('/tim-kiem-dictionary', 'DictionaryController@search');
 
 //Back-end
 Route::get('login', 'Auth\LoginController@getLogin')->name('get_login');
