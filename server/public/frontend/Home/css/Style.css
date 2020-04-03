@@ -24,11 +24,14 @@ button {
 /* line 16, Style .scss */
 
 .add {
-    padding: 0 !important;
-    padding-left: 4% !important;
+    /*padding: 0 !important;*/
+    /*padding-left: 4% !important;*/
+    position: absolute;
+    right: 15%;
 }
-
-
+.Menu-Onclick {
+    margin: 0 auto;
+}
 /* line 19, Style .scss */
 
 .add a:hover {
@@ -111,7 +114,11 @@ button {
     padding-left: 0 !important;
     border-bottom: 0.1px solid #F2F2F2;
 }
-
+#hambubger-menu {
+    position: absolute;
+    right: 0;
+    top: 5%;
+}
 
 /* line 64, Style .scss */
 
@@ -391,6 +398,17 @@ footer .info>p {
         padding-top: 10px;
         padding-left: 30px;
     }
+    .navbar {
+        padding: 10px 5%;
+    }
+
+    #form-mobile {
+        position: absolute;
+        top: 10px;
+        right: 15%;
+        width: 50%;
+    }
+
     /* line 198, Style .scss */
     .main-page .into-main-page {
         margin-top: 50px;
@@ -440,7 +458,14 @@ footer .info>p {
         text-align: center;
     }
 }
-
+@media only screen and (min-width: 576px)  and (max-width: 991px){
+    #form-mobile {
+    position: absolute;
+    top: 10px;
+    right: 15%;
+    width: 50%;
+}
+}
 @media only screen and (min-width: 576px) {
     /* line 238, Style .scss */
     .flex-container div {
@@ -461,6 +486,11 @@ footer .info>p {
         padding-top: 20px;
         padding-left: 50px;
     }
+    .navbar {
+        padding: 10px 5%;
+    }
+
+
 
     /* line 247, Style .scss */
     .main-page .into-main-page p {
@@ -519,6 +549,10 @@ footer .info>p {
         display: inline-block;
         padding-top: 20px;
         padding-left: 50px;
+    }
+
+    .navbar {
+        padding: 10px 5%;
     }
     /* line 281, Style .scss */
 
@@ -597,6 +631,7 @@ footer .info>p {
         width: 100%;
         height: auto;
     }
+
     /* line 334, Style .scss */
     .main-page span {
         font-size: 2.3rem;
@@ -644,6 +679,12 @@ footer .info>p {
     .main-page {
         /*padding-top: 30px;*/
         height: 450px;
+    }
+    .add {
+        right: 15%;
+    }
+    .navbar {
+        padding: 0 15%;
     }
     /* line 365, Style .scss */
     footer {
@@ -700,6 +741,12 @@ footer .info>p {
     .layout-main {
         max-width: 60.666667%;
         margin: 0 auto;
+    }
+    .add {
+        right: 20%;
+    }
+    .navbar {
+        padding: 0 20%;
     }
     /* line 392, Style .scss */
     .section {
