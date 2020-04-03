@@ -156,7 +156,7 @@ ul li a {
 .layout-main {
     height: auto;
     padding: 0 !important;
-    margin: 3rem 0;
+    /*margin: 3rem 0;*/
 }
 .layout-content {
     padding: 0;
