@@ -1,4 +1,4 @@
-@extends('client')
+@extends('Layouts.client')
 @section('container')
 
     <head>

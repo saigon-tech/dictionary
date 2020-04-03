@@ -85,7 +85,7 @@ class AlphabetDictionary extends Controller
 
         $manager_alphabet_dictionary = view('Admin.Alphabet.edit_alphabet_dictionary')->with('edit_alphabet_dictionary',
             $edit_alphabet_dictionary);
-        return view('admin_layout')->with('Admin.Alphabet.edit_alphabet_dictionary', $manager_alphabet_dictionary);
+        return view('Layouts.admin_layout')->with('Admin.Alphabet.edit_alphabet_dictionary', $manager_alphabet_dictionary);
     }
 
     /**

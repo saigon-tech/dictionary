@@ -39,7 +39,7 @@ class DictionaryController extends Controller
             ->orderby('tbl_dictionary.dictionary_id', 'desc')->get();
 
         $manager_dictionary = view('Admin.Dictionary.all_dictionary')->with('all_dictionary', $all_dictionary);
-        return view('admin_layout')->with('Admin.Dictionary.all_dictionary', $manager_dictionary);
+        return view('Layouts.admin_layout')->with('Admin.Dictionary.all_dictionary', $manager_dictionary);
     }
 
     public function save_dictionary(Request $request)
@@ -98,7 +98,7 @@ class DictionaryController extends Controller
         $manager_dictionary  = view('Admin.Dictionary.edit_dictionary')->with('edit_dictionary', $edit_dictionary)
             ->with('category_dictionary', $category_dictionary)->with('alphabet_dictionary', $alphabet_dictionary);
 
-        return view('admin_layout')->with('Admin.Dictionary.edit_dictionary', $manager_dictionary);
+        return view('Layouts.admin_layout')->with('Admin.Dictionary.edit_dictionary', $manager_dictionary);
     }
 
     public function update_dictionary(Request $request, $dictionary_id)
