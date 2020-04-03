@@ -1,55 +1,45 @@
 @charset "utf-8";
 /* CSS Document */
 
-body {
-    font-family: "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+body{
+	font-family: "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 }
-
 header {
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-}
+  width: 100%;
+  position: fixed;
+  z-index: 1; }
 
 /* line 13, Style .scss */
 button {
-    outline: none !important;
-}
+  outline: none !important; }
 
 /* line 16, Style .scss */
 .add {
-    padding: 0 !important;
-    padding-left: 4% !important;
-}
-
-/* line 19, Style .scss */
-.add a:hover {
-    text-decoration: none;
-}
+  padding: 0 !important;
+  padding-left: 4% !important; }
+  /* line 19, Style .scss */
+  .add a:hover {
+    text-decoration: none; }
 
 /* line 23, Style .scss */
 .navbar {
-    padding: 0;
-    padding-bottom: 7px;
-    padding-top: 6px;
-}
+  padding: 0;
+  padding-bottom: 7px;
+  padding-top: 6px; }
 
 /* line 29, Style .scss */
 .float-right button {
-    color: #BE2031;
-    outline: none;
-    border: none;
-}
+  color: #BE2031;
+  outline: none;
+  border: none; }
 
 /* line 35, Style .scss */
 .Icon_search {
-    position: absolute;
-    top: 15%;
-    right: 0;
-}
-
-/* line 39, Style .scss */
-.Icon_search i {
+  position: absolute;
+  top: 15%;
+  right: 0; }
+  /* line 39, Style .scss */
+  .Icon_search i {
     display: inline-block;
     color: #BE2031;
     width: 1.5rem;
@@ -57,137 +47,107 @@ button {
     vertical-align: middle;
     content: "";
     background: no-repeat center center;
-    background-size: 100% 100%;
-}
+    background-size: 100% 100%; }
 
 /* line 50, Style .scss */
 .dropdown-menu {
-    width: 200px;
-}
-
-/* line 51, Style .scss */
-.dropdown-menu a:active {
-    outline: none !important;
-}
-
-/* line 53, Style .scss */
-.dropdown-menu .dropdown-item-1 {
-    color: #6C6C6C;
-}
-
-/* line 55, Style .scss */
-.dropdown-menu .dropdown-item-1 i {
-    font-size: 0.8rem;
-}
+  width: 200px; }
+  /* line 51, Style .scss */
+  .dropdown-menu a:active {
+    outline: none !important; }
+  /* line 53, Style .scss */
+  .dropdown-menu .dropdown-item-1 {
+    color: #6C6C6C; }
+    /* line 55, Style .scss */
+    .dropdown-menu .dropdown-item-1 i {
+      font-size: 0.8rem; }
 
 /* line 60, Style .scss */
 .nav-item {
-    padding-left: 0 !important;
-    border-bottom: 0.1px solid #F2F2F2;
-}
+  padding-left: 0 !important;
+  border-bottom: 0.1px solid #F2F2F2; }
 
 /* line 64, Style .scss */
 #dropdownMenuLink-1 {
-    outline: none;
-    border: none;
-}
+  outline: none;
+  border: none; }
 
 /* line 68, Style .scss */
 .navbar-brand {
-    margin-right: 0 !important;
-}
+  margin-right: 0 !important; }
 
 /* line 72, Style .scss */
 ul li i {
-    font-size: 0.7rem;
-}
-
+  font-size: 0.7rem; }
 /* line 74, Style .scss */
 ul li a {
-    margin-right: 20px;
-}
+  margin-right: 20px; }
 
 /* line 77, Style .scss */
 .input-group {
-    border-bottom: 1px solid #BE2031;
-}
-
-/* line 79, Style .scss */
-.input-group input {
+  border-bottom: 1px solid #BE2031; }
+  /* line 79, Style .scss */
+  .input-group input {
     outline: none;
     border: none;
-    padding: 0;
-}
+    padding: 0; }
 
 /* line 86, Style .scss */
 .button-add button {
-    background: transparent;
-    outline: none;
-    font-size: 0.75rem;
-    border: 0.5px solid #BE2031;
-    color: #BE2031;
-}
-
+  background: transparent;
+  outline: none;
+  font-size: 0.75rem;
+  border: 0.5px solid #BE2031;
+  color: #BE2031; }
 /* line 92, Style .scss */
 .button-add a:hover {
-    text-decoration: none;
-}
-
+  text-decoration: none; }
 /* =============================================================main-page */
-.container-fluid {
+.container-fluid{
     margin: 0;
-    padding: 0 !important;
+    padding: 0!important;
 }
-
-.main-page {
+.main-page{
     background-color: #f2f2f2;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 80px;
+    padding-left: 0!important;
+	padding-right: 0!important;
+	padding-top: 80px;
 }
-
-.main-page .info {
+.main-page .info{
     border-radius: 23px;
     box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
     margin: 0;
 }
-
-.main-page .tag {
+.main-page .tag{
     height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-bottom: 30px;
     background-color: #BF2735;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-
-.main-page .tag span {
+.main-page .tag span{
     color: white;
 }
-
-.main-page .info .img {
+.main-page .info .img{
     margin: 0;
     padding: 0;
 }
-
-.main-page .info .img img {
+.main-page .info .img img{
     width: 100%;
     height: auto;
 }
-
-.main-page .info .text {
+.main-page .info .text{
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
 }
-
-.main-page .info .text p {
+.main-page .info .text p{
     text-align: center;
 }
-
 footer {
     width: 100%;
     margin: 0;
@@ -224,221 +184,142 @@ footer {
     .main-page .text p{
         font-size: 1rem;
     }
-
-    .main-page .info .text {
-        height: 300px;
-        margin: 0;
-        margin-top: 15px;
-        padding: 0;
+    .main-page .info .text{
+		height: 300px;
+		margin: 0;
+    	margin-top: 15px;
+		padding: 0;
     }
-
-    footer {
-        height: 300px;
-    }
-
+	footer {
+    height: 300px; }
     footer .logo {
-        padding: 0;
-        text-align: center;
-    }
-
-    footer .logo img {
+      padding: 0;
+      text-align: center; }
+      footer .logo img {
         width: 30%;
-        height: auto;
-    }
-
+        height: auto; }
     footer .info {
-        text-align: center;
-        font-size: 0.7rem;
-    }
-
+      text-align: center;
+      font-size: 0.7rem; }
     footer .icon {
-        text-align: center;
-    }
+      text-align: center; }
 }
-
-@media only screen and (min-width: 576px) {
-    .main-page {
-        height: 1250px;
-    }
-
-    .main-page .tag span {
-        font-size: 1.8rem;
-    }
-
-    .main-page .info {
-        height: 1000px;
-    }
-
-    .main-page .tag {
-        height: 45px;
-        border-top-right-radius: 10px;
+@media only screen and (min-width:576px){
+	.main-page{
+		height: 1250px;}
+	.main-page .tag span{
+		font-size: 1.8rem;}
+	.main-page .info{
+		height: 1000px;}
+	.main-page .tag{
+		height: 45px;
+		border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
-    }
-
-    footer {
-        height: 150px;
-    }
-
+	}
+	footer {
+    height: 150px; }
     footer .logo img {
-        width: 22%;
-    }
-
+      width: 22%; }
     footer .info {
-        text-align: center;
-    }
-
-    footer .info p {
-        font-size: 0.7rem;
-    }
-
+      text-align: center; }
+      footer .info p {
+        font-size: 0.7rem; }
     footer .icon {
-        text-align: center;
-        padding: 0;
-    }
+      text-align: center;
+      padding: 0; }
 }
-
-@media only screen and (min-width: 768px) {
-    .main-page {
-        height: 1200px;
-    }
-
-    .main-page .tag {
+@media only screen and (min-width:768px){
+    .main-page{
+		height: 1200px;
+	}
+	.main-page .tag{
         height: 50px;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
     }
-
-    .main-page .tag span {
-        font-size: 1.8rem;
-    }
-
-    .main-page .info {
-        height: 950px;
-    }
-
-    footer {
-        height: 150px;
-    }
-
+	.main-page .tag span{
+		font-size: 1.8rem;
+	}
+	.main-page .info{
+		height: 950px;}
+	footer {
+    height: 150px; }
     footer .logo img {
-        width: 18%;
-        height: auto;
-    }
-
+      width: 18%;
+      height: auto; }
     footer .icon {
-        padding: 0;
-    }
-
-    footer .icon a {
-        color: white;
-    }
+      padding: 0; }
+      footer .icon a {
+        color: white; }
 }
-
-@media only screen and (min-width: 992px) {
-    #navbar-search {
-        display: block !important;
-    }
-
-    .nav-item {
-        border: none;
-    }
-
-    .main-page {
-        height: 1350px;
-        padding-top: 130px;
-    }
-
-    .main-page .info {
-        height: 1100px;
-    }
-
-    footer {
-        height: 150px;
-    }
-
+@media only screen and (min-width:992px){
+	 #navbar-search {
+    display: block !important; 
+	}
+	.nav-item {
+    border: none; 
+	}
+	.main-page{
+		height: 1350px;
+		padding-top: 130px;
+	}
+	.main-page .info{
+		height: 1100px;
+	}
+	footer {
+    height: 150px; }
     footer .logo img {
-        width: 17%;
-    }
-
+      width: 17%; }
     footer .info p {
-        font-size: 0.7rem;
-    }
+      font-size: 0.7rem; }
 }
-
-@media only screen and (min-width: 1200px) {
-    .main-page .text p {
-        font-size: 1.2rem;
-    }
-
-    .main-page .info {
-        height: 1200px;
-    }
-
-    .main-page {
-        height: 1500px;
-    }
-
-    footer {
-        height: 170px;
-    }
+@media only screen and (min-width:1200px){
+	.main-page .text p{
+		font-size: 1.2rem;
+	}
+	.main-page .info{
+		height: 1200px;
+	}
+	.main-page{
+		height: 1500px;}
+	footer {
+    height: 170px; }
 }
-
-@media only screen and (min-width: 1920px) {
-    .main-page .text p {
-        font-size: 1.5rem;
-    }
-
-    .main-page .info {
-        height: 1450px;
-    }
-
-    .main-page {
-        height: 1800px;
-    }
+@media only screen and (min-width:1920px){
+	.main-page .text p{
+		font-size: 1.5rem;
+	}
+	.main-page .info{
+		height: 1450px;
+	}
+	.main-page{
+		height: 1800px;}
 }
-
-@media only screen and (min-width: 2560px) {
-    .main-page .info {
-        height: 1700px;
-    }
-
-    .main-page {
-        height: 2000px;
-    }
-
-    .main-page .tag {
+@media only screen and (min-width:2560px){
+	.main-page .info{
+		height: 1700px;
+	}
+	.main-page{
+		height: 2000px;}
+	.main-page .tag{
         height: 70px;
         border-top-right-radius: 17px;
         border-bottom-right-radius: 17px;
     }
-
-    .main-page .tag span {
-        font-size: 2.2rem;
-    }
-
-    .main-page .text p {
-        font-size: 1.7rem;
-    }
-
-    footer {
-        height: 180px;
-    }
-
+	.main-page .tag span{
+		font-size: 2.2rem;}
+	.main-page .text p{
+		font-size: 1.7rem;}
+	footer {
+    height: 180px; }
     footer .logo img {
-        width: 10%;
-        height: auto;
-    }
-
+      width: 10%;
+      height: auto; }
     footer .icon {
-        padding: 0;
-    }
-
-    footer .icon a {
+      padding: 0; }
+      footer .icon a {
         color: white;
-        margin-right: 15px;
-    }
-
+        margin-right: 15px; }
     footer .info p {
-        font-size: 1rem;
-    }
+      font-size: 1rem; }
 }

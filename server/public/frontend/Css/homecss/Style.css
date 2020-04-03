@@ -209,6 +209,7 @@ ul li a {
 
 .hidden {
     width: 100%;
+    height: 150px;
     background-color: transparent;
 }
 
@@ -256,7 +257,7 @@ ul li a {
 
 .section {
     background-color: #F2F2F2;
-    height: auto;
+    height: 600px;
 }
 
 
@@ -382,7 +383,7 @@ footer .info>p {
     }
     /* line 208, Style .scss */
     .section {
-        height: auto;
+        height: 470px;
     }
     /* line 210, Style .scss */
     .section .line {
@@ -500,7 +501,7 @@ footer .info>p {
     }
     /* line 294, Style .scss */
     .section {
-        height: auto;
+        height: 550px;
     }
     /* line 296, Style .scss */
     .section .line {
@@ -567,7 +568,7 @@ footer .info>p {
     }
     /* line 342, Style .scss */
     .section {
-        height: auto;
+        height: 580px;
     }
     /* line 344, Style .scss */
     .section .text p {
@@ -640,7 +641,7 @@ footer .info>p {
     }
     /* line 392, Style .scss */
     .section {
-        height: auto;
+        height: 750px;
     }
     /* line 393, Style .scss */
     .section .text p {
@@ -698,7 +699,7 @@ footer .info>p {
     }
     /* line 434, Style .scss */
     .section {
-        height: auto;
+        height: 850px;
     }
     /* line 436, Style .scss */
     .section .text p {

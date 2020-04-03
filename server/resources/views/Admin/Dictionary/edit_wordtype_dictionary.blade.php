@@ -11,30 +11,32 @@
                     if($message)
                     {
                             echo '<span. class="text-alert">'. $message.'</span>';
+                            // $message = Session::get('message');
                             Session::put('message',null);
                     }
                     ?>
             <div class="panel-body">
-                @foreach($edit_alphabet_dictionary as $key => $edit_value)
+                @foreach($edit_wordtype_dictionary as $key => $edit_value)
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/update-alphabet-dictionary/'.$edit_value->alphabet_id) }}"
+                    <form role="form" action="{{ URL::to('/update-wordtype-dictionary/'.$edit_value->wordtype_id) }}"
                         method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Tên Bảng Chữ Cái</label>
-                            <input type="text" value="{{ $edit_value->alphabet_name }}" name="alphabet_dictionary_name"
+                            <label for="exampleInputEmail1">Tên danh mục</label>
+                            <input type="text" value="{{ $edit_value->wordtype_name }}" name="wordtype_dictionary_name"
                                 class="form-control" id="exampleInputEmail1" placeholder="Tên danh mục">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Mô tả Bảng chữ cái</label>
+                            <label for="exampleInputPassword1">Mô tả danh mục</label>
                             <textarea style="resize: none" rows="8" class="form-control ckeditor"
-                                name="alphabet_dictionary_desc" id="exampleInputPassword1"
-                                placeholder="Mô tả danh mục">{{$edit_value->alphabet_desc}}</textarea>
+                                name="wordtype_dictionary_desc" id="exampleInputPassword1"
+                                placeholder="Mô tả danh mục">{{$edit_value->wordtype_desc}}</textarea>
                         </div>
 
 
 
-                        <button type="submit" name="update_category_product" class="btn btn-info">Thêm danh mục</button>
+                        <button type="submit" name="update_wordtype_dictionary" class="btn btn-info">Thêm danh
+                            mục</button>
                     </form>
                 </div>
                 @endforeach

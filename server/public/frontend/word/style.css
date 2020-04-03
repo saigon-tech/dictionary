@@ -417,6 +417,10 @@ footer .info > p {
         border: none;
     }
 
+    .main-page .thong-tin {
+        margin-top: 160px;
+    }
+
     footer {
         height: 150px;
     }

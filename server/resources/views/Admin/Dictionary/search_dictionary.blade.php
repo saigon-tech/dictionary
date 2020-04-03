@@ -1,4 +1,4 @@
-@extends('Layouts.admin_layout')
+@extends('admin_layout')
 @section('admin_content')
 <div class="table-agile-info">
   <div class="panel panel-default">
@@ -40,7 +40,7 @@
             <th>Name From English</th>
             <th>Name From VietName</th>
             <th>Picture</th>
-            <th>Category</th>
+            <th>Wordtype</th>
             <th>Alphabet</th>
             <th>Show</th>
             <th>Edit | Delete</th>
@@ -58,20 +58,20 @@
             <td>{{ $dictionary_search_key->dictionary_name_vn }}</td>
             <td> <img src="public/uploads/dictionary/{{ $dictionary_search_key->dictionary_image}}"
                 style="height:80px;width:80px"> </td>
-            <td>{{$dictionary_search_key->category_name }}</td>
+            <td>{{$dictionary_search_key->wordtype_name }}</td>
             <td>{{$dictionary_search_key->alphabet_name }}</td>
             <td><span class="text-ellipsis">
                 <?php
                     if($dictionary_search_key->dictionary_status==0){
                         ?>
-                <a href="{{ route('unactive.dictionary', [$dictionary_search_key->dictionary_id]) }}"><span
+                <a href="{{ URL::to("/unactive-dictionary/".$dictionary_search_key->dictionary_id )}}"><span
                     class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
                 <?php
                     }
                     else {
                         ?>
-                <a href="{{ route('active.dictionary', [$dictionary_search_key->dictionary_id]) }}"><span class="
+                <a href="{{ URL::to("/active-dictionary/".$dictionary_search_key->dictionary_id )}}""><span class="
                   fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
               <?php
@@ -80,12 +80,12 @@
               </span></td>
 
             <td>
-              <a href="{{ route('edit.dictionary', [$dictionary_search_key->dictionary_id]) }}"
+              <a href="{{ URL::to('/edit-dictionary/'.$dictionary_search_key->dictionary_id ) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
               <a onclick="return confirm('Ban cố chắc xóa sản phẩm  này không ')"
-                href="{{ route('destroy.dictionary', [$dictionary_search_key->dictionary_id]) }}"
+                href="{{ URL::to('/delete-dictionary/'.$dictionary_search_key->dictionary_id ) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>

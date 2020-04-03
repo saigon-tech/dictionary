@@ -1,13 +1,27 @@
+/* line 3, Style .scss */
+
 #body {
-  background-color: #F2F2F2; }
+    background-color: #F2F2F2;
+}
+
+
+/* line 7, Style .scss */
 
 header {
-  width: 100%;
-  position: fixed;
-  z-index: 1; }
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+
+/* line 13, Style .scss */
 
 button {
-  outline: none !important; }
+    outline: none !important;
+}
+
+
+/* line 16, Style .scss */
 
 .add {
     /*padding: 0 !important;*/
@@ -37,15 +51,24 @@ button {
 /* line 29, Style .scss */
 
 .float-right button {
-  color: #BE2031;
-  outline: none;
-  border: none; }
+    color: #BE2031;
+    outline: none;
+    border: none;
+}
+
+
+/* line 35, Style .scss */
 
 .Icon_search {
-  position: absolute;
-  top: 15%;
-  right: 0; }
-  .Icon_search i {
+    position: absolute;
+    top: 15%;
+    right: 0;
+}
+
+
+/* line 39, Style .scss */
+
+.Icon_search i {
     display: inline-block;
     color: #BE2031;
     width: 1.5rem;
@@ -53,16 +76,39 @@ button {
     vertical-align: middle;
     content: "";
     background: no-repeat center center;
-    background-size: 100% 100%; }
+    background-size: 100% 100%;
+}
+
+
+/* line 50, Style .scss */
 
 .dropdown-menu {
-  width: 200px; }
-  .dropdown-menu a:active {
-    outline: none !important; }
-  .dropdown-menu .dropdown-item-1 {
-    color: #6C6C6C; }
-    .dropdown-menu .dropdown-item-1 i {
-      font-size: 0.8rem; }
+    width: 200px;
+}
+
+
+/* line 51, Style .scss */
+
+.dropdown-menu a:active {
+    outline: none !important;
+}
+
+
+/* line 53, Style .scss */
+
+.dropdown-menu .dropdown-item-1 {
+    color: #6C6C6C;
+}
+
+
+/* line 55, Style .scss */
+
+.dropdown-menu .dropdown-item-1 i {
+    font-size: 0.8rem;
+}
+
+
+/* line 60, Style .scss */
 
 .nav-item {
     padding-left: 0 !important;
@@ -77,44 +123,88 @@ button {
 /* line 64, Style .scss */
 
 #dropdownMenuLink-1 {
-  outline: none;
-  border: none; }
-
-.navbar-brand {
-  margin-right: 0 !important; }
-
-ul li i {
-  font-size: 0.7rem; }
-ul li a {
-  margin-right: 20px; }
-
-.input-group {
-  border-bottom: 1px solid #BE2031; }
-  .input-group input {
     outline: none;
     border: none;
-    padding: 0; }
+}
+
+
+/* line 68, Style .scss */
+
+.navbar-brand {
+    margin-right: 0 !important;
+}
+
+
+/* line 72, Style .scss */
+
+ul li i {
+    font-size: 0.7rem;
+}
+
+
+/* line 74, Style .scss */
+
+ul li a {
+    margin-right: 20px;
+}
+
+
+/* line 77, Style .scss */
+
+.input-group {
+    border-bottom: 1px solid #BE2031;
+}
+
+
+/* line 79, Style .scss */
+
+.input-group input {
+    outline: none;
+    border: none;
+    padding: 0;
+}
+
+
+/* line 86, Style .scss */
 
 .button-add button {
-  background: transparent;
-  outline: none;
-  font-size: 0.75rem;
-  border: 0.5px solid #BE2031;
-  color: #BE2031; }
+    background: transparent;
+    outline: none;
+    font-size: 0.75rem;
+    border: 0.5px solid #BE2031;
+    color: #BE2031;
+}
+
+
+/* line 92, Style .scss */
+
 .button-add a:hover {
-  text-decoration: none; }
+    text-decoration: none;
+}
+
+
+/* line 96, Style .scss */
 
 .flex-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; }
-  .flex-container div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* line 97, Style .scss */
+
+.flex-container div {
     background-color: white;
     margin: 10px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
-    border-radius: 18px; }
+    border-radius: 18px;
+}
+
+
+/* line 109, Style .scss */
 
 #flex-container {
     padding-top: 150px;
@@ -124,9 +214,19 @@ ul li a {
 /* line 113, Style .scss */
 
 .hidden {
-  width: 100%;
-  height: 150px;
-  background-color: transparent; }
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+}
+
+.hidden2 {
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+}
+
+
+/* line 118, Style .scss */
 
 .main-page {
     width: 100%;
@@ -148,10 +248,19 @@ ul li a {
 
 .into-main-page span {
     font-size: 3rem;
-    margin: 0 auto; }
-  .into-main-page p {
+    margin: 0 auto;
+}
+
+
+/* line 130, Style .scss */
+
+.into-main-page p {
     font-size: 1.6rem;
-    margin: 0 auto; }
+    margin: 0 auto;
+}
+
+
+/* line 135, Style .scss */
 
 .section {
     background-color: white;
@@ -186,34 +295,42 @@ ul li a {
     color: #707070;
     padding: 0px;
     margin-bottom: 3px;
-    font-weight: 500; }
-  .section .line {
+    font-weight: 500;
+}
+
+
+/* line 153, Style .scss */
+
+.section .line {
     width: 30%;
     height: 1px;
-    background-color: #909090; }
-  .section ul {
+    background-color: #909090;
+}
+
+
+/* line 158, Style .scss */
+
+.section ul {
     list-style: none;
     margin-top: 5%;
     display: flex;
     justify-content: space-between;
     padding: 0;
-    padding-bottom: 5%; }
-    .section ul li a {
-      margin-right: 0 !important; }
-    .section ul li span {
-      padding: 0.5rem 0.75rem !important; }
+    padding-bottom: 5%;
+}
 
-a:not([href]):not([tabindex]) {
-  display: inherit;
-  margin-right: 0; }
 
-.page-item.active .page-link {
-  border-top-right-radius: 0 !important;
-  border-bottom-right-radius: 0 !important; }
+/* line 165, Style .scss */
 
-@media screen and (max-width: 570px) {
-  .section ul li {
-    height: 0 !important; } }
+.section ul li {
+    width: 25%;
+    height: 350px;
+    border: 1px solid #909090;
+}
+
+
+/* line 172, Style .scss */
+
 footer {
     background-color: #BE2031;
 }
@@ -259,9 +376,12 @@ footer .info>p {
 }
 
 @media only screen and (max-width: 575px) {
-  .flex-container div {
-    width: 60%;
-    height: 300px; }
+    /* line 187, Style .scss */
+    .flex-container div {
+        width: 60%;
+        height: 300px;
+    }
+    /* line 188, Style .scss */
     .flex-container div p {
         font-size: 1.4rem;
     }
@@ -291,31 +411,49 @@ footer .info>p {
 
     /* line 198, Style .scss */
     .main-page .into-main-page {
-      margin-top: 50px;
-      height: 300px; }
-      .main-page .into-main-page span {
-        font-size: 1.8rem; }
-      .main-page .into-main-page p {
-        font-size: 0.8rem; }
-
-  .section {
-    height: 470px; }
+        margin-top: 50px;
+        height: 300px;
+    }
+    /* line 201, Style .scss */
+    .main-page .into-main-page span {
+        font-size: 1.8rem;
+    }
+    /* line 204, Style .scss */
+    .main-page .into-main-page p {
+        font-size: 0.8rem;
+    }
+    /* line 208, Style .scss */
+    .section {
+        height: 470px;
+    }
+    /* line 210, Style .scss */
     .section .line {
-      width: 70%; }
+        width: 70%;
+    }
+    /* line 212, Style .scss */
     .section ul li {
-      height: 300px; }
-
-  footer {
-    height: 300px; }
+        height: 300px;
+    }
+    /* line 216, Style .scss */
+    footer {
+        height: 300px;
+    }
+    /* line 218, Style .scss */
     footer .logo {
-      padding: 0;
-      text-align: center; }
-      footer .logo img {
+        padding: 0;
+        text-align: center;
+    }
+    /* line 221, Style .scss */
+    footer .logo img {
         width: 30%;
-        height: auto; }
+        height: auto;
+    }
+    /* line 226, Style .scss */
     footer .info {
-      text-align: center;
-      font-size: 0.7rem; }
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    /* line 230, Style .scss */
     footer .icon {
         text-align: center;
     }
@@ -329,10 +467,13 @@ footer .info>p {
 }
 }
 @media only screen and (min-width: 576px) {
-  .flex-container div {
-    margin-bottom: 70px;
-    width: 28%;
-    height: 280px; }
+    /* line 238, Style .scss */
+    .flex-container div {
+        margin-bottom: 70px;
+        width: 28%;
+        height: 280px;
+    }
+    /* line 239, Style .scss */
     .flex-container div p {
         font-size: 1.5rem;
     }
@@ -353,30 +494,50 @@ footer .info>p {
 
     /* line 247, Style .scss */
     .main-page .into-main-page p {
-      font-size: 1rem; }
+        font-size: 1rem;
+    }
+    /* line 248, Style .scss */
     .main-page .into-main-page span {
-      font-size: 2.3rem; }
-
-  .section .text p {
-    font-size: 1.5rem; }
-  .section .line {
-    width: 70%; }
-
-  footer {
-    height: 150px; }
+        font-size: 2.3rem;
+    }
+    /* line 252, Style .scss */
+    .section .text p {
+        font-size: 1.5rem;
+    }
+    /* line 253, Style .scss */
+    .section .line {
+        width: 70%;
+    }
+    /* line 255, Style .scss */
+    footer {
+        height: 150px;
+    }
+    /* line 258, Style .scss */
     footer .logo img {
-      width: 22%; }
+        width: 22%;
+    }
+    /* line 261, Style .scss */
     footer .info {
-      text-align: center; }
-      footer .info p {
-        font-size: 0.7rem; }
+        text-align: center;
+    }
+    /* line 263, Style .scss */
+    footer .info p {
+        font-size: 0.7rem;
+    }
+    /* line 266, Style .scss */
     footer .icon {
-      text-align: center;
-      padding: 0; } }
+        text-align: center;
+        padding: 0;
+    }
+}
+
 @media only screen and (min-width: 768px) {
-  .flex-container div {
-    width: 25%;
-    height: 300px; }
+    /* line 275, Style .scss */
+    .flex-container div {
+        width: 25%;
+        height: 300px;
+    }
+    /* line 276, Style .scss */
     .flex-container div p {
         font-size: 1.5rem;
     }
@@ -397,34 +558,54 @@ footer .info>p {
 
     /* line 284, Style .scss */
     .into-main-page span {
-      font-size: 2.8rem; }
+        font-size: 2.8rem;
+    }
+    /* line 287, Style .scss */
     .into-main-page p {
-      font-size: 1.2rem; }
+        font-size: 1.2rem;
+    }
+    /* line 290, Style .scss */
     .into-main-page img {
-      width: 100%; }
-
-  .section {
-    height: 550px; }
+        width: 100%;
+    }
+    /* line 294, Style .scss */
+    .section {
+        height: 550px;
+    }
+    /* line 296, Style .scss */
     .section .line {
         width: 70%;
     }
     /* line 298, Style .scss */
     .section p {
-      font-size: 1.5rem; }
-
-  footer {
-    height: 150px; }
+        font-size: 1.5rem;
+    }
+    /* line 302, Style .scss */
+    footer {
+        height: 150px;
+    }
+    /* line 305, Style .scss */
     footer .logo img {
-      width: 18%;
-      height: auto; }
+        width: 18%;
+        height: auto;
+    }
+    /* line 309, Style .scss */
     footer .icon {
-      padding: 0; }
-      footer .icon a {
-        color: white; } }
+        padding: 0;
+    }
+    /* line 311, Style .scss */
+    footer .icon a {
+        color: white;
+    }
+}
+
 @media only screen and (min-width: 992px) {
-  .flex-container div {
-    width: 18%;
-    height: 330px; }
+    /* line 318, Style .scss */
+    .flex-container div {
+        width: 18%;
+        height: 330px;
+    }
+    /* line 319, Style .scss */
     .flex-container div p {
         font-size: 1.6rem;
     }
@@ -453,27 +634,42 @@ footer .info>p {
 
     /* line 334, Style .scss */
     .main-page span {
-      font-size: 2.3rem; }
+        font-size: 2.3rem;
+    }
+    /* line 336, Style .scss */
     .main-page p {
-      font-size: 1rem; }
-
-  #navbar-search {
-    display: block !important; }
-
-  .section {
-    height: 580px; }
+        font-size: 1rem;
+    }
+    /* line 339, Style .scss */
+    #navbar-search {
+        display: block !important;
+    }
+    /* line 342, Style .scss */
+    .section {
+        height: 580px;
+    }
+    /* line 344, Style .scss */
     .section .text p {
-      font-size: 2rem; }
-
-  footer {
-    height: 150px; }
+        font-size: 2rem;
+    }
+    /* line 348, Style .scss */
+    footer {
+        height: 150px;
+    }
+    /* line 350, Style .scss */
     footer .logo img {
-      width: 17%; }
+        width: 17%;
+    }
+    /* line 353, Style .scss */
     footer .info p {
-      font-size: 0.7rem; }
+        font-size: 0.7rem;
+    }
+    /* line 357, Style .scss */
+    .nav-item {
+        border: none;
+    }
+}
 
-  .nav-item {
-    border: none; } }
 @media only screen and (min-width: 1200px) {
     /* line 361, Style .scss */
     .flex-container>div {
@@ -497,12 +693,12 @@ footer .info>p {
     /* line 368, Style .scss */
     .nav-item {
         border: none;
+    }
+    .nav-link {
+        padding: .4rem 1rem;
+    }
+}
 
-  footer {
-    height: 170px; }
-
-  .nav-item {
-    border: none; } }
 @media only screen and (min-width: 1920px) {
     .banner-layout-text {
         position: absolute;
@@ -558,28 +754,45 @@ footer .info>p {
     }
     /* line 393, Style .scss */
     .section .text p {
-      font-size: 2.2rem; }
+        font-size: 2.2rem;
+    }
+    /* line 395, Style .scss */
     .section ul li {
-      height: 500px;
-      width: 20%; }
-
-  footer {
-    height: 180px; }
+        height: 500px;
+        width: 20%;
+    }
+    /* line 400, Style .scss */
+    footer {
+        height: 180px;
+    }
+    /* line 403, Style .scss */
     footer .logo img {
-      width: 10%;
-      height: auto; }
+        width: 10%;
+        height: auto;
+    }
+    /* line 407, Style .scss */
     footer .icon {
-      padding: 0; }
-      footer .icon a {
+        padding: 0;
+    }
+    /* line 409, Style .scss */
+    footer .icon a {
         color: white;
-        margin-right: 15px; }
+        margin-right: 15px;
+    }
+    /* line 415, Style .scss */
     footer .info p {
-      font-size: 1rem; } }
+        font-size: 1rem;
+    }
+}
+
 @media only screen and (min-width: 2560px) {
-  .flex-container div {
-    width: 10%;
-    height: 400px;
-    margin-right: 50px; }
+    /* line 421, Style .scss */
+    .flex-container div {
+        width: 10%;
+        height: 400px;
+        margin-right: 50px;
+    }
+    /* line 422, Style .scss */
     .flex-container div p {
         font-size: 1.8rem;
     }
