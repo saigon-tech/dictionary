@@ -87,13 +87,13 @@
                                                     class="fas fa-briefcase"></i> Work</a>
                                         </a>
                                         <a class="dropdown-item" href="#">
-                                            <a href="{{URL::to('wordtype-food')}}" class="dropdown-item-1 ml-3"><i
+                                            <a href="{{URL::to('category-food')}}" class="dropdown-item-1 ml-3"><i
                                                     class="fas fa-utensils"></i> Food</a>
                                             <a href="" class="dropdown-item-1 mr-3 float-right"><i
                                                     class="fas fa-restroom"></i> Sex</a>
                                         </a>
                                         <a class="dropdown-item" href="#">
-                                            <a href="{{URL::to('wordtype-game')}}" class="dropdown-item-1 ml-3"><i
+                                            <a href="{{URL::to('category-game')}}" class="dropdown-item-1 ml-3"><i
                                                     class="fas fa-gamepad"></i> Game</a>
                                             <a href="" class="dropdown-item-1 mr-3 float-right"><i
                                                     class="fab fa-internet-explorer"></i> Internet</a>
@@ -106,7 +106,7 @@
                                         </a>
                                         <a class="dropdown-item" href="#">
                                             <a href="" class="dropdown-item-1 ml-3"><i class="fas fa-swimmer"></i> Sport</a>
-                                            <a href="{{URL::to('wordtype-music')}}"
+                                            <a href="{{URL::to('category-music')}}"
                                                class="dropdown-item-1 mr-3 float-right"><i
                                                     class="fas fa-headphones-alt"></i> Music</a>
                                         </a>
@@ -160,13 +160,13 @@
                                                 class="fas fa-briefcase"></i> Work</a>
                                     </a>
                                     <a class="dropdown-item" href="#">
-                                        <a href="{{URL::to('wordtype-food')}}" class="dropdown-item-1 ml-3"><i
+                                        <a href="{{URL::to('category-food')}}" class="dropdown-item-1 ml-3"><i
                                                 class="fas fa-utensils"></i> Food</a>
                                         <a href="" class="dropdown-item-1 mr-3 float-right"><i
                                                 class="fas fa-restroom"></i> Sex</a>
                                     </a>
                                     <a class="dropdown-item" href="#">
-                                        <a href="{{URL::to('wordtype-game')}}" class="dropdown-item-1 ml-3"><i
+                                        <a href="{{URL::to('category-game')}}" class="dropdown-item-1 ml-3"><i
                                                 class="fas fa-gamepad"></i> Game</a>
                                         <a href="" class="dropdown-item-1 mr-3 float-right"><i
                                                 class="fab fa-internet-explorer"></i> Internet</a>
@@ -179,7 +179,7 @@
                                     </a>
                                     <a class="dropdown-item" href="#">
                                         <a href="" class="dropdown-item-1 ml-3"><i class="fas fa-swimmer"></i> Sport</a>
-                                        <a href="{{URL::to('wordtype-music')}}"
+                                        <a href="{{URL::to('category-music')}}"
                                            class="dropdown-item-1 mr-3 float-right"><i
                                                 class="fas fa-headphones-alt"></i> Music</a>
                                     </a>

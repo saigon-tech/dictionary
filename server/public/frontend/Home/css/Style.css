@@ -319,14 +319,61 @@ ul li a {
     padding: 0;
     padding-bottom: 5%;
 }
+.section ul li a {
+    margin-right: 0 !important;
+}
+.section ul li span {
+    padding: 0.5rem 0.75rem !important;
+}
 
-
-/* line 165, Style .scss */
-
-.section ul li {
-    width: 25%;
-    height: 350px;
-    border: 1px solid #909090;
+a:not([href]):not([tabindex]) {
+    display: inherit;
+    margin-right: 0;
+}
+.page-item.active .page-link {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+@media screen and (max-width: 767px) {
+    .page-link{
+        font-size: 2.1vw;
+        padding: 0.4rem 0.65rem !important;
+    }
+    .section ul li span{
+        padding: 0.4rem 0.65rem !important;
+    }
+}
+@media screen and (max-width:640px) {
+    .page-link{
+        padding: 0.3rem 0.5rem !important;
+    }
+    .section ul li span{
+        padding: 0.3rem 0.5rem !important;
+    }
+}
+@media screen and (max-width:460px) {
+    .page-link{
+        padding: 0.2rem 0.4rem !important;
+    }
+    .section ul li span{
+        padding: 0.2rem 0.4rem !important;
+    }
+}
+@media screen and (max-width:400px) {
+    .page-link{
+        padding: 0.1rem 0.35rem !important;
+    }
+    .section ul li span{
+        padding: 0.1rem 0.35rem !important;
+    }
+}
+@media screen and (max-width:360px) {
+    .page-link{
+        padding: 0.1rem 0.3rem !important;
+    }
+    .section ul li span{
+        padding: 0.1rem 0.3rem !important;
+    }
 }
 
 
@@ -430,10 +477,6 @@ footer .info>p {
     /* line 210, Style .scss */
     .section .line {
         width: 70%;
-    }
-    /* line 212, Style .scss */
-    .section ul li {
-        height: 300px;
     }
     /* line 216, Style .scss */
     footer {
