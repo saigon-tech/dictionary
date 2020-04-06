@@ -30,7 +30,8 @@ button {
     right: 15%;
 }
 .Menu-Onclick {
-    margin: 0 auto;
+    width: 100%;
+    padding: 10px 5%;
 }
 /* line 19, Style .scss */
 
