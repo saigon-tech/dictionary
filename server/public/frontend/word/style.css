@@ -15,6 +15,18 @@ button {
     outline: none !important;
 }
 
+#btn-padding {
+    padding: 0;
+}
+
+#layout-input {
+    justify-content: center;
+}
+
+#navbar-list-2 {
+    justify-content: center;
+}
+
 /* line 16, Style .scss */
 .add {
     padding: 0 !important;
@@ -132,11 +144,37 @@ ul li a {
     text-decoration: none;
 }
 
+.line {
+    margin: 0 auto;
+}
+
+.hidden {
+    height: 92px !important;
+}
+
 /* ===============================================================================main-page */
+.layout-main {
+    height: auto;
+    padding: 0 !important;
+    /*margin: 3rem 0;*/
+}
+.layout-content {
+    padding: 0;
+    margin: 0 auto;
+}
+.style-card {
+    padding: 7.5px;
+}
+
+.card-img {
+    height: 150px;
+    overflow: hidden;
+}
 
 .main-page {
     height: 1100px;
     background-color: #f2f2f2;
+    margin-top:0 !important;
 }
 
 .main-page .thong-tin {
@@ -223,6 +261,10 @@ footer .info > p {
         font-weight: 100;
         margin: 0;
     }
+    .style-card {
+        padding: 0;
+    }
+
 
     .main-page h1 {
         font-size: 1.5rem;
@@ -373,6 +415,10 @@ footer .info > p {
 
     .nav-item {
         border: none;
+    }
+
+    .main-page .thong-tin {
+        margin-top: 160px;
     }
 
     footer {

@@ -24,7 +24,7 @@ button{
 	padding: 0;
 	padding-bottom: 7px;
 	padding-top: 6px;
-} 
+}
 .float-right{
 	button{
 		color: $mau-do;
@@ -68,7 +68,7 @@ button{
 .navbar-brand {
 	margin-right: 0 !important;
 }
-ul li{ 
+ul li{
 	i{
 	font-size: 0.7rem;}
 	a{
@@ -84,9 +84,9 @@ ul li{
 }
 .button-add{
 	button{
-		background: transparent; 
+		background: transparent;
 		outline: none;
-		font-size: 0.75rem; 
+		font-size: 0.75rem;
 		border: 0.5px solid $mau-do;
 		color: $mau-do;}
 	a:hover{
@@ -102,7 +102,7 @@ ul li{
 		font-size: 30px;
 		border-radius: 18px;
 }
-	display: flex; 
+	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 }
@@ -183,11 +183,11 @@ footer{
 }
 }
 @media only screen and (max-width:575px){
-	.flex-container{ 
+	.flex-container{
 		div{
 			p{font-size: 1.4rem;}
 			width: 60%;
-			height: 300px;	
+			height: 300px;
 		}
 	}
 	.hidden{
@@ -233,12 +233,12 @@ footer{
 	}
 }
 
-@media only screen and (min-width: 576px) { 
+@media only screen and (min-width: 576px) {
       .flex-container{
 		div{
 			p{font-size: 1.5rem;}
 			margin-bottom: 70px;
-        	width: 28%;    
+        	width: 28%;
 			height: 280px;}
 	  }
 	  .main-page{
@@ -297,14 +297,14 @@ footer{
 		  width: 75%;}
 	  p{
 		  font-size: 1.5rem;
-	  }	
+	  }
   }
 	footer{
 		height: 150px;
 		.logo{
 			img{
 			width: 18%;
-			height: auto;}	
+			height: auto;}
 	}
 		.icon{
 			padding: 0;
@@ -395,14 +395,14 @@ footer{
 	ul li{
 		height: 500px;
 		width: 20%;
-	}	
+	}
 }
 footer{
 	height: 180px;
 	.logo{
 		img{
 		width: 10%;
-		height: auto;}	
+		height: auto;}
 	}
 	.icon{
 		padding: 0;

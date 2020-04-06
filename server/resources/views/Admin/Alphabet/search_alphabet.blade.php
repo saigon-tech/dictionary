@@ -1,4 +1,4 @@
-@extends('Layouts.admin_layout')
+@extends('admin_layout')
 @section('admin_content')
 <div class="table-agile-info">
   <div class="panel panel-default">
@@ -53,14 +53,14 @@
                 <?php
                     if($alphabet_dis_search->alphabet_status==0){
                         ?>
-                <a href="{{ route('unactive.alphabet', [$alphabet_dis_search->alphabet_id]) }}"><span
+                <a href="{{ URL::to("/unactive-alphabet-dictionary/".$alphabet_dis_search->alphabet_id )}}"><span
                     class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
                 <?php
                     }
                     else {
                         ?>
-                <a href="{{ route('active.alphabet', [$alphabet_dis_search->alphabet_id]) }}"><span class="
+                <a href="{{ URL::to("/active-alphabet-dictionary/".$alphabet_dis_search->alphabet_id )}}""><span class="
                   fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
               <?php
@@ -69,12 +69,12 @@
               </span></td>
 
             <td>
-              <a href="{{ route('edit.alphabet', [$alphabet_dis_search->alphabet_id]) }}"
+              <a href="{{ URL::to('/edit-alphabet-dictionary/'.$alphabet_dis_search->alphabet_id) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
               <a onclick="return confirm('Ban cố chắc xóa danh mục này không ')"
-                href="{{ route('destroy.alphabet', [$alphabet_dis_search->alphabet_id]) }}"
+                href="{{ URL::to('/delete-alphabet-dictionary/'.$alphabet_dis_search->alphabet_id) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>

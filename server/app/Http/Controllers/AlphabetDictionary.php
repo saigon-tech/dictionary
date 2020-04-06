@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use App\Models\Alphabet;
 use App\Logics\AlphabetLogic;
 
@@ -47,7 +46,9 @@ class AlphabetDictionary extends Controller
         $data['alphabet_desc']   = $request->alphabet_dictionary_desc;
         $data['alphabet_status'] = $request->alphabet_dictionary_status;
         $data->save();
-        return redirect()->route('list.alphabet');
+
+        return Redirect::to('/add-alphabet-dictionary');
+
     }
 
     /**
@@ -58,8 +59,8 @@ class AlphabetDictionary extends Controller
     {
 
         Alphabet::where('alphabet_id', $alphabet_dictionary_id)->update(['alphabet_status' => 1]);
-        Session::flash('message', 'Không kích hoạt danh mục Alphabet thành công');
-        return redirect()->route('list.alphabet');
+        Session::put("message", "Không kích hoạt danh mục sản phẩm thành công");
+        return Redirect::to("all-alphabet-dictionary");
     }
 
     /**
@@ -70,8 +71,8 @@ class AlphabetDictionary extends Controller
     {
 
         Alphabet::where('alphabet_id', $alphabet_dictionary_id)->update(['alphabet_status' => 0]);
-        Session::flash('message', 'Kích hoạt danh mục Alphabet thành công');
-        return redirect()->route('list.alphabet');
+        Session::put("message", "Thành kích hoạt danh mục bảng chữ cái thành công");
+        return Redirect::to("all-alphabet-dictionary");
     }
 
     /**
@@ -83,9 +84,9 @@ class AlphabetDictionary extends Controller
 
         $edit_alphabet_dictionary = Alphabet::where('alphabet_id', $alphabet_dictionary_id)->get();
 
-        $manager_alphabet_dictionary = view('Admin.Alphabet.edit_alphabet_dictionary')->with('edit_alphabet_dictionary',
+        $manager_alphabet_dictionary = view('admin.edit_alphabet_dictionary')->with('edit_alphabet_dictionary',
             $edit_alphabet_dictionary);
-        return view('Layouts.admin_layout')->with('Admin.Alphabet.edit_alphabet_dictionary', $manager_alphabet_dictionary);
+        return view('admin_layout')->with('admin.edit_alphabet_dictionary', $manager_alphabet_dictionary);
     }
 
     /**
@@ -100,8 +101,8 @@ class AlphabetDictionary extends Controller
         $data['alphabet_name'] = $request->alphabet_dictionary_name;
         $data['alphabet_desc'] = $request->alphabet_dictionary_desc;
         Alphabet::where('alphabet_id', $alphabet_dictionary_id)->update($data);
-        Session::flash('message', 'Cập nhật danh mục Alphabet thành công');
-        return redirect()->route('list.alphabet');
+        Session::put('message', 'Cap nhap danh mục sản phầm thành công');
+        return Redirect::to("all-alphabet-dictionary");
     }
 
     /**
@@ -112,8 +113,8 @@ class AlphabetDictionary extends Controller
     {
 
         Alphabet::where('alphabet_id', $alphabet_dictionary_id)->delete();
-        Session::flash('message', 'Xóa danh mục sản phầm thành công');
-        return redirect()->route('list.alphabet');
+        Session::put('message', 'Xoa danh mục sản phầm thành công');
+        return Redirect::to("all-alphabet-dictionary");
     }
 
     /**
@@ -124,7 +125,7 @@ class AlphabetDictionary extends Controller
     {
         $keywords        = $request->keywords_submit;
         $search_alphabet = Alphabet::where('alphabet_name', 'like', '%' . $keywords . '%')->get();
-        return view('Admin.Alphabet.search_alphabet')->with('search_alphabet', $search_alphabet);
+        return view('admin.search_alphabet')->with('search_alphabet', $search_alphabet);
     }
 
 }

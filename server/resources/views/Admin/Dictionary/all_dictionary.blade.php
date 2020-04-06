@@ -1,4 +1,4 @@
-@extends('Layouts.admin_layout')
+@extends('admin_layout')
 @section('admin_content')
 <div class="table-agile-info">
   <div class="panel panel-default">
@@ -7,7 +7,7 @@
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
-          <a href="{{ route('add.dictionary') }}" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Dictionary</a>
+
       </div>
       <div class="col-sm-4">
       </div>
@@ -41,7 +41,7 @@
             <th>Name From English</th>
             <th>Name From VietName</th>
             <th>Picture</th>
-            <th>Category</th>
+            <th>Wordtype</th>
             <th>Alphabet</th>
             <th>Show</th>
             <th>Edit | Delete</th>
@@ -54,30 +54,36 @@
           <tr>
             <td>{{$dicti->dictionary_name_eng }}</td>
             <td>{{ $dicti->dictionary_name_vn }}</td>
-            <td>
-                <img src="{{ url('/public/uploads/dictionary/'.$dicti->dictionary_image) }}" style="height:80px;width:80px">
+            <td> <img src="public/uploads/dictionary/{{ $dicti->dictionary_image}}" style="height:80px;width:80px">
             </td>
-            <td>{{$dicti->category_name }}</td>
+            <td>{{$dicti->wordtype_name }}</td>
             <td>{{$dicti->alphabet_name }}</td>
             <td><span class="text-ellipsis">
-                @if($dicti->dictionary_status==0)
-                    <a href="{{ route('unactive.dictionary', [$dicti->dictionary_id]) }}"><span
-                        class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
+                <?php
+                    if($dicti->dictionary_status==0){
+                        ?>
+                <a href="{{ URL::to("/unactive-dictionary/".$dicti->dictionary_id )}}"><span
+                    class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
-                @else
-                    <a href="{{ route('active.dictionary', [$dicti->dictionary_id])}}"><span class=" fa-thumb-styling-two
-                      fa fa-thumbs-down" style="font-size: 28px;
+                <?php
+                    }
+                    else {
+                        ?>
+                <a href="{{ URL::to("/active-dictionary/".$dicti->dictionary_id )}}""><span class=" fa-thumb-styling-two
+                  fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
-                 @endif
+              <?php
+                    }
+                    ?>
               </span></td>
 
             <td>
-              <a href="{{ route('edit.dictionary', [$dicti->dictionary_id]) }}" class="active styling-edit"
+              <a href="{{ URL::to('/edit-dictionary/'.$dicti->dictionary_id ) }}" class="active styling-edit"
                 ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
               <a onclick="return confirm('Ban cố chắc xóa sản phẩm  này không ')"
-                href="{{ route('destroy.dictionary', [$dicti->dictionary_id]) }}" class="active styling-edit"
+                href="{{ URL::to('/delete-dictionary/'.$dicti->dictionary_id ) }}" class="active styling-edit"
                 ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
