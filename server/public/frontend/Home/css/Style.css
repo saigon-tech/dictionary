@@ -29,10 +29,12 @@ button {
     position: absolute;
     right: 15%;
 }
+
 .Menu-Onclick {
     width: 100%;
     padding: 10px 5%;
 }
+
 /* line 19, Style .scss */
 
 .add a:hover {
@@ -115,6 +117,7 @@ button {
     padding-left: 0 !important;
     border-bottom: 0.1px solid #F2F2F2;
 }
+
 #hambubger-menu {
     position: absolute;
     right: 0;
@@ -319,9 +322,11 @@ ul li a {
     padding: 0;
     padding-bottom: 5%;
 }
+
 .section ul li a {
     margin-right: 0 !important;
 }
+
 .section ul li span {
     padding: 0.5rem 0.75rem !important;
 }
@@ -330,48 +335,59 @@ a:not([href]):not([tabindex]) {
     display: inherit;
     margin-right: 0;
 }
+
 .page-item.active .page-link {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
 }
+
 @media screen and (max-width: 767px) {
-    .page-link{
+    .page-link {
         font-size: 2.1vw;
         padding: 0.4rem 0.65rem !important;
     }
-    .section ul li span{
+
+    .section ul li span {
         padding: 0.4rem 0.65rem !important;
     }
 }
-@media screen and (max-width:640px) {
-    .page-link{
+
+@media screen and (max-width: 640px) {
+    .page-link {
         padding: 0.3rem 0.5rem !important;
     }
-    .section ul li span{
+
+    .section ul li span {
         padding: 0.3rem 0.5rem !important;
     }
 }
-@media screen and (max-width:460px) {
-    .page-link{
+
+@media screen and (max-width: 460px) {
+    .page-link {
         padding: 0.2rem 0.4rem !important;
     }
-    .section ul li span{
+
+    .section ul li span {
         padding: 0.2rem 0.4rem !important;
     }
 }
-@media screen and (max-width:400px) {
-    .page-link{
+
+@media screen and (max-width: 400px) {
+    .page-link {
         padding: 0.1rem 0.35rem !important;
     }
-    .section ul li span{
+
+    .section ul li span {
         padding: 0.1rem 0.35rem !important;
     }
 }
-@media screen and (max-width:360px) {
-    .page-link{
+
+@media screen and (max-width: 360px) {
+    .page-link {
         padding: 0.1rem 0.3rem !important;
     }
-    .section ul li span{
+
+    .section ul li span {
         padding: 0.1rem 0.3rem !important;
     }
 }
@@ -393,13 +409,18 @@ footer {
     position: fixed;
     right: 50px;
 }
+
 #btn-back-to-top.show {
     opacity: 1;
     visibility: visible;
 }
 
+#btn-back-to-top:hover {
+    color: white;
+}
+
 #max-width-mobile {
-    margin-top:15px;
+    margin-top: 15px;
 }
 
 /* line 174, Style .scss */
@@ -419,7 +440,7 @@ footer .icon a {
 
 /* line 181, Style .scss */
 
-footer .info>p {
+footer .info > p {
     color: white;
 }
 
@@ -429,23 +450,33 @@ footer .info>p {
         width: 60%;
         height: 300px;
     }
+
     /* line 188, Style .scss */
     .flex-container div p {
         font-size: 1.4rem;
     }
+
     /* line 193, Style .scss */
     .hidden {
         height: 100px;
     }
+
     /* line 196, Style .scss */
     .main-page {
         height: 450px;
     }
+
     .banner-layout-text {
         display: inline-block;
         padding-top: 10px;
         padding-left: 30px;
     }
+
+    #btn-back-to-top {
+        bottom: 30px;
+        right: 10px;
+    }
+
     .navbar {
         padding: 10px 5%;
     }
@@ -462,54 +493,73 @@ footer .info>p {
         margin-top: 50px;
         height: 300px;
     }
+
     /* line 201, Style .scss */
     .main-page .into-main-page span {
         font-size: 1.8rem;
     }
+
     /* line 204, Style .scss */
     .main-page .into-main-page p {
         font-size: 0.8rem;
     }
+
     /* line 208, Style .scss */
     .section {
         height: 470px;
     }
+
     /* line 210, Style .scss */
     .section .line {
         width: 70%;
     }
+
     /* line 216, Style .scss */
     footer {
         height: 300px;
     }
+
     /* line 218, Style .scss */
     footer .logo {
         padding: 0;
         text-align: center;
     }
+
     /* line 221, Style .scss */
     footer .logo img {
         width: 30%;
         height: auto;
     }
+
     /* line 226, Style .scss */
     footer .info {
         text-align: center;
         font-size: 0.7rem;
     }
+
     /* line 230, Style .scss */
     footer .icon {
         text-align: center;
     }
 }
-@media only screen and (min-width: 576px)  and (max-width: 991px){
+
+@media only screen and (min-width: 576px)  and (max-width: 767px) {
+    #btn-back-to-top {
+        bottom: 30px;
+        right: 10px;
+    }
+}
+
+@media only screen and (min-width: 576px)  and (max-width: 991px) {
     #form-mobile {
-    position: absolute;
-    top: 10px;
-    right: 15%;
-    width: 50%;
+        position: absolute;
+        top: 10px;
+        right: 15%;
+        width: 50%;
+    }
+
 }
-}
+
 @media only screen and (min-width: 576px) {
     /* line 238, Style .scss */
     .flex-container div {
@@ -517,57 +567,67 @@ footer .info>p {
         width: 28%;
         height: 280px;
     }
+
     /* line 239, Style .scss */
     .flex-container div p {
         font-size: 1.5rem;
     }
+
     /* line 244, Style .scss */
     .main-page {
         height: 550px;
     }
+
     .banner-layout-text {
         display: inline-block;
         padding-top: 20px;
         padding-left: 50px;
     }
+
     .navbar {
         padding: 10px 5%;
     }
-
-
 
     /* line 247, Style .scss */
     .main-page .into-main-page p {
         font-size: 1rem;
     }
+
     /* line 248, Style .scss */
     .main-page .into-main-page span {
         font-size: 2.3rem;
     }
+
     /* line 252, Style .scss */
     .section .text p {
         font-size: 1.5rem;
     }
+
     /* line 253, Style .scss */
     .section .line {
         width: 70%;
     }
+
     /* line 255, Style .scss */
     footer {
         height: 150px;
     }
+
     /* line 258, Style .scss */
     footer .logo img {
         width: 22%;
     }
+
     /* line 261, Style .scss */
     footer .info {
         text-align: center;
     }
+
     /* line 263, Style .scss */
     footer .info p {
         font-size: 0.7rem;
     }
+
     /* line 266, Style .scss */
     footer .icon {
         text-align: center;
@@ -581,13 +641,15 @@ footer .info>p {
         width: 25%;
         height: 300px;
     }
+
     /* line 276, Style .scss */
     .flex-container div p {
         font-size: 1.5rem;
     }
+
     .main-page {
-         height: 550px;
-     }
+        height: 550px;
+    }
 
     .banner-layout-text {
         display: inline-block;
@@ -598,45 +660,54 @@ footer .info>p {
     .navbar {
         padding: 10px 5%;
     }
-    /* line 281, Style .scss */
 
+    /* line 281, Style .scss */
     /* line 284, Style .scss */
     .into-main-page span {
         font-size: 2.8rem;
     }
+
     /* line 287, Style .scss */
     .into-main-page p {
         font-size: 1.2rem;
     }
+
     /* line 290, Style .scss */
     .into-main-page img {
         width: 100%;
     }
+
     /* line 294, Style .scss */
     .section {
         height: 550px;
     }
+
     /* line 296, Style .scss */
     .section .line {
         width: 70%;
     }
+
     /* line 298, Style .scss */
     .section p {
         font-size: 1.5rem;
     }
+
     /* line 302, Style .scss */
     footer {
         height: 150px;
     }
+
     /* line 305, Style .scss */
     footer .logo img {
         width: 18%;
         height: auto;
     }
+
     /* line 309, Style .scss */
     footer .icon {
         padding: 0;
     }
+
     /* line 311, Style .scss */
     footer .icon a {
         color: white;
@@ -649,27 +720,32 @@ footer .info>p {
         width: 18%;
         height: 330px;
     }
+
     /* line 319, Style .scss */
     .flex-container div p {
         font-size: 1.6rem;
     }
+
     /* line 324, Style .scss */
     .main-page {
         margin-top: 100px;
         height: 250px;
     }
+
     .banner-layout-text {
         position: absolute;
         top: calc(50% - 56px);
-        padding-left:0;
-        padding-top:0;
+        padding-left: 0;
+        padding-top: 0;
     }
+
     /* line 327, Style .scss */
     .main-page .into-main-page {
         /*height: 400px !important;*/
         max-width: 60.666667%;
         /*margin-top: 100px;*/
     }
+
     /* line 330, Style .scss */
     .main-page img {
         width: 100%;
@@ -680,34 +756,42 @@ footer .info>p {
     .main-page span {
         font-size: 2.3rem;
     }
+
     /* line 336, Style .scss */
     .main-page p {
         font-size: 1rem;
     }
+
     /* line 339, Style .scss */
     #navbar-search {
         display: block !important;
     }
+
     /* line 342, Style .scss */
     .section {
         height: 580px;
     }
+
     /* line 344, Style .scss */
     .section .text p {
         font-size: 2rem;
     }
+
     /* line 348, Style .scss */
     footer {
         height: 150px;
     }
+
     /* line 350, Style .scss */
     footer .logo img {
         width: 17%;
     }
+
     /* line 353, Style .scss */
     footer .info p {
         font-size: 0.7rem;
     }
+
     /* line 357, Style .scss */
     .nav-item {
         border: none;
@@ -716,28 +800,34 @@ footer .info>p {
 
 @media only screen and (min-width: 1200px) {
     /* line 361, Style .scss */
-    .flex-container>div {
+    .flex-container > div {
         width: 15%;
         height: 330px;
     }
+
     .main-page {
         /*padding-top: 30px;*/
         height: 450px;
     }
+
     .add {
         right: 15%;
     }
+
     .navbar {
         padding: 0 15%;
     }
+
     /* line 365, Style .scss */
     footer {
         height: 170px;
     }
+
     /* line 368, Style .scss */
     .nav-item {
         border: none;
     }
+
     .nav-link {
         padding: .4rem 1rem;
     }
@@ -748,20 +838,24 @@ footer .info>p {
         position: absolute;
         top: calc(50% - 56px);
     }
+
     /* line 372, Style .scss */
-    .flex-container>div {
+    .flex-container > div {
         width: 15%;
         height: 400px;
         margin-right: 50px;
     }
+
     /* line 377, Style .scss */
     .main-page {
         /*padding-top: 30px;*/
         height: 450px;
     }
+
     #max-width {
         max-width: 100% !important;
     }
+
     /* line 380, Style .scss */
     .main-page .into-main-page {
         /*height: 300px;*/
@@ -769,60 +863,74 @@ footer .info>p {
         padding: 0;
         overflow: hidden;
     }
+
     /* line 383, Style .scss */
     .main-page .into-main-page img {
         width: 100%;
         height: auto;
     }
+
     /* line 386, Style .scss */
     .main-page .into-main-page span {
         font-size: 4rem;
     }
+
     /* line 389, Style .scss */
     .main-page .into-main-page p {
         font-size: 1.5rem;
     }
+
     .layout-main {
         max-width: 60.666667%;
         margin: 0 auto;
     }
+
     .add {
         right: 20%;
     }
+
     .navbar {
         padding: 0 20%;
     }
+
     /* line 392, Style .scss */
     .section {
         height: 750px;
     }
+
     /* line 393, Style .scss */
     .section .text p {
         font-size: 2.2rem;
     }
+
     /* line 395, Style .scss */
     .section ul li {
         height: 500px;
         width: 20%;
     }
+
     /* line 400, Style .scss */
     footer {
         height: 180px;
     }
+
     /* line 403, Style .scss */
     footer .logo img {
         width: 10%;
         height: auto;
     }
+
     /* line 407, Style .scss */
     footer .icon {
         padding: 0;
     }
+
     /* line 409, Style .scss */
     footer .icon a {
         color: white;
         margin-right: 15px;
     }
+
     /* line 415, Style .scss */
     footer .info p {
         font-size: 1rem;
@@ -836,31 +944,38 @@ footer .info>p {
         height: 400px;
         margin-right: 50px;
     }
+
     /* line 422, Style .scss */
     .flex-container div p {
         font-size: 1.8rem;
     }
+
     /* line 428, Style .scss */
     .main-page {
         padding-left: 100px;
         padding-right: 100px;
         height: 550px;
     }
+
     .banner-layout-text {
         position: absolute;
         top: calc(50% - 56px);
     }
+
     /* line 429, Style .scss */
     .main-page span {
         font-size: 5rem;
     }
+
     #max-width {
         max-width: 100% !important;
     }
+
     /* line 434, Style .scss */
     .section {
         height: 850px;
     }
+
     /* line 436, Style .scss */
     .section .text p {
         font-size: 3rem;

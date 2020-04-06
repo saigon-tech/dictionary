@@ -25,11 +25,6 @@
                 <img src="{{URL::to ('resources/Image/Asset3.png') }}" id="LogoMENU" alt="logo" width="120vw"
                      height="auto">
             </a>
-            <button class="navbar-toggler" id="hambubger-menu" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
         <div class="col-lg-8" id="form-mobile">
             <div id="navbar-search" class="">
@@ -48,8 +43,8 @@
                     </form>
                 </div>
             </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="Menu-Onclick d-lg-block d-sm-none d-none">
+            <div class="collapse navbar-collapse d-lg-block dropdown-hambuger-menu" id="navbarSupportedContent">
+                <div class="Menu-Onclick ">
                     <div class="" id="navbar-list-2">
                         <ul class="navbar-nav list-inline d-flex mx-auto justify-content-center">
                             <li class="nav-item active list-inline-item text-danger">
@@ -121,7 +116,12 @@
                 </div>
             </div>
         </div>
-        <div class="collapse navbar-collapse" aria-labelledby="navbarDropdown" id="navbarSupportedContent">
+        <button class="navbar-toggler" id="hambubger-menu" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" aria-labelledby="navbarDropdown">
             <div class="Menu-Onclick d-lg-none ">
                 <div class="" id="navbar-list-2">
                     <ul class="navbar-nav list-inline d-flex mx-auto justify-content-center">
@@ -196,18 +196,17 @@
         <div class="add">
             <a href="{{URL::to('/add-all-dictionary')}}" data-toggle="tooltip" title="Please add your words!">
                 <button type="button"
-                        class="btn btn-outline-danger d-md-none d-lg-block d-sm-none d-none "><i
+                        class="btn btn-outline-danger  d-lg-block  "><i
                         class="fa fa-plus" aria-hidden="true"></i></button>
             </a>
         </div>
     </nav>
-
 </header>
 <!-- =====================================================================================================================main-page -->
 
 @yield('container')
 <!-- ==========================================================================================================================================footer -->
-<div class=" btn back-home" id="btn-back-to-top"><a><i class="fa fa-arrow-up" aria-hidden="true"></i>
+<div class=" btn back-home btn-outline-danger" id="btn-back-to-top"><a><i class="fa fa-arrow-up" aria-hidden="true"></i>
     </a></div>
 <footer class="col-xs-12 col-12 col-md-12 col-lg-12">
     <div class="logo col-10 col-md-10 col-lg-8 mx-auto pt-3 pl-0"><a href="index.html"><img
