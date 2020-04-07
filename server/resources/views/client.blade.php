@@ -23,11 +23,6 @@
         <div class="col-lg-2 col-sm-3 col-3 col-md-3 logo-pc">
             <div class="header-logo-hidden">
                 <a class="navbar-brand brand-logo" id="LogoMENU" href="{{URL::to('/')}}">
-                    {{--                    <picture>--}}
-                    {{--                        <source media="(max-width: 991px)" srcset="img_pink_flowers.jpg">--}}
-                    {{--                        <source media="(min-width: 465px)" srcset="img_white_flower.jpg">--}}
-                    {{--                        <img src="{{URL::to ('resources/Image/Asset3.png') }}" alt="Flowers" style="width:auto;">--}}
-                    {{--                    </picture>--}}
                     <img src="{{URL::to ('resources/Image/Asset3.png') }}" class="d-lg-block d-sm-none d-md-none d-none"
                          id="LogoMENU" alt="logo" width="120vw"
                          height="auto">
@@ -37,7 +32,6 @@
                          height="auto">
                 </a>
             </div>
-
         </div>
         <div class="col-lg-8" id="form-mobile">
             <div id="navbar-search" class="">

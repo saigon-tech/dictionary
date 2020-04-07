@@ -4,7 +4,6 @@
     background-color: #F2F2F2;
 }
 
-
 /* line 7, Style .scss */
 
 header {
@@ -13,18 +12,11 @@ header {
     z-index: 1;
 }
 
-.header-logo {
-    background-image: url("../../../../resources/Image/New folder/Asset 3 copy.png");
-    width: 120vw;
-    height: auto;
-}
-
 /* line 13, Style .scss */
 
 button {
     outline: none !important;
 }
-
 
 /* line 16, Style .scss */
 
@@ -53,7 +45,6 @@ button {
 
 .header-img-logo {
     margin-top: 5%;
-
 }
 
 /* line 23, Style .scss */
@@ -64,7 +55,6 @@ button {
     padding-top: 6px;
 }
 
-
 /* line 29, Style .scss */
 
 .float-right button {
@@ -73,7 +63,6 @@ button {
     border: none;
 }
 
-
 /* line 35, Style .scss */
 
 .Icon_search {
@@ -81,7 +70,6 @@ button {
     top: 15%;
     right: 0;
 }
-
 
 /* line 39, Style .scss */
 
@@ -96,13 +84,11 @@ button {
     background-size: 100% 100%;
 }
 
-
 /* line 50, Style .scss */
 
 .dropdown-menu {
     width: 200px;
 }
-
 
 /* line 51, Style .scss */
 
@@ -110,20 +96,17 @@ button {
     outline: none !important;
 }
 
-
 /* line 53, Style .scss */
 
 .dropdown-menu .dropdown-item-1 {
     color: #6C6C6C;
 }
 
-
 /* line 55, Style .scss */
 
 .dropdown-menu .dropdown-item-1 i {
     font-size: 0.8rem;
 }
-
 
 /* line 60, Style .scss */
 
@@ -145,13 +128,11 @@ button {
     border: none;
 }
 
-
 /* line 68, Style .scss */
 
 .navbar-brand {
     margin-right: 0 !important;
 }
-
 
 /* line 72, Style .scss */
 
@@ -159,20 +140,17 @@ ul li i {
     font-size: 0.7rem;
 }
 
-
 /* line 74, Style .scss */
 
 ul li a {
     margin-right: 20px;
 }
 
-
 /* line 77, Style .scss */
 
 .input-group {
     border-bottom: 1px solid #BE2031;
 }
-
 
 /* line 79, Style .scss */
 
@@ -181,7 +159,6 @@ ul li a {
     border: none;
     padding: 0;
 }
-
 
 /* line 86, Style .scss */
 
@@ -193,13 +170,11 @@ ul li a {
     color: #BE2031;
 }
 
-
 /* line 92, Style .scss */
 
 .button-add a:hover {
     text-decoration: none;
 }
-
 
 /* line 96, Style .scss */
 
@@ -208,7 +183,6 @@ ul li a {
     justify-content: center;
     flex-wrap: wrap;
 }
-
 
 /* line 97, Style .scss */
 
@@ -220,7 +194,6 @@ ul li a {
     font-size: 30px;
     border-radius: 18px;
 }
-
 
 /* line 109, Style .scss */
 
@@ -243,7 +216,6 @@ ul li a {
     background-color: transparent;
 }
 
-
 /* line 118, Style .scss */
 
 .main-page {
@@ -251,7 +223,6 @@ ul li a {
     background-color: white;
     overflow: hidden;
 }
-
 
 /* line 122, Style .scss */
 
@@ -261,14 +232,12 @@ ul li a {
     padding: 0 !important;
 }
 
-
 /* line 126, Style .scss */
 
 .into-main-page span {
     font-size: 3rem;
     margin: 0 auto;
 }
-
 
 /* line 130, Style .scss */
 
@@ -277,7 +246,6 @@ ul li a {
     margin: 0 auto;
 }
 
-
 /* line 135, Style .scss */
 
 .section {
@@ -285,13 +253,11 @@ ul li a {
     height: 600px;
 }
 
-
 /* line 138, Style .scss */
 
 .section .text {
     text-align: center;
 }
-
 
 /* line 141, Style .scss */
 
@@ -299,13 +265,11 @@ ul li a {
     width: 100%;
 }
 
-
 /* line 144, Style .scss */
 
 .section span {
     padding: 0 !important;
 }
-
 
 /* line 147, Style .scss */
 
@@ -316,7 +280,6 @@ ul li a {
     font-weight: 500;
 }
 
-
 /* line 153, Style .scss */
 
 .section .line {
@@ -324,7 +287,6 @@ ul li a {
     height: 1px;
     background-color: #909090;
 }
-
 
 /* line 158, Style .scss */
 
@@ -406,7 +368,6 @@ a:not([href]):not([tabindex]) {
     }
 }
 
-
 /* line 172, Style .scss */
 
 footer {
@@ -443,14 +404,12 @@ footer .icon {
     padding: 0;
 }
 
-
 /* line 176, Style .scss */
 
 footer .icon a {
     color: white;
     margin-right: 10px;
 }
-
 
 /* line 181, Style .scss */
 
@@ -757,12 +716,9 @@ footer .info > p {
         padding-top: 0;
     }
 
-
     /* line 327, Style .scss */
     .main-page .into-main-page {
-        /*height: 400px !important;*/
         max-width: 60.666667%;
-        /*margin-top: 100px;*/
     }
 
     /* line 330, Style .scss */
@@ -825,7 +781,6 @@ footer .info > p {
     }
 
     .main-page {
-        /*padding-top: 30px;*/
         height: 450px;
     }
 
@@ -871,7 +826,6 @@ footer .info > p {
 
     /* line 377, Style .scss */
     .main-page {
-        /*padding-top: 30px;*/
         height: 450px;
     }
 
