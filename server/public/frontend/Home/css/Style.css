@@ -13,6 +13,11 @@ header {
     z-index: 1;
 }
 
+.header-logo {
+    background-image: url("../../../../resources/Image/New folder/Asset 3 copy.png");
+    width: 120vw;
+    height: auto;
+}
 
 /* line 13, Style .scss */
 
@@ -30,9 +35,14 @@ button {
     right: 15%;
 }
 
+.add button {
+    padding: 3px 8px;
+    margin: 0 5px;
+}
+
 .Menu-Onclick {
     width: 100%;
-    padding: 10px 5%;
+    margin: 10px 10%;
 }
 
 /* line 19, Style .scss */
@@ -41,6 +51,10 @@ button {
     text-decoration: none;
 }
 
+.header-img-logo {
+    margin-top: 5%;
+
+}
 
 /* line 23, Style .scss */
 
@@ -120,8 +134,8 @@ button {
 
 #hambubger-menu {
     position: absolute;
-    right: 0;
-    top: 5%;
+    right: 5%;
+    padding: 0;
 }
 
 /* line 64, Style .scss */
@@ -483,9 +497,9 @@ footer .info > p {
 
     #form-mobile {
         position: absolute;
-        top: 10px;
-        right: 15%;
-        width: 50%;
+        top: 20px;
+        right: 12%;
+        width: 80%;
     }
 
     /* line 198, Style .scss */
@@ -553,9 +567,9 @@ footer .info > p {
 @media only screen and (min-width: 576px)  and (max-width: 991px) {
     #form-mobile {
         position: absolute;
-        top: 10px;
-        right: 15%;
-        width: 50%;
+        top: 20px;
+        right: 10%;
+        width: 80%;
     }
 
 }
@@ -586,6 +600,10 @@ footer .info > p {
 
     .navbar {
         padding: 10px 5%;
+    }
+
+    .Menu-Onclick {
+        margin: 10px 7%;
     }
 
     /* line 247, Style .scss */
@@ -739,6 +757,7 @@ footer .info > p {
         padding-top: 0;
     }
 
+
     /* line 327, Style .scss */
     .main-page .into-main-page {
         /*height: 400px !important;*/
@@ -812,6 +831,10 @@ footer .info > p {
 
     .add {
         right: 15%;
+    }
+
+    .logo-pc {
+        padding: 0;
     }
 
     .navbar {

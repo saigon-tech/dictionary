@@ -43,11 +43,11 @@
 
                     </div>
                 @endforeach
-                    <div class="card-group col-12 col-md-6 col-sm-12 style-card">
-                        <ul class="pagination">
-                            <li><a>{{$all_dictionary->links()}}</a></li>
-                        </ul>
-                    </div>
+                <div class="card-group col-12 col-md-6 col-sm-12 style-card">
+                    <ul class="pagination">
+                        <li><a>{{$all_dictionary->links()}}</a></li>
+                    </ul>
+                </div>
             </div>
 
 
