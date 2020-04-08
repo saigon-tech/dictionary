@@ -31,7 +31,7 @@
                     <div class="card-group col-12 col-md-6 col-lg-4 style-card">
                         <div class="card shadow rounded">
                             <div class="card-img">
-                                <img src="{{ URL::to('/uploads/dictionary/'.$lienquan->dictionary_image) }}"
+                                <img src="{{ url('/public/uploads/dictionary/'.$lienquan->dictionary_image) }}"
                                      class="card-img-top" alt="...">
                             </div>
                             <div class="card-body">
