@@ -158,10 +158,12 @@ ul li a {
     padding: 0 !important;
     /*margin: 3rem 0;*/
 }
+
 .layout-content {
     padding: 0;
     margin: 0 auto;
 }
+
 .style-card {
     padding: 7.5px;
 }
@@ -174,7 +176,7 @@ ul li a {
 .main-page {
     height: 1100px;
     background-color: #f2f2f2;
-    margin-top:0 !important;
+    margin-top: 0 !important;
 }
 
 .main-page .thong-tin {
@@ -242,15 +244,17 @@ footer .icon a {
 footer .info > p {
     color: white;
 }
-@media only screen and (min-width: 576px)  and (max-width: 767px) {
+
+@media only screen and (min-width: 319px)  and (max-width: 991px) {
     .dropdown-hambuger-menu {
         position: fixed;
-        background: red;
+        background: white;
         left: 0px;
         right: 0px;
-        top: 59px;
+        top: 70px;
     }
 }
+
 @media only screen and (max-width: 575px) {
     .main-page {
         height: 900px;
@@ -269,10 +273,10 @@ footer .info > p {
         font-weight: 100;
         margin: 0;
     }
+
     .style-card {
         padding: 0;
     }
-
 
     .main-page h1 {
         font-size: 1.5rem;

@@ -20,11 +20,18 @@
 <body id="body top">
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="col-lg-2">
-            <a class="navbar-brand brand-logo " href="{{URL::to('/')}}">
-                <img src="{{URL::to ('resources/Image/Asset3.png') }}" id="LogoMENU" alt="logo" width="120vw"
-                     height="auto">
-            </a>
+        <div class="col-lg-2 col-sm-3 col-3 col-md-3 logo-pc">
+            <div class="header-logo-hidden">
+                <a class="navbar-brand brand-logo" id="LogoMENU" href="{{URL::to('/')}}">
+                    <img src="{{URL::to ('resources/Image/Asset3.png') }}" class="d-lg-block d-sm-none d-md-none d-none"
+                         id="LogoMENU" alt="logo" width="120vw"
+                         height="auto">
+                    <img src="{{URL::to ('resources/Image/Asset6.png') }}"
+                         class="d-lg-none d-sm-block d-md-block d-block header-img-logo" id="LogoMENU" alt="logo"
+                         width="100vw"
+                         height="auto">
+                </a>
+            </div>
         </div>
         <div class="col-lg-8" id="form-mobile">
             <div id="navbar-search" class="">
@@ -121,78 +128,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" aria-labelledby="navbarDropdown">
-            <div class="Menu-Onclick d-lg-none ">
-                <div class="" id="navbar-list-2">
-                    <ul class="navbar-nav list-inline d-flex mx-auto justify-content-center">
-                        <li class="nav-item active list-inline-item text-danger">
-                            <div class="dropdown show">
-                                <a class="btn dropdown-toggle text-danger pr-0 pl-0" href="#" role="button"
-                                   id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Alphabet
-                                </a>
-                                <div class="dropdown-menu pl-4" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">
-                                        @foreach ($alphabet as $key => $alphabet_nav)
-                                            <a href="{{ route('detail.alphabet',$alphabet_nav->alphabet_id) }}"
-                                               class="dropdown-item-1">
-                                                {{ $alphabet_nav->alphabet_name }}</a>
-                                        @endforeach
-                                    </a>
-                                </div>
-                            </div>
 
-                        </li>
-                        <li class="nav-item list-inline-item text-danger">
-                            <div class="dropdown show">
-                                <a class="btn dropdown-toggle text-danger pr-0 pl-0" href="#" role="button"
-                                   id="dropdownMenuLink-1" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Category
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">
-                                        <a href="" class="dropdown-item-1 ml-3"><i
-                                                class="fas fa-graduation-cap"></i>
-                                            College</a>
-                                        <a href="" class="dropdown-item-1 mr-3 float-right"><i
-                                                class="fas fa-briefcase"></i> Work</a>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <a href="{{URL::to('category-food')}}" class="dropdown-item-1 ml-3"><i
-                                                class="fas fa-utensils"></i> Food</a>
-                                        <a href="" class="dropdown-item-1 mr-3 float-right"><i
-                                                class="fas fa-restroom"></i> Sex</a>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <a href="{{URL::to('category-game')}}" class="dropdown-item-1 ml-3"><i
-                                                class="fas fa-gamepad"></i> Game</a>
-                                        <a href="" class="dropdown-item-1 mr-3 float-right"><i
-                                                class="fab fa-internet-explorer"></i> Internet</a>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <a href="" class="dropdown-item-1 ml-3"><i class="fas fa-home"></i>
-                                            Family</a>
-                                        <a href="" class="dropdown-item-1 mr-3 float-right"><i
-                                                class="fas fa-church"></i> Religion</a>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <a href="" class="dropdown-item-1 ml-3"><i class="fas fa-swimmer"></i> Sport</a>
-                                        <a href="{{URL::to('category-music')}}"
-                                           class="dropdown-item-1 mr-3 float-right"><i
-                                                class="fas fa-headphones-alt"></i> Music</a>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item-1 list-inline-item text-danger">
-                            <a class="nav-link text-danger" href="#">About us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="add">
             <a href="{{URL::to('/add-all-dictionary')}}" data-toggle="tooltip" title="Please add your words!">
                 <button type="button"
