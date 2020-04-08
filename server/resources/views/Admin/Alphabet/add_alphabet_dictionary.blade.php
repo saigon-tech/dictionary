@@ -17,18 +17,18 @@
                             }
                             ?>
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/save-alphabet-dictionary') }}" method="post">
+                    <form role="form" action="{{ route('save.alphabet') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name Alphabet</label>
                             <input type="text" name="alphabet_dictionary_name" class="form-control"
-                                id="exampleInputEmail1" placeholder="Tên danh mục">
+                                id="exampleInputEmail1" placeholder="Name Alphabet">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Description Alphabet</label>
                             <textarea style="resize: none" rows="8" class="form-control ckeditor"
                                 name="alphabet_dictionary_desc" id="exampleInputPassword1"
-                                placeholder="Mô tả Bảng Chữ cái"></textarea>
+                                placeholder="Description Alphabet"></textarea>
                         </div>
 
                         <div class="form-group">

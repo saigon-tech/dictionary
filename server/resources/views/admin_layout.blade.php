@@ -4,7 +4,7 @@
     <title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
     <script type="application/x-javascript">
       addEventListener("load", function () {
@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
-                <a href="index.html" class="logo">
+                <a href="{{route('get.admin_dashboard')}}" class="logo">
                     Dictionary
                 </a>
 
@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul class="dropdown-menu extended logout">
                             <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="{{ URL::to('logout') }}"><i class="fa fa-key"></i>Đăng Xuất</a></li>
+                            <li><a href="{{ URL::to('logout') }}"><i class="fa fa-key"></i>Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -87,17 +87,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Bảng Chữ cái (Alphabet)</span>
+                                <span>Alphabet</span>
                             </a>
                             <ul class="sub">
                                 <li>
                                     <a href="{{ route('add.alphabet') }}">
-                                        Thêm danh mục Bảng Chữ Cái
+                                        Add Alphabet
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{ route('list.alphabet') }}">
-                                        Liệt kê danh mục Bảng Chữ Cái
+                                        List Alphabet
                                     </a>
                                 </li>
                             </ul>
@@ -105,22 +105,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Loại từ (Word Type)</span>
+                                <span>Category</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{ URL::to('/add-wordtype-dictionary') }}">Thêm danh mục Loại từ </a></li>
-                                <li><a href="{{ URL::to('/all-wordtype-dictionary') }}">Liệt kê danh mục Loại từ </a>
+                                <li>
+                                    <a href="{{ route('add.category') }}">
+                                        Add Category
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('list.category') }}">
+                                        List Category
+                                    </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Từ Vựng (Dictionary)</span>
+                                <span>Dictionary</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{ URL::to('/add-dictionary') }}">Thêm Từ Vựng</a></li>
-                                <li><a href="{{ URL::to('/all-dictionary') }}">Liệt kê Từ Vựng</a></li>
+                                <li><a href="{{ route('add.dictionary') }}">Add Dictionary</a></li>
+                                <li><a href="{{ route('list.dictionary') }}">List Dictionary</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -134,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </section>
             <div class="footer">
                 <div class="wthree-copyright">
-                    <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+                    <p>© <?= date("Y"); ?> Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
                 </div>
             </div>
         </section>
