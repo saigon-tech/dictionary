@@ -3,16 +3,16 @@
 <div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Listed WordType
+      Listed Category
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
-
+          <a href="{{ route('add.category') }}" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Category</a>
       </div>
       <div class="col-sm-4">
       </div>
       <div class="col-sm-3">
-        <form action="{{ URL::to('/tim-kiem-wordtype') }}" method="POST">
+        <form action="{{ URL::to('/tim-kiem-category') }}" method="POST">
           {{ csrf_field() }}
           <div class="input-group">
             <input type="text" class="input-sm form-control" name="keywords_submit" placeholder="Search">
@@ -37,45 +37,38 @@
         <thead>
           <tr>
 
-            <th>WordType</th>
+            <th>Category</th>
             <th>Description</th>
             <th style="width:30px;">Show</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($all_wordtype_dictionary as $key =>$wordtype_dict)
+          @foreach ($all_category_dictionary as $key =>$category_dict)
 
 
           <tr>
 
-            <td>{{$wordtype_dict->wordtype_name }}</td>
-            <td>{!! $wordtype_dict->wordtype_desc !!}</td>
+            <td>{{$category_dict->category_name }}</td>
+            <td>{!! $category_dict->category_desc !!}</td>
             <td><span class="text-ellipsis">
-                <?php
-                    if($wordtype_dict->wordtype_status==0){
-                        ?>
-                <a href="{{ URL::to("/unactive-wordtype-dictionary/".$wordtype_dict->wordtype_id )}}"><span
+                    @if($category_dict->category_status==0)
+                <a href="{{ route('unactive.category', [$category_dict->category_id])}}"><span
                     class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
-                <?php
-                    }
-                    else {
-                        ?>
-                <a href="{{ URL::to("/active-wordtype-dictionary/".$wordtype_dict->wordtype_id )}}""><span class="
+                    @else
+                <a href="{{ route('active.category', [$category_dict->category_id])}}"><span class="
                   fa-thumb-styling-two fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
-              <?php
-                    }
-                    ?>
+                    @endif
               </span></td>
 
             <td>
-              <a href="{{ URL::to('/edit-wordtype-dictionary/'.$wordtype_dict->wordtype_id) }}"
+              <a href="{{ route('edit.category', [$category_dict->category_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
-              <a onclick="return confirm('Ban cố chắc xóa danh mục này không ')"
-                href="{{ URL::to('/delete-wordtype-dictionary/'.$wordtype_dict->wordtype_id) }}"
+              <a onclick="return confirm('Do you want to delete this Category? ')"
+                href="{{ route('destroy.category', [$category_dict->category_id]) }}"
                 class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>

@@ -17,37 +17,36 @@
                             }
                             ?>
                 <div class="position-center">
-                    <form role="form" action="{{ URL::to('/save-dictionary') }}" method="post"
+                    <form role="form" action="{{ route('save.dictionary') }}" method="post"
                         enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name from English</label>
                             <input type="text" name="dictionary_name_eng" class="form-control" id="exampleInputEmail1"
-                                placeholder="Tên Từ Tiếng anh">
+                                placeholder="Name from English">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Name from VietNam</label>
+                            <label for="exampleInputEmail1">Name from Vietnamese</label>
                             <input type="text" name="dictionary_name_vn" class="form-control" id="exampleInputEmail1"
-                                placeholder="Tên Từ Tiếng Việt">
+                                placeholder="Name from Vietnamese">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Picture</label>
                             <input type="file" name="dictionary_image" class="form-control" id="exampleInputEmail1"
-                                placeholder="Hình ảnh">
+                                placeholder="Picture">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Description</label>
                             <textarea style="resize: none" rows="8" class="form-control ckeditor" name="dictionary_desc"
-                                id="exampleInputPassword1" placeholder="Mô tả Từ điển"></textarea>
+                                id="exampleInputPassword1" placeholder="Description"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Wordtype</label>
-                            <select name="dictionary_wordtype" class="form-control input-sm m-bot15">
-                                @foreach($wordtype_dictionary as $key =>$wordtype)
-                                <option value="{{ $wordtype->wordtype_id }}">{{ $wordtype->wordtype_name }}</option>
+                            <label for="exampleInputPassword1">Category</label>
+                            <select name="dictionary_category" class="form-control input-sm m-bot15">
+                                @foreach($category_dictionary as $key =>$category)
+                                <option value="{{ $category->category_id }}">{{ $category->category_name }}</option>
                                 @endforeach
-
                             </select>
                         </div>
                         <div class="form-group">
@@ -56,7 +55,6 @@
                                 @foreach($alphabet_dictionary as $key =>$alphabet)
                                 <option value="{{ $alphabet->alphabet_id }}">{{ $alphabet->alphabet_name }}</option>
                                 @endforeach
-
                             </select>
                         </div>
                         <div class="form-group">

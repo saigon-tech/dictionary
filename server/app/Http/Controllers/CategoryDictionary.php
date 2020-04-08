@@ -1,132 +1,85 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Category;
 use Illuminate\Support\Facades\Session;
-use App\Models\Alphabet;
-use App\Logics\AlphabetLogic;
+use Illuminate\Support\Facades\Redirect;
 
 
-class AlphabetDictionary extends Controller
+class CategoryDictionary extends Controller
 {
-    private $alphabet_logic = null;
-
-    public function __construct(AlphabetLogic $AlphabetLogic)
-    {
-        $this->alphabet_logic = $AlphabetLogic;
+    public function AuthLogin(){
+        $admin_id = Session::get('admin_id');
+        if($admin_id)
+        {
+            return Redirect::to('dashboard');
+        }
+        else{
+            return Redirect::to('admin')->send();
+        }
     }
 
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function add_alphabet_dictionary()
-    {
-        return view('Admin.Alphabet.add_alphabet_dictionary');
+    public function add_category_dictionary(){
+        //$this->AuthLogin();
+        return view('Admin.Category.add_category_dictionary');
     }
-
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function all_alphabet_dictionary()
-    {
-        $alphabets= $this->alphabet_logic->getDataAllAlphabet();
-        return view('Admin.Alphabet.all_alphabet_dictionary', [
-            'all_alphabet_dictionary' => $alphabets,
-        ]);
+    public function all_category_dictionary(){
+        //$this->AuthLogin();
+        $all_category_dictionary = category::get();
+        $manager_category_dictionary = view('Admin.Category.all_category_dictionary')->with('all_category_dictionary',$all_category_dictionary);
+        return view('admin_layout')->with('Admin.Category.all_category_dictionary',$manager_category_dictionary);
     }
-
-    /**
-     * @param Request $request
-     * @return mixed
-     */
-    public function save_alphabet_dictionary(Request $request)
-    {
-        $data                    = new Alphabet;
-        $data['alphabet_name']   = $request->alphabet_dictionary_name;
-        $data['alphabet_desc']   = $request->alphabet_dictionary_desc;
-        $data['alphabet_status'] = $request->alphabet_dictionary_status;
+    public function save_category_dictionary(Request $request){
+        //$this->AuthLogin();
+        $data = new category;
+        $data['category_name'] = $request->category_dictionary_name;
+        $data['category_desc'] = $request->category_dictionary_desc;
+        $data['category_status'] = $request->category_dictionary_status;
         $data->save();
-
-        return redirect()->route('list.alphabet');
+        Session::flash('message','Add Category Successfully');
+        return redirect()->route('list.category');
 
     }
-
-    /**
-     * @param $alphabet_dictionary_id
-     * @return mixed
-     */
-    public function unactive_alphabet_dictionary($alphabet_dictionary_id)
-    {
-
-        Alphabet::where('alphabet_id', $alphabet_dictionary_id)->update(['alphabet_status' => 1]);
-        Session::flash('message', 'Failed to Activate Alphabet Successfully');
-        return redirect()->route('list.alphabet');
+    public function unactive_category_dictionary($category_dictionary_id){
+        //$this->AuthLogin();
+        category::where('category_id',$category_dictionary_id)->update(['category_status'=>1]);
+        Session::flash("message","Failed to Activate Category Successfully");
+        return redirect()->route('list.category');
     }
-
-    /**
-     * @param $alphabet_dictionary_id
-     * @return mixed
-     */
-    public function active_alphabet_dictionary($alphabet_dictionary_id)
-    {
-
-        Alphabet::where('alphabet_id', $alphabet_dictionary_id)->update(['alphabet_status' => 0]);
-        Session::flash("message", "Activate Alphabet Successfully");
-        return redirect()->route('list.alphabet');
+    public function active_category_dictionary($category_dictionary_id){
+        //$this->AuthLogin();
+        category::where('category_id',$category_dictionary_id)->update(['category_status'=>0]);
+        Session::flash("message","Activate Category Successfully");
+        return redirect()->route('list.category');
     }
-
-    /**
-     * @param $alphabet_dictionary_id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit_alphabet_dictionary($alphabet_dictionary_id)
-    {
-
-        $edit_alphabet_dictionary = Alphabet::where('alphabet_id', $alphabet_dictionary_id)->get();
-
-        $manager_alphabet_dictionary = view('Admin.Alphabet.edit_alphabet_dictionary')->with('edit_alphabet_dictionary',
-            $edit_alphabet_dictionary);
-        return view('admin_layout')->with('Admin.Alphabet.edit_alphabet_dictionary', $manager_alphabet_dictionary);
+    public function edit_category_dictionary($category_dictionary_id){
+        //$this->AuthLogin();
+        $edit_category_dictionary =  category::where('category_id',$category_dictionary_id)->get();
+        $manager_category_dictionary = view('Admin.Category.edit_category_dictionary')->with('edit_category_dictionary',$edit_category_dictionary);
+        return view('admin_layout')->with('Admin.Category.edit_category_dictionary', $manager_category_dictionary);
     }
+    public function update_category_dictionary(Request $request,$category_dictionary_id){
+        //$this->AuthLogin();
+        $data = array();
+        $data['category_name'] = $request->category_dictionary_name;
+        $data['category_desc'] = $request->category_dictionary_desc;
+        category::where('category_id',$category_dictionary_id)->update($data);
+        Session::flash('message','Update Category Successfully');
+        return redirect()->route('list.category');
 
-    /**
-     * @param Request $request
-     * @param $alphabet_dictionary_id
-     * @return mixed
-     */
-    public function update_alphabet_dictionary(Request $request, $alphabet_dictionary_id)
-    {
-
-        $data                  = [];
-        $data['alphabet_name'] = $request->alphabet_dictionary_name;
-        $data['alphabet_desc'] = $request->alphabet_dictionary_desc;
-        Alphabet::where('alphabet_id', $alphabet_dictionary_id)->update($data);
-        Session::put('message', 'Update Alphabet Successfully');
-        return redirect()->route('list.alphabet');
     }
-
-    /**
-     * @param $alphabet_dictionary_id
-     * @return mixed
-     */
-    public function delete_alphabet_dictionary($alphabet_dictionary_id)
-    {
-
-        Alphabet::where('alphabet_id', $alphabet_dictionary_id)->delete();
-        Session::put('message', 'Delete Alphabet Successfully');
-        return redirect()->route('list.alphabet');
+    public function delete_category_dictionary($category_dictionary_id){
+        //$this->AuthLogin();
+        category::where('category_id',$category_dictionary_id)->delete();
+        Session::flash('message','Delete Category Successfully');
+        return redirect()->route('list.category');
     }
-
-    /**
-     * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
     public function search(Request $request)
     {
-        $keywords        = $request->keywords_submit;
-        $search_alphabet = Alphabet::where('alphabet_name', 'like', '%' . $keywords . '%')->get();
-        return view('Admin.Alphabet.search_alphabet')->with('search_alphabet', $search_alphabet);
+        $keywords = $request->keywords_submit;
+        $search_category = category::where('category_name','like','%'.$keywords.'%')->get();
+        return view('Admin.Category.search_category')->with('search_category',$search_category);
     }
+
 
 }

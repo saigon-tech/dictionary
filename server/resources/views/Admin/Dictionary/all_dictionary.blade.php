@@ -3,11 +3,11 @@
 <div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      All Dictionary
+      Listed Dictionary
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
-
+          <a href="{{ route('add.dictionary') }}" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Dictionary</a>
       </div>
       <div class="col-sm-4">
       </div>
@@ -39,9 +39,9 @@
           <tr>
 
             <th>Name From English</th>
-            <th>Name From VietName</th>
+            <th>Name From Vietnamese</th>
             <th>Picture</th>
-            <th>Wordtype</th>
+            <th>Category</th>
             <th>Alphabet</th>
             <th>Show</th>
             <th>Edit | Delete</th>
@@ -49,41 +49,34 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($all_dictionary as $key =>$dicti)
+          @foreach ($all_dictionary as $key =>$dictionary)
 
           <tr>
-            <td>{{$dicti->dictionary_name_eng }}</td>
-            <td>{{ $dicti->dictionary_name_vn }}</td>
-            <td> <img src="public/uploads/dictionary/{{ $dicti->dictionary_image}}" style="height:80px;width:80px">
+            <td>{{$dictionary->dictionary_name_eng }}</td>
+            <td>{{ $dictionary->dictionary_name_vn }}</td>
+            <td> <img src="{{ url('/public/uploads/dictionary/'.$dictionary->dictionary_image)}}" style="height:80px;width:80px">
             </td>
-            <td>{{$dicti->wordtype_name }}</td>
-            <td>{{$dicti->alphabet_name }}</td>
+            <td>{{$dictionary->category_name }}</td>
+            <td>{{$dictionary->alphabet_name }}</td>
             <td><span class="text-ellipsis">
-                <?php
-                    if($dicti->dictionary_status==0){
-                        ?>
-                <a href="{{ URL::to("/unactive-dictionary/".$dicti->dictionary_id )}}"><span
+                    @if($dictionary->dictionary_status==0)
+                <a href="{{route('unactive.dictionary',[$dictionary->dictionary_id])}}"><span
                     class="fa-thumb-styling-one fa fa-thumbs-up" style="font-size: 28px;
     color: green;"></span></a>
-                <?php
-                    }
-                    else {
-                        ?>
-                <a href="{{ URL::to("/active-dictionary/".$dicti->dictionary_id )}}""><span class=" fa-thumb-styling-two
+                    @else
+                <a href="{{ route('active.dictionary',[$dictionary->dictionary_id])}}"><span class=" fa-thumb-styling-two
                   fa fa-thumbs-down" style="font-size: 28px;
     color: red;"></span></a>
-              <?php
-                    }
-                    ?>
-              </span></td>
-
+                    @endif
+              </span>
+            </td>
             <td>
-              <a href="{{ URL::to('/edit-dictionary/'.$dicti->dictionary_id ) }}" class="active styling-edit"
+              <a href="{{ route('edit.dictionary',[$dictionary->dictionary_id]) }}" class="active styling-edit"
                 ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i>
               </a>
-              <a onclick="return confirm('Ban cố chắc xóa sản phẩm  này không ')"
-                href="{{ URL::to('/delete-dictionary/'.$dicti->dictionary_id ) }}" class="active styling-edit"
+              <a onclick="return confirm('Do you want to delete this Dictionary ? ')"
+                href="{{ route('destroy.dictionary',[$dictionary->dictionary_id]) }}" class="active styling-edit"
                 ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
